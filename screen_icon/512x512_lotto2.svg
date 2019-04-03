@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 512.00001 512.00001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   inkscape:export-filename="/home/buster/바탕화면/test"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   sodipodi:docname="512x512_lotto2.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5801"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1;"
+         offset="0"
+         id="stop5803" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5789">
+      <stop
+         style="stop-color:#ffff00;stop-opacity:1;"
+         offset="0"
+         id="stop5791" />
+      <stop
+         style="stop-color:#ffff00;stop-opacity:0;"
+         offset="1"
+         id="stop5793" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5789"
+       id="linearGradient5795"
+       x1="40.812912"
+       y1="861.61926"
+       x2="534.12933"
+       y2="861.61926"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:label="Blur Double"
+       inkscape:menu="Blurs"
+       inkscape:menu-tooltip="Overlays two copies with different blur amounts and modifiable blend and composite"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8146">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         id="feGaussianBlur8148" />
+      <feGaussianBlur
+         stdDeviation="0.01"
+         in="SourceGraphic"
+         result="result1"
+         id="feGaussianBlur8150" />
+      <feComposite
+         in2="result1"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         id="feComposite8152" />
+      <feBlend
+         in2="fbSourceGraphic"
+         mode="normal"
+         result="result3"
+         id="feBlend8154" />
+    </filter>
+    <filter
+       inkscape:label="Blur Double"
+       inkscape:menu="Blurs"
+       inkscape:menu-tooltip="Overlays two copies with different blur amounts and modifiable blend and composite"
+       style="color-interpolation-filters:sRGB;"
+       id="filter8174">
+      <feGaussianBlur
+         stdDeviation="5"
+         result="fbSourceGraphic"
+         id="feGaussianBlur8176" />
+      <feGaussianBlur
+         stdDeviation="0.01"
+         in="SourceGraphic"
+         result="result1"
+         id="feGaussianBlur8178" />
+      <feComposite
+         in2="result1"
+         operator="arithmetic"
+         in="fbSourceGraphic"
+         k2="0.5"
+         k3="0.5"
+         result="result2"
+         id="feComposite8180" />
+      <feBlend
+         in2="fbSourceGraphic"
+         mode="normal"
+         result="result3"
+         id="feBlend8182" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="362.15449"
+     inkscape:cy="265.56681"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="true"
+     borderlayer="true"
+     inkscape:window-width="1680"
+     inkscape:window-height="1026"
+     inkscape:window-x="1680"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-540.36216)">
+    <rect
+       style="fill:#ffd5f6;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.01650715px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-3"
+       width="458.60291"
+       height="468.56961"
+       x="26.267179"
+       y="559.47827" />
+    <circle
+       style="fill:#ff5555;stroke:#000000;stroke-opacity:1;fill-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3374"
+       cx="130.30965"
+       cy="670.52448"
+       r="95.964493" />
+    <rect
+       style="fill:#ff55dd;fill-rule:evenodd;stroke:none;stroke-width:0.5434323px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-36"
+       width="509.57346"
+       height="30"
+       x="2.2971027"
+       y="538.6803" />
+    <rect
+       style="fill:#ff55dd;fill-rule:evenodd;stroke:none;stroke-width:0.54561281px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-7"
+       width="30"
+       height="511.45682"
+       x="483.1105"
+       y="543.08551" />
+    <rect
+       style="fill:#ff55dd;fill-rule:evenodd;stroke:none;stroke-width:0.58271682px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336-36-5"
+       width="509.53418"
+       height="30"
+       x="0.78120506"
+       y="1024.9883" />
+    <ellipse
+       style="fill:#0000ff;stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3372-3"
+       cx="263.64981"
+       cy="686.68695"
+       r="80.307129" />
+    <circle
+       style="fill:#0055d4;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3374-0"
+       cx="263.14474"
+       cy="695.27319"
+       r="81.317284" />
+    <circle
+       style="fill:#00ffff;stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3372-3-5"
+       cx="360.11942"
+       cy="749.82147"
+       r="51.51778" />
+    <circle
+       style="fill:#c8b7be;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3372-3-5-6-5"
+       cx="454.06357"
+       cy="791.23767"
+       r="23.233507" />
+    <circle
+       style="fill:#916f6f;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path3372-3-5-6"
+       cx="408.60672"
+       cy="802.34937"
+       r="34.850262" />
+    <circle
+       style="fill:#9955ff;stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3372"
+       cx="140.41118"
+       cy="820.02722"
+       r="106.06602" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:112.47681427px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.794;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999982px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="545.38019"
+       y="606.62701"
+       id="text3353-2-3-2-7"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.77624301,0.48955946,-0.6068863,0.90550648,0,0)"><tspan
+         sodipodi:role="line"
+         x="545.38019"
+         y="606.62701"
+         id="tspan3507-2-0-5"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999982px;stroke-opacity:1;">32</tspan></text>
+    <g
+       id="g8134"
+       style="fill:#000000;filter:url(#filter8146)"
+       transform="translate(62.629458,-229.30463)">
+      <text
+         transform="scale(1.0239563,0.97660417)"
+         sodipodi:linespacing="125%"
+         id="text3353"
+         y="1135.083"
+         x="-31.409864"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.25px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan3485"
+           y="1135.083"
+           x="-31.409864"
+           sodipodi:role="line">로또 </tspan></text>
+      <text
+         transform="scale(0.90442441,1.1056756)"
+         sodipodi:linespacing="125%"
+         id="text3353-2"
+         y="1114.1384"
+         x="-37.426624"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:100.58499908px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="tspan3507"
+           y="1114.1384"
+           x="-37.426624"
+           sodipodi:role="line">번호발생기 </tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:81.55791473px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.429;fill:#00ff66;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999988px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-227.45969"
+       y="666.47388"
+       id="text3353-2-3-5"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.91988215,-0.28371221,0.43543918,0.9527966,0,0)"><tspan
+         sodipodi:role="line"
+         x="-227.45969"
+         y="666.47388"
+         id="tspan3507-2-8"
+         style="fill:#00ff66;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999988px;stroke-opacity:1;">28</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:93.43034363px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter8174)"
+       x="667.18347"
+       y="579.06195"
+       id="text3353-7"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.86650721,0,0,1.1540585,-263.64982,6.0609153)"><tspan
+         sodipodi:role="line"
+         x="667.18347"
+         y="579.06195"
+         id="tspan3485-7"
+         style="fill:#000000;stroke-width:1px">무료</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:76.43830872px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.803;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-478.68204"
+       y="636.38702"
+       id="text3353-2-3"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.63563625,-0.6382928,0.86579345,0.70381492,0,0)"><tspan
+         sodipodi:role="line"
+         x="-478.68204"
+         y="636.38702"
+         id="tspan3507-2"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1px;stroke-opacity:1;">12</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:46.22953033px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.69599998;fill:#a02c2c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999988px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-411.20081"
+       y="716.7572"
+       id="text3353-2-3-2"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.62146393,-0.65284892,0.84648943,0.71986526,0,0)"><tspan
+         sodipodi:role="line"
+         x="-411.20081"
+         y="716.7572"
+         id="tspan3507-2-0"
+         style="fill:#a02c2c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999988px;stroke-opacity:1;">45</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.0240593px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.69599998;fill:#a02c2c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999982px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-390.65298"
+       y="770.81274"
+       id="text3353-2-3-2-8"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.60923464,-0.66595368,0.82983204,0.73431526,0,0)"><tspan
+         sodipodi:role="line"
+         x="-390.65298"
+         y="770.81274"
+         id="tspan3507-2-0-6"
+         style="fill:#a02c2c;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999982px;stroke-opacity:1">18</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.66585159px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.69599998;fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999976px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-368.49118"
+       y="803.9646"
+       id="text3353-2-3-2-8-2"
+       sodipodi:linespacing="125%"
+       transform="matrix(0.63316621,-0.64078288,0.86242894,0.70656062,0,0)"><tspan
+         sodipodi:role="line"
+         x="-368.49118"
+         y="803.9646"
+         id="tspan3507-2-0-6-7"
+         style="fill:#ff5555;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.99999976px;stroke-opacity:1;">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:139.25px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff00cc;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;"
+       x="23.45756"
+       y="900.32306"
+       id="text3353-3"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0239563,0.97660417)"><tspan
+         sodipodi:role="line"
+         x="23.45756"
+         y="900.32306"
+         id="tspan3485-6">로또 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:100.58499908px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff66;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="24.692255"
+       y="906.78326"
+       id="text3353-2-7"
+       sodipodi:linespacing="125%"
+       transform="scale(0.90442441,1.1056756)"><tspan
+         sodipodi:role="line"
+         x="24.692255"
+         y="906.78326"
+         id="tspan3507-5"
+         style="fill:#00ff66;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1">번호발생기 </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:93.43034363px;line-height:125%;font-family:'휴먼둥근헤드라인';-inkscape-font-specification:'휴먼둥근헤드라인, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="356.09952"
+       y="585.70386"
+       id="text3353-7-3"
+       sodipodi:linespacing="125%"
+       transform="scale(0.86650721,1.1540585)"><tspan
+         sodipodi:role="line"
+         x="356.09952"
+         y="585.70386"
+         id="tspan3485-7-5"
+         style="fill:#ffff00;stroke-width:1px">무료</tspan></text>
+    <rect
+       style="fill:#ff55dd;fill-rule:evenodd;stroke:none;stroke-width:0.59177673px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3336"
+       width="30"
+       height="517.47156"
+       x="0.80599999"
+       y="539.97009" />
+  </g>
+</svg>

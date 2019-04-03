@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_resultwin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/winText1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="22dp"
+        app:autoSizeMinTextSize="14dp" />
+
+    <TextView
+        android:id="@+id/winText2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="20dp"
+        app:autoSizeMinTextSize="14dp" />
+
+    <TextView
+        android:id="@+id/winText3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="16dp"
+        app:autoSizeMinTextSize="12dp" />
+
+    <TextView
+        android:id="@+id/winText4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="16dp"
+        app:autoSizeMinTextSize="12dp" />
+
+    <TextView
+        android:id="@+id/winText5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="16dp"
+        app:autoSizeMinTextSize="12dp" />
+
+    <TextView
+        android:id="@+id/winText6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:autoSizeMaxTextSize="16dp"
+        app:autoSizeMinTextSize="12dp" />
+</LinearLayout>

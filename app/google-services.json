@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "164039908410",
+    "firebase_url": "https://lot-gen.firebaseio.com",
+    "project_id": "lot-gen",
+    "storage_bucket": "lot-gen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164039908410:android:8a1be41608f2c08e",
+        "android_client_info": {
+          "package_name": "gotopark.buster.lottogen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164039908410-d7krdb7pnn19u0lk1vg79usivb27jcsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoExjNnXpyYCmIfEejrflkQWXmtrwZZ18"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164039908410:android:41e6c629c6a405d5",
+        "android_client_info": {
+          "package_name": "gotopark.com.LotGen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164039908410-d7krdb7pnn19u0lk1vg79usivb27jcsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoExjNnXpyYCmIfEejrflkQWXmtrwZZ18"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
