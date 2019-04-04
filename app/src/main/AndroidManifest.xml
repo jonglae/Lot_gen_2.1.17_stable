@@ -38,15 +38,15 @@
 
         <activity
             android:name=".qrCodeReader.BaseScannerActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".qrCodeReader.FullScannerFragmentActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".qrCodeReader.WebActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <meta-data

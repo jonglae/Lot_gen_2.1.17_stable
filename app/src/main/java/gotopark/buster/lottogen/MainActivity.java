@@ -614,9 +614,9 @@ public class MainActivity extends AppCompatActivity {
 
 
                 Rtilte.setText (LotCount+"추첨일:"+LotDate);
-                Resultwin1.setText (LotWin+"\n");
-                Resultwin2.setText (Linfo);
-                Resultwin3.setText ("(당첨 축하 드립니다. ^^)");
+                Resultwin1.setText (LotWin);
+                Resultwin2.setText ("\n"+Linfo);
+                Resultwin2.append ("(당첨을 축하 드립니다. ^^)");
 
 
                 RBall1.setImageResource (dball1);
