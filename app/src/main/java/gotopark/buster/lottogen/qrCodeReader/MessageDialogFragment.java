@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
+import org.jetbrains.annotations.NotNull;
+
 
 /**
  * Created by Gold on 2017. 3. 28..
@@ -34,6 +36,7 @@ public class MessageDialogFragment extends DialogFragment {
         return fragment;
     }
 
+    @NotNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

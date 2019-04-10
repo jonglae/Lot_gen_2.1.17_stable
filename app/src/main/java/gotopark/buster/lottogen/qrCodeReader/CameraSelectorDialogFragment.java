@@ -11,6 +11,8 @@ import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
+import org.jetbrains.annotations.NotNull;
+
 import gotopark.buster.lottogen.R;
 
 public class CameraSelectorDialogFragment extends DialogFragment {
@@ -33,6 +35,7 @@ public class CameraSelectorDialogFragment extends DialogFragment {
         return fragment;
     }
 
+    @NotNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         if(mListener == null) {

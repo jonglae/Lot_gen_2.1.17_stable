@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,8 +21,11 @@ import android.view.ViewGroup;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import gotopark.buster.lottogen.R;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -39,7 +44,7 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
     private int mCameraId = -1;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle state) {
         mScannerView = new ZXingScannerView(getActivity());
         if(state != null) {
             mFlash = state.getBoolean(FLASH_STATE, false);
@@ -89,6 +94,7 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
         MenuItemCompat.setShowAsAction(menuItem, MenuItem.SHOW_AS_ACTION_NEVER);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle presses on the action bar items
@@ -113,12 +119,12 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
                 return true;
             case R.id.menu_formats:
                 DialogFragment fragment = FormatSelectorDialogFragment.newInstance(this, mSelectedIndices);
-                fragment.show(getActivity().getSupportFragmentManager(), "format_selector");
+                fragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "format_selector");
                 return true;
             case R.id.menu_camera_selector:
                 mScannerView.stopCamera();
                 DialogFragment cFragment = CameraSelectorDialogFragment.newInstance(this, mCameraId);
-                cFragment.show(getActivity().getSupportFragmentManager(), "camera_selector");
+                cFragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "camera_selector");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -135,7 +141,7 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NotNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(FLASH_STATE, mFlash);
         outState.putBoolean(AUTO_FOCUS_STATE, mAutoFocus);
@@ -143,17 +149,18 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
         outState.putInt(CAMERA_ID, mCameraId);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void handleResult(Result rawResult) {
         try {
 
             //바코드 스캔완료시 완료사운드 재생부
             Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-            Ringtone r = RingtoneManager.getRingtone(getActivity().getApplicationContext(), notification);
+            Ringtone r = RingtoneManager.getRingtone(Objects.requireNonNull(getActivity()).getApplicationContext(), notification);
             r.play();
             //===================================
 
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
         //다이얼로그 Show / WebView 넘어가기
         showMessageDialog("Contents = " + rawResult.getText() + ", Format = " + rawResult.getBarcodeFormat().toString());
         Intent intent = new Intent(getActivity(), WebActivity.class);
@@ -162,21 +169,25 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
         startActivity(intent);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void showMessageDialog(String message) {
         DialogFragment fragment = MessageDialogFragment.newInstance("Scan Result", message ,this);
-        fragment.show(getActivity().getSupportFragmentManager(), "scan_results");
+        fragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "scan_results");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void closeMessageDialog() {
         closeDialog("scan_results");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void closeFormatsDialog() {
         closeDialog("format_selector");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void closeDialog(String dialogName) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
         DialogFragment fragment = (DialogFragment) fragmentManager.findFragmentByTag(dialogName);
         if(fragment != null) {
             fragment.dismiss();
@@ -220,6 +231,7 @@ public class FullScannerFragment extends Fragment implements MessageDialogFragme
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onPause() {
         super.onPause();

@@ -12,6 +12,8 @@ import android.support.v4.app.DialogFragment;
 
 import com.google.zxing.BarcodeFormat;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 
 import gotopark.buster.lottogen.R;
@@ -40,6 +42,7 @@ public class FormatSelectorDialogFragment extends DialogFragment {
         return fragment;
     }
 
+    @NotNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         if(mSelectedIndices == null || mListener == null) {
