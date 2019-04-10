@@ -120,15 +120,18 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
     };
-    String[] l_number = new String[8];
+
+//    String[] l_number = new String[8];
+
     private Button.OnClickListener Lot_share = new View.OnClickListener() {
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
 
-            AnRate();
             LotCOPY();
+            Admob_Front();
+
             String comText = Balltxt1.getText().toString();
 
             if (Objects.equals("0", comText)) {
@@ -151,7 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
+            AnRate();
             onBackPressed();
+
 
         }
     };
@@ -175,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 assert clipboard != null;
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(MainActivity.this, "Lotto Number Copied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "행운의 로또번호가 복사됐습니다.", Toast.LENGTH_SHORT).show();
                 text1.setText("!!! Lotto Number Copied !!!");
             }
         }
@@ -228,9 +233,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(this, clss);
             startActivity(intent);
+            Admob_Front();
+
         }
 
-        Admob_Front();
 
     }
 
@@ -287,7 +293,9 @@ public class MainActivity extends AppCompatActivity {
 
             new LotonumCall().execute();
             Admob_is();
+            Admob_Front();
             AnRate();
+
 
         } else {
 
@@ -426,9 +434,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void Admob_Front() {
         InterstitialAd mInterstitialAd;
-        Log.e("AD_Front_TEST =====> ","=======================> OK");
+        Log.e("전면_Front_TEST =====> ", "=======================> OK");
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString (R.string.interstitial_ad_unit_id));
+        mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
 
@@ -444,7 +452,6 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                        Admob_Front();
                         finish();
                     }
                 })
@@ -669,7 +676,7 @@ public class MainActivity extends AppCompatActivity {
                 Rtilte.setText(LotCount + "추첨일:" + LotDate);
                 Resultwin1.setText(LotWin);
                 Resultwin2.setText("\n" + Linfo);
-                Resultwin2.append("("+Cpriz_data+")");
+                Resultwin2.append("(" + Cpriz_data + ")");
 
 
                 RBall1.setImageResource(dball1);
@@ -713,4 +720,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+    }
 }
