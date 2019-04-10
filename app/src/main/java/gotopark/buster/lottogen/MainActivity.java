@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Resultwin3;
     private TextView Resultwin4;
     private TextView Resultwin5;
+    private InterstitialAd mInterstitialAd;
 
 
     private String ctextR;
@@ -433,7 +434,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Admob_Front() {
-        InterstitialAd mInterstitialAd;
         Log.e("전면_Front_TEST =====> ", "=======================> OK");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
