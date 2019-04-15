@@ -47,6 +47,7 @@
     <string name="ok_button">OK</string>
     <string name="cancel_button">Cancel</string>
     <bool name="cameraPreviewShouldFillView">true</bool>
+    <string name="scr_EXIT_Mesg1">나가시겠습니까 ?</string>
 
 
     <string name="jsoup_q1">#latest_draw</string>

@@ -56,9 +56,6 @@ import gotopark.buster.lottogen.Module.numtoimg;
 import gotopark.buster.lottogen.Module.numtoimg2;
 import gotopark.buster.lottogen.Module.randomNum;
 import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
-import hotchemi.android.rate.AppRate;
-import hotchemi.android.rate.OnClickButtonListener;
-import hotchemi.android.rate.StoreType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -104,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Resultwin4;
     private TextView Resultwin5;
     private InterstitialAd mInterstitialAd;
+    BackPressCloseHandler backHandler;
 
 
     private String ctextR;
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             LotCOPY();
-            Admob_Front();
+
 
             String comText = Balltxt1.getText().toString();
 
@@ -148,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 msg.putExtra(Intent.EXTRA_TITLE, "동행복권 로또 넘버");
                 msg.setType("text/plain");
                 startActivity(Intent.createChooser(msg, "Share"));
+
+                Show_front();
             }
         }
     };
@@ -155,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
-            AnRate();
             onBackPressed();
 
 
@@ -234,10 +233,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Intent intent = new Intent(this, clss);
             startActivity(intent);
-            Admob_Front();
 
         }
 
+        Show_front();
 
     }
 
@@ -291,11 +290,12 @@ public class MainActivity extends AppCompatActivity {
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
             setContentView(R.layout.activity_main);
+            backHandler = new BackPressCloseHandler(this);
 
             new LotonumCall().execute();
             Admob_is();
             Admob_Front();
-            AnRate();
+            BackPressCloseHandler.AnRate();
 
 
         } else {
@@ -404,25 +404,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void AnRate() {
 
-        AppRate.with(this)
-                .setStoreType(StoreType.GOOGLEPLAY) //default is Google, other option is Amazon
-                .setInstallDays(1) // default 10, 0 means install day.
-                .setLaunchTimes(10) // default 10 times.
-                .setRemindInterval(1) // default 1 day.
-                .setShowLaterButton(false) // default true.
-                .setDebug(false) // default false.
-                .setCancelable(false) // default false.
-                .setOnClickButtonListener(new OnClickButtonListener() { // callback listener.
-                    @Override
-                    public void onClickButton(int which) {
-                        Log.d(MainActivity.class.getName(), Integer.toString(which));
-                    }
-                }).monitor();
-
-        AppRate.showRateDialogIfMeetsConditions(this);
-    }
 
     public void Admob_is() {
 
@@ -437,31 +419,31 @@ public class MainActivity extends AppCompatActivity {
         Log.e("전면_Front_TEST =====> ", "=======================> OK");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+
+        mInterstitialAd.loadAd(adRequest);
+
+
     }
+
+    public void Show_front() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+
+
+    }
+
+
 
     @Override
     public void onBackPressed() {
 
-        AlertDialog.Builder builder;
-        builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(R.string.app_name);
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage(getString(R.string.Popup_Mesg1))
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
+        String iMesg = getString(R.string.scr_EXIT_Mesg1);
+        BackPressCloseHandler.onBackPressed(iMesg);
     }
 
 
