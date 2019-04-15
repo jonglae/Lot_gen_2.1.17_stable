@@ -2,7 +2,7 @@ package antest.lotto_test;
 
 import org.testng.annotations.Test;
 
-import gotopark.buster.lottogen.Module.numtoimg;
+import gotopark.buster.vietlott.Module.numtoimg;
 
 import static junit.framework.Assert.assertEquals;
 

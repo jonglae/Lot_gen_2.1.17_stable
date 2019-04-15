@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
 import android.content.Intent;
 import android.media.Ringtone;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import gotopark.buster.lottogen.R;
+import gotopark.buster.vietlott.R;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class FullScannerFragment extends Fragment implements MessageDialogFragment.MessageDialogListener,

@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

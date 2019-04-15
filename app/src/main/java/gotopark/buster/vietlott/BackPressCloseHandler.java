@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen;
+package gotopark.buster.vietlott;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

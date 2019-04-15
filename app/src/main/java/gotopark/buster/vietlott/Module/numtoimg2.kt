@@ -1,14 +1,14 @@
-package gotopark.buster.lottogen.Module
+package gotopark.buster.vietlott.Module
 
-import gotopark.buster.lottogen.R
+import gotopark.buster.vietlott.R
 
 /**
  * Created by buster on 18. 3. 26.
  */
 
-class numtoimg {
+class numtoimg2 {
 
-    fun Numimg(input1: Int): Int {
+    fun Numimg2(input1: Int): Int {
 
         val Imgnum = intArrayOf(
                 R.drawable.ball1,

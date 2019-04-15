@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen;
+package gotopark.buster.vietlott;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -51,11 +51,11 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-import gotopark.buster.lottogen.Module.MonyCalc;
-import gotopark.buster.lottogen.Module.numtoimg;
-import gotopark.buster.lottogen.Module.numtoimg2;
-import gotopark.buster.lottogen.Module.randomNum;
-import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
+import gotopark.buster.vietlott.Module.MonyCalc;
+import gotopark.buster.vietlott.Module.numtoimg;
+import gotopark.buster.vietlott.Module.numtoimg2;
+import gotopark.buster.vietlott.Module.randomNum;
+import gotopark.buster.vietlott.qrCodeReader.FullScannerFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
 

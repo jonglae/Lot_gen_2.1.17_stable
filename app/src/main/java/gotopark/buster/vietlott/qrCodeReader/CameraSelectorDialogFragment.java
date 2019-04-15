@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
 /**
  * Created by Gold on 2017. 3. 28..
@@ -13,7 +13,7 @@ import android.support.v4.app.DialogFragment;
 
 import org.jetbrains.annotations.NotNull;
 
-import gotopark.buster.lottogen.R;
+import gotopark.buster.vietlott.R;
 
 public class CameraSelectorDialogFragment extends DialogFragment {
     public interface CameraSelectorDialogListener {

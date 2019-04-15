@@ -1,10 +1,9 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 
-import gotopark.buster.lottogen.R;
+import gotopark.buster.vietlott.R;
 
 public class FullScannerFragmentActivity extends BaseScannerActivity {
 

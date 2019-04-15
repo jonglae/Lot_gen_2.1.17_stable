@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.Module
+package gotopark.buster.vietlott.Module
 
 import java.util.*
 

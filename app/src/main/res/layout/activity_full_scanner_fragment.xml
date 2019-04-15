@@ -10,7 +10,7 @@
         android:id="@+id/scanner_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="gotopark.buster.lottogen.qrCodeReader.FullScannerFragment" />
+        android:name="gotopark.buster.vietlott.qrCodeReader.FullScannerFragment" />
 
 
     <!--

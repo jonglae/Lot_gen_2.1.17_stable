@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
 /**
  * Created by Gold on 2017. 3. 28..
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-import gotopark.buster.lottogen.R;
+import gotopark.buster.vietlott.R;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class FormatSelectorDialogFragment extends DialogFragment {

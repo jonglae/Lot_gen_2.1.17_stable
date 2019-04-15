@@ -4,7 +4,7 @@
     android:id="@+id/activity_web"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gotopark.buster.lottogen.qrCodeReader.BaseScannerActivity">
+    tools:context="gotopark.buster.vietlott.qrCodeReader.BaseScannerActivity">
 
     <WebView
         android:id="@+id/webView"

@@ -1,4 +1,4 @@
-package gotopark.buster.lottogen.qrCodeReader;
+package gotopark.buster.vietlott.qrCodeReader;
 
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;

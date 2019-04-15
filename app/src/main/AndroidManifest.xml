@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="gotopark.buster.lottogen">
+    package="gotopark.buster.vietlott">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -24,7 +24,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="n">
 
-        <activity android:name=".MainActivity"
+        <activity android:name="gotopark.buster.vietlott.MainActivity"
 
                   android:configChanges="orientation|screenSize"
                   android:screenOrientation="sensor">
@@ -37,15 +37,15 @@
         </activity>
 
         <activity
-            android:name=".qrCodeReader.BaseScannerActivity"
+            android:name="gotopark.buster.vietlott.qrCodeReader.BaseScannerActivity"
             android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".qrCodeReader.FullScannerFragmentActivity"
+            android:name="gotopark.buster.vietlott.qrCodeReader.FullScannerFragmentActivity"
             android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
-            android:name=".qrCodeReader.WebActivity"
+            android:name="gotopark.buster.vietlott.qrCodeReader.WebActivity"
             android:screenOrientation="unspecified"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
