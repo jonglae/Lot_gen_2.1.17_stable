@@ -45,8 +45,8 @@ dependencies {
     implementation 'com.github.hotchemi:android-rate:1.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
-    implementation 'com.google.firebase:firebase-ads:17.2.0'
-//    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
+//    implementation 'com.google.firebase:firebase-ads:17.2.
 
 
     testImplementation 'org.testng:testng:6.9.6'

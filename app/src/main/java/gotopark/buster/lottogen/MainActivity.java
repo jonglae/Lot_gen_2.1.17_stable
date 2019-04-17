@@ -91,24 +91,20 @@ public class MainActivity extends AppCompatActivity {
     private ImageView RBall4;
     private ImageView RBall5;
     private ImageView RBall6;
-    private ImageView RBall7;
     private ImageView RBall8;
 
     private TextView Rtilte;
     private TextView Resultwin1;
     private TextView Resultwin2;
     private TextView Resultwin3;
-    private TextView Resultwin4;
-    private TextView Resultwin5;
     private InterstitialAd mInterstitialAd;
-    BackPressCloseHandler backHandler;
+    BackProcessHandler backHandler;
 
 
-    private String ctextR;
+    public String ctextR;
     String SUM_lotto_num;
     String LotDate;
 
-    private Class<?> mClss;
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
     private Button.OnClickListener MDCT = new View.OnClickListener() {
@@ -120,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-//    String[] l_number = new String[8];
-
     private Button.OnClickListener Lot_share = new View.OnClickListener() {
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -129,6 +123,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
 
             LotCOPY();
+            ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
+            ctextR = ctextR + "\n" + SUM_lotto_num+"\n"+getString(R.string.twiter_CH);
 
 
             String comText = Balltxt1.getText().toString();
@@ -139,15 +135,8 @@ public class MainActivity extends AppCompatActivity {
                 text1.append(getString(R.string.app_Das));
 
             } else {
-                Intent msg = new Intent(Intent.ACTION_SEND);
-                msg.addCategory(Intent.CATEGORY_DEFAULT);
-                msg.putExtra(Intent.EXTRA_SUBJECT, "동행복권 로또 넘버");
-                msg.putExtra(Intent.EXTRA_TEXT, ctextR);
-                msg.putExtra(Intent.EXTRA_TITLE, "동행복권 로또 넘버");
-                msg.setType("text/plain");
-                startActivity(Intent.createChooser(msg, "Share"));
+                BackProcessHandler.ClipsBoards();
 
-                Show_front();
             }
         }
     };
@@ -227,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
     public void launchActivity(Class<?> clss) {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            mClss = clss;
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, ZXING_CAMERA_PERMISSION);
         } else {
@@ -265,13 +253,7 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
 
-
-//        ctextR = App_Share + "\n" + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "\n\n" + App_links1 + "\n1등 ^^당첨을 기원합니다.~♡";
-        ctextR = App_Share + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
-
-        ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
-
-        ctextR = ctextR + "\n" + SUM_lotto_num;
+        ctextR = App_Share + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6+"\n\n" + App_links1;
 
     }
 
@@ -290,12 +272,12 @@ public class MainActivity extends AppCompatActivity {
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
             setContentView(R.layout.activity_main);
-            backHandler = new BackPressCloseHandler(this);
+            backHandler = new BackProcessHandler(this);
 
             new LotonumCall().execute();
             Admob_is();
             Admob_Front();
-            BackPressCloseHandler.AnRate();
+            BackProcessHandler.AnRate();
 
 
         } else {
@@ -367,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
         RBall4 = findViewById(R.id.RBall4);
         RBall5 = findViewById(R.id.RBall5);
         RBall6 = findViewById(R.id.RBall6);
-        RBall7 = findViewById(R.id.RBall7);
+        android.widget.ImageView RBall7 = findViewById(R.id.RBall7);
         RBall8 = findViewById(R.id.RBall8);
 
         //========================================================================
@@ -376,8 +358,8 @@ public class MainActivity extends AppCompatActivity {
         Resultwin1 = findViewById(R.id.winText1);
         Resultwin2 = findViewById(R.id.winText2);
         Resultwin3 = findViewById(R.id.winText3);
-        Resultwin4 = findViewById(R.id.winText4);
-        Resultwin5 = findViewById(R.id.winText5);
+        TextView resultwin4 = findViewById(R.id.winText4);
+        TextView resultwin5 = findViewById(R.id.winText5);
         /*
          *
          * 시작시 메세지 출력
@@ -443,7 +425,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         String iMesg = getString(R.string.scr_EXIT_Mesg1);
-        BackPressCloseHandler.onBackPressed(iMesg);
+        BackProcessHandler.onBackPressed(iMesg);
     }
 
 
@@ -684,18 +666,10 @@ public class MainActivity extends AppCompatActivity {
 
                 /** 네트웍 품질 문제 발생시 메세지 출력 */
 
-
-                String iInfo1 = "Network Error!";
-                String iInfo2 = "The network connection is poor.";
-                String iInfo3 = "Try again later!!!";
-                String iInfo4 = "If you To check your Lottery Number";
-                String iInfo5 = "Connect to the Internet";
-
-                Rtilte.setText(iInfo1);
-                Resultwin1.setText(iInfo2);
-                Resultwin2.setText(iInfo3);
-                Resultwin3.setText(iInfo4);
-                Resultwin3.setText(iInfo5);
+                Rtilte.setText(getString(R.string.net_Info1));
+                Resultwin1.setText(getString(R.string.net_Info2));
+                Resultwin2.setText(getString(R.string.net_Info3));
+                Resultwin3.setText(getString(R.string.net_Info4));
 
             }
 
