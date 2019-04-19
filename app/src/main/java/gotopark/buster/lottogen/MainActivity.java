@@ -60,7 +60,8 @@ import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-    private TextView text1;
+    public TextView text1;
+    public TextView text10;
 
     private TextView Balltxt1;
     private TextView Balltxt2;
@@ -178,11 +179,17 @@ public class MainActivity extends AppCompatActivity {
     Button.OnClickListener gen = new View.OnClickListener() {
 
 
+
+
+        int count = 0;
+        Random rand = new Random();
+        int primeWord = rand.nextInt(13) + 4;
+        int[] Times_Ran = {150, 250, 350, 550, 650, 850, 950, 1150, 1450, 1550};
+
+
         public void onClick(View v) {
 
-            Random rand = new Random();
             // 반복 회수 지정
-            int Times_Ran[] = {150, 250, 350, 550, 650, 850, 950, 1150, 1450, 1550};
             int xnum = rand.nextInt(9);
             int millisec = Times_Ran[xnum];
             // 반복 회수 끝
@@ -193,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onTick(long millisUntilFinished) {
 
 //                    text2.setTextSize (TypedValue.COMPLEX_UNIT_SP, 24);
-                    text1.setText(" - 소수 분석중 - " + millisUntilFinished / 50 + "0ms 남았습니다.");
+                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 50 + "0ms 남았습니다.");
                     GenNumber();
 
 
@@ -201,11 +208,23 @@ public class MainActivity extends AppCompatActivity {
 
                 @SuppressLint("SetTextI18n")
                 public void onFinish() {
-                    String Scr_text2 = getString(R.string.scr_text2);
-                    String Scr_text1 = getString(R.string.scr_text1);
+//                    String Scr_text2 = getString(R.string.scr_text2);
+//                    String Scr_text1 = getString(R.string.scr_text1);
+//                    text1.setText(Scr_text2);
+//                    text1.append("\n" + Scr_text1);
 
-                    text1.setText(Scr_text2);
-                    text1.append("\n" + Scr_text1);
+                    count = count + 1;
+                    Log.e("============", count + "====" + primeWord);
+
+                    if (count == primeWord) {
+                        randomNum Num = new randomNum();
+                        String saywords = (String) getResources().getString(Num.frontSay());
+                        text1.setText("\n"+saywords);
+                        count = 0;
+                        primeWord = rand.nextInt(11) + 3;
+                    }
+
+
 
                 }
 
@@ -263,6 +282,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         ConnectivityManager manager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         assert manager != null;
         NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -271,7 +292,6 @@ public class MainActivity extends AppCompatActivity {
 
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
-            setContentView(R.layout.activity_main);
             backHandler = new BackProcessHandler(this);
 
             new LotonumCall().execute();
@@ -284,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
 
             AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
             {
-                setContentView(R.layout.activity_main);
+
                 ad.setTitle(getString(R.string.info_net1));
                 ad.setMessage(getString(R.string.info_net2));
                 ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -307,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
         //========================================================================
 
         text1 = findViewById(R.id.text1);
-        TextView text10 = findViewById(R.id.textView10);
+        text10 = findViewById(R.id.textView10);
 
         Balltxt1 = findViewById(R.id.balltext1);
         Balltxt2 = findViewById(R.id.balltext2);

@@ -11,18 +11,17 @@
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="46dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:autoLink="web"
-        android:fontFamily="monospace"
         android:text="@string/main_mdct"
-        android:textAlignment="center"
-        android:textColor="?attr/colorControlHighlight"
+        android:textColor="#8BC34A"
         android:visibility="visible"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="@+id/include"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/textball_layout"
@@ -213,13 +212,13 @@
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="246dp"
+        android:layout_width="0dp"
         android:layout_height="44dp"
-        android:layout_marginRight="8dp"
+        android:gravity="top"
         android:text=""
         android:textAlignment="center"
-        android:textColor="@android:color/holo_green_dark"
-        android:textSize="15sp"
+        android:textColor="#673AB7"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
