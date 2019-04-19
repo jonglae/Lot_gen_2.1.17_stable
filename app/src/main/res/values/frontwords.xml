@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="frontword1">지금은 쉽게 볼 수 없지만, 언제나 비가 온 뒤에야 무지개가 뜬다는 사실을 내 인생의 소나기 뒤에도 가슴에 무지개가 뜨기를.</string>
     <string name="frontword2">인생의 빛나는 순간은 성공했을 때가 아니라 역경을 이겨낼 때 이다.</string>
     <string name="frontword3">자기 나라의 전통적 문화의 뿌리를 소중히 지켜나가는 나라는 번영하고 그렇지 못한 나라는 망한다. -알렉산더 솔제니친</string>
@@ -120,20 +120,20 @@
     <string name="frontword118">모든 이의 친구는 누구의 친구도 아니다.</string>
     <string name="frontword119">만족하게 살고, 때때로 웃으며, 많이 사랑한 사람이 성공한다. -A.J. 스탠리 부인</string>
     <string name="frontword120">당신이 바라는 그 무엇이든지 간절히 바라고 사랑하면 당신 곁에 올 수 있습니다.</string>
-    <string name="frontword121">괜찮을 거야. 이게 끝이 아닐거야. 넌 해낼 수 있어. 그칠줄 모르고 속삭입니다. 생명이 있는 한 희망은 존재하기 때문입니다. - 애밀리 디킨슨 \'희망은 한마리 새'</string>
+    <string name="frontword121" tools:ignore="StringEscaping">괜찮을 거야. 이게 끝이 아닐거야. 넌 해낼 수 있어. 그칠줄 모르고 속삭입니다. 생명이 있는 한 희망은 존재하기 때문입니다. - 애밀리 디킨슨 \'희망은 한마리 새\'</string>
     <string name="frontword122">복한가 그렇지 못한가는 결국 우리들 자신에게 달려 있다.</string>
     <string name="frontword123">인생은 왕복차표를 발행하지 않는다. 일단 떠나면 다시는 돌아오지 못한다.R.롤랑</string>
     <string name="frontword124">승자는 어린이에게도 사과할 수 있지만, 패자는 노인에게도 고개를 숙이지 못한다. J.하비스</string>
     <string name="frontword125">말을 물가로 끌고 갈 수는 있어도 억지로 물을 마시게 할 수는 없다.</string>
     <string name="frontword126">자기자신을 사랑하는 일이야말로 평생 이어질 낭만의 첫 걸음이다. -오스카와일드-</string>
-    <string name="frontword127">그 누구도 아닌 자기 걸음을 걸어라. 나는 독특하다는 것을 믿어라. 누구나 몰려가는 줄에 설 필요는 없다. 자신만의 걸음으로 자기길을 가거라. 바보같은 사람들이 무어라 비웃든간에. -영화 \'죽은 시인의 사회' 중에서</string>
+    <string name="frontword127" tools:ignore="StringEscaping">그 누구도 아닌 자기 걸음을 걸어라. 나는 독특하다는 것을 믿어라. 누구나 몰려가는 줄에 설 필요는 없다. 자신만의 걸음으로 자기길을 가거라. 바보같은 사람들이 무어라 비웃든간에. -영화 \'죽은 시인의 사회\' 중에서</string>
     <string name="frontword128">미래를 신뢰하지 마라, 죽은 과거는 묻어버려라, 그리고 살아있는 현재에 행동하라.  -롱펠로</string>
     <string name="frontword129">해 볼 가치가 있는 일이라면 모두 훌륭히 할 가치가 있다.</string>
     <string name="frontword130">과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다. 조지 오웰</string>
     <string name="frontword131">품질이 물량보다 더 중요합니다. 한 번의 홈런이 두 번의 2루타보다 나아요.  스티브 잡스</string>
-    <string name="frontword132">의심할 필요도 없이, 의식있는 몇몇 사람들이 세상을 바꿀 수 있다. 더구나, 역사는 항상 그래 왔다. - 영화 \'시대정신3' 중에서</string>
-    <string name="frontword133">너희들은 행복을 위해 노력하면서 살거라. 세상은 너무 아름답단다. -영화 \'매디슨 카운터의 다리' 중에서</string>
-    <string name="frontword134">써커스 사자도 채찍의 두려움으로 의자에 앉는걸 배우지만,그런 사자는 잘 훈련됐다고 하지 잘교육됐다고는 안합니다 - 영화 \'세 얼간이' 중에서</string>
+    <string name="frontword132" tools:ignore="StringEscaping">의심할 필요도 없이, 의식있는 몇몇 사람들이 세상을 바꿀 수 있다. 더구나, 역사는 항상 그래 왔다. - 영화 \'시대정신3\' 중에서</string>
+    <string name="frontword133" tools:ignore="StringEscaping">너희들은 행복을 위해 노력하면서 살거라. 세상은 너무 아름답단다. -영화 \'매디슨 카운터의 다리\' 중에서</string>
+    <string name="frontword134" tools:ignore="StringEscaping">써커스 사자도 채찍의 두려움으로 의자에 앉는걸 배우지만,그런 사자는 잘 훈련됐다고 하지 잘교육됐다고는 안합니다 - 영화 \'세 얼간이\' 중에서</string>
     <string name="frontword135">손안의 새 한 마리는 숲 속의 새 두 마리 값어치가 있다.</string>
     <string name="frontword136">안다는 것은 전혀 중요하지 않다; 상상하는 것이 가장 중요하다. 아나톨 프랑스</string>
     <string name="frontword137">거룩하고 즐겁고 활기차게 살아라. 믿음과 열심에는 피곤과 짜증이 없다. -어니스트 핸즈-</string>
