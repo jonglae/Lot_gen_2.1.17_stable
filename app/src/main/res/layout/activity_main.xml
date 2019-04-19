@@ -20,7 +20,7 @@
         android:visibility="visible"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="@+id/include"
+        ads:layout_constraintTop_toBottomOf="@+id/textball_layout"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -213,7 +213,7 @@
     <TextView
         android:id="@+id/text1"
         android:layout_width="0dp"
-        android:layout_height="44dp"
+        android:layout_height="50dp"
         android:gravity="top"
         android:text=""
         android:textAlignment="center"
@@ -229,6 +229,7 @@
         layout="@layout/layout_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/textball_layout" />

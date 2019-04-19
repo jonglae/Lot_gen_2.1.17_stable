@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                     if (count == primeWord) {
                         randomNum Num = new randomNum();
                         String saywords = (String) getResources().getString(Num.frontSay());
-                        text1.setText("\n"+saywords);
+                        text1.setText(saywords);
                         count = 0;
                         primeWord = rand.nextInt(11) + 3;
                     }
