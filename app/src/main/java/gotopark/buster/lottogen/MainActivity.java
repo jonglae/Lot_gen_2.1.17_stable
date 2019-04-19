@@ -444,8 +444,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        String iMesg = getString(R.string.scr_EXIT_Mesg1);
-        BackProcessHandler.onBackPressed(iMesg);
+        BackProcessHandler.onBackPressed();
     }
 
 

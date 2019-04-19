@@ -6,7 +6,7 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "gotopark.buster.lottogen"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 68
         versionName '2.1.23'
@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.github.hotchemi:android-rate:1.0.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'gun0912.ted:tedadmobdialog:1.0.5'
     implementation 'com.google.android.gms:play-services-ads:17.2.0'
 //    implementation 'com.google.firebase:firebase-ads:17.2.
 

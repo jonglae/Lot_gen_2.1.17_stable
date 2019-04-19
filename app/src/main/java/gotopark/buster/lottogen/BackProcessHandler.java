@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+
+import gun0912.ted.tedadmobdialog.TedAdmobDialog;
 import hotchemi.android.rate.AppRate;
 import hotchemi.android.rate.OnClickButtonListener;
 import hotchemi.android.rate.StoreType;
@@ -23,29 +26,51 @@ class BackProcessHandler {
         activity = (MainActivity) context;
     }
 
-    static void onBackPressed(String iMsge) {
+    static void onBackPressed() {
 
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(activity);
         builder.setTitle(R.string.app_name);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setMessage(iMsge)
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setMessage(activity.getString(R.string.scr_EXIT_Mesg1))
+                .setCancelable(true)
+                .setPositiveButton(activity.getString(R.string.scr_EXIT_Mesg2), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-//                        activity.Show_front();
-                        AnRate();
+                        new TedAdmobDialog.Builder(activity, TedAdmobDialog.AdType.BANNER, activity.getString(R.string.banner_ad_unit_id))
+                                .setAdListener(new AdListener() {
 
-                        activity.finish();
+
+
+
+                                    @Override
+                                    public void onAdClicked() {
+                                        super.onAdClicked();
+
+
+                                    }
+
+
+
+
+
+                                })
+                                .showReviewButton(true)
+                                .create()
+                                .show();
 
                     }
+
+
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+
+                .setNegativeButton(activity.getString(R.string.scr_EXIT_Mesg3), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
 
                         AnRate();
+                        dialog.cancel();
+                        activity.finish();
 
                     }
                 });
