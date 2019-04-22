@@ -213,13 +213,14 @@
     <TextView
         android:id="@+id/text1"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:gravity="top"
+        android:layout_height="60dp"
+        android:background="#F2006354"
+        android:gravity="center_vertical"
         android:text=""
         android:textAlignment="center"
-        android:textColor="#673AB7"
+        android:textColor="@color/white"
         android:textSize="12sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -192,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
             // 반복 회수 지정
             int xnum = rand.nextInt(9);
             int millisec = Times_Ran[xnum];
+
             // 반복 회수 끝
 
             CountDownTimer start = new CountDownTimer(millisec, 50) {
@@ -200,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onTick(long millisUntilFinished) {
 
 //                    text2.setTextSize (TypedValue.COMPLEX_UNIT_SP, 24);
-                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 50 + "0ms 남았습니다.");
+                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 50 + "00ms 남았습니다.");
                     GenNumber();
 
 
@@ -214,17 +215,15 @@ public class MainActivity extends AppCompatActivity {
 //                    text1.append("\n" + Scr_text1);
 
                     count = count + 1;
-                    Log.e("============", count + "====" + primeWord);
+//                        Log.e("============", count + "====" + primeWord);
 
                     if (count == primeWord) {
-                        randomNum Num = new randomNum();
-                        String saywords = (String) getResources().getString(Num.frontSay());
+                        String saywords = BackProcessHandler.frontSay();
                         text1.setText(saywords);
                         count = 0;
                         primeWord = rand.nextInt(11) + 3;
+
                     }
-
-
 
                 }
 

@@ -5,10 +5,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
+
+import java.util.Arrays;
+import java.util.Random;
 
 import gun0912.ted.tedadmobdialog.TedAdmobDialog;
 import hotchemi.android.rate.AppRate;
@@ -108,6 +112,20 @@ class BackProcessHandler {
         msg.putExtra(Intent.EXTRA_TITLE, "동행복권 로또 넘버");
         msg.setType("text/plain");
         activity.startActivity(Intent.createChooser(msg, "Share"));
+    }
+
+    static String frontSay() {
+
+        Random rand = new Random();
+        Resources res = activity.getResources();
+        String[] sayword = res.getStringArray(R.array.FrontItems);
+
+        int wrdMax = sayword.length;
+        int i = rand.nextInt(wrdMax);
+
+        Log.e("=========", Arrays.toString(sayword));
+
+        return sayword[i];
     }
 
 }
