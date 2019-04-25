@@ -20,6 +20,7 @@
             android:layout_weight="1"
             android:background="@drawable/ripple_exit"
             android:text="@string/btn_exit"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             android:visibility="visible" />
@@ -35,6 +36,37 @@
             android:background="@drawable/ripple_copy"
             android:text="@string/btn_copy"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_save"
+            android:text="@string/btn_save"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/ripple_list"
+            android:text="@string/btn_list"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
             android:visibility="visible" />
@@ -47,36 +79,6 @@
             android:layout_weight="1"
             android:background="@drawable/ripple_share"
             android:text="@string/btn_share"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button5"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/ripple_save"
-            android:text="@string/btn_save"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button6"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:background="@drawable/ripple_list"
-            android:text="@string/btn_list"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:textColor="@android:color/black"
             android:textSize="16sp"

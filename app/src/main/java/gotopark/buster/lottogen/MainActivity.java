@@ -710,8 +710,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Rtilte.setText(LotCount + "추첨일:" + LotDate);
                 Resultwin1.setText(LotWin);
-                Resultwin2.setText("\n" + Linfo);
-                Resultwin2.append("(" + Cpriz_data + ")");
+                Resultwin2.setText(Linfo);
+                Resultwin3.setText(Cpriz_data);
 
 
                 RBall1.setImageResource(dball1);

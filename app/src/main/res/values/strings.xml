@@ -69,6 +69,7 @@
     <string name="scr_EXIT_Mesg1">나가시겠습니까 ?</string>
     <string name="scr_EXIT_Mesg2">광고 보고 나가기</string>
     <string name="scr_EXIT_Mesg3">나가기</string>
+    <string name="select_list">리스트를 길게 클릭 하면 지울 수 있습니다.</string>
 
 
     //Note String
