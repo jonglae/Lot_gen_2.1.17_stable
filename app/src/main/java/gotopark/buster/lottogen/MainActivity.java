@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @SuppressLint("SetTextI18n")
                 public void onFinish() {
-//                    String Scr_text2 = getString(R.string.scr_text2);
+                    String Scr_text2 = getString(R.string.scr_text2);
 //                    String Scr_text1 = getString(R.string.scr_text1);
 //                    text1.setText(Scr_text2);
 //                    text1.append("\n" + Scr_text1);
@@ -272,9 +272,9 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
 
-        ctextR =  ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
 
-        ctextRlist =ctextR;
+
+        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
 
         ctextR = "#" + App_Share + ctextRlist + "\n\n" + App_links1;
 
@@ -424,6 +424,7 @@ public class MainActivity extends AppCompatActivity {
             if(ClickCount == 0) {
 
                 LotCOPY();
+
                 db.insertNote(ctextRlist);
                 ClickCount = 1;
 
