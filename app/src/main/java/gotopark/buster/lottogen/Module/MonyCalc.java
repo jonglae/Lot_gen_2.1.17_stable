@@ -14,7 +14,7 @@ public class MonyCalc {
 
 //        String[] han3 = {"","만","억","조","경"};
 
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         int len = money.length();
         for (int i = len - 1; i >= 0; i--) {
             result.append(han1[Integer.parseInt(money.substring(len - i - 1, len - i))]);

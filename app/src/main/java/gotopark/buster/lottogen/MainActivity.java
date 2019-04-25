@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView RBall4;
     private ImageView RBall5;
     private ImageView RBall6;
+    private ImageView RBall7;
     private ImageView RBall8;
 
     private TextView Rtilte;
@@ -223,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
                         primeWord = rand.nextInt(11) + 3;
 
                     }
-
+                    ClickCount = 0;
                 }
 
             }.start();
@@ -319,12 +320,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //========================================================================
-        View textView1 = findViewById(R.id.winText1);
-        View textView2 = findViewById(R.id.layout_resultwin);
-        View ImageView = findViewById(R.id.lottoballs);
+//        View textView1 = findViewById(R.id.winText1);
+//        View textView2 = findViewById(R.id.layout_resultwin);
+//        View ImageView = findViewById(R.id.lottoballs);
 
         //========================================================================
-
+//
         text1 = findViewById(R.id.text1);
         text10 = findViewById(R.id.text10);
 
@@ -368,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
         RBall4 = findViewById(R.id.RBall4);
         RBall5 = findViewById(R.id.RBall5);
         RBall6 = findViewById(R.id.RBall6);
-        android.widget.ImageView RBall7 = findViewById(R.id.RBall7);
+        RBall7 = findViewById(R.id.RBall7);
         RBall8 = findViewById(R.id.RBall8);
 
         //========================================================================

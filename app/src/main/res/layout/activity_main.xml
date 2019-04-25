@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gotopark.buster.lottogen.MainActivity"
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context="gotopark.buster.lottogen.MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,29 +14,20 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/top_include"
             layout="@layout/top_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="2dp" />
+            android:layout_height="wrap_content" />
 
         <include
-            android:id="@+id/include1"
             layout="@layout/layout_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp" />
+            android:layout_height="wrap_content" />
 
         <include
-            android:id="@+id/include2"
             layout="@layout/resultwin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

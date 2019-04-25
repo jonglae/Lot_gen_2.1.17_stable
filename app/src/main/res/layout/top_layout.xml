@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/text10"
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="4dp"
@@ -187,7 +187,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/text10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
