@@ -102,9 +102,10 @@ public class MainActivity extends AppCompatActivity {
     BackProcessHandler backHandler;
 
 
-    public String ctextR;
+    public String ctextR,ctextRlist;
     String SUM_lotto_num;
     String LotDate;
+    int ClickCount = 1;
 
     private static final int ZXING_CAMERA_PERMISSION = 1;
 

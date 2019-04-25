@@ -10,7 +10,7 @@
 	android:paddingRight="15dp">
 
 	<LinearLayout
-		android:id="@+id/textball_layout"
+		android:id="@+id/textball_text"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginStart="8dp"
