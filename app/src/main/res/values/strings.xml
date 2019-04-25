@@ -8,9 +8,11 @@
     <string name="info_net1">!통신 문제 발생!</string>
 
     <string name="btn_gen">로또번호 생성버튼(Click)</string>
-    <string name="btn_copy">복사(Copy)</string>
-    <string name="btn_exit">종료(Exit)</string>
-    <string name="btn_share">공유(Share)</string>
+    <string name="btn_copy">복사</string>
+    <string name="btn_exit">종료</string>
+    <string name="btn_share">공유</string>
+    <string name="btn_save">저장</string>
+    <string name="btn_list">리스트</string>
     <string name="Main_text">생성 버튼을 눌러 주세요</string>
     <string name="main_mdct">MDCT</string>
     <string name="scr_Plus">+</string>

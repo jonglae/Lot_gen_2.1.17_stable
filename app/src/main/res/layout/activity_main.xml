@@ -18,22 +18,21 @@
             android:id="@+id/top_include"
             layout="@layout/top_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp" />
 
         <include
             android:id="@+id/include1"
             layout="@layout/layout_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp" />
 
         <include
             android:id="@+id/include2"
-            layout="@layout/lottoballs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <include
-            android:id="@+id/include3"
             layout="@layout/resultwin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -51,10 +50,7 @@
         android:onClick="launchFullFragmentActivity"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintEnd_toEndOf="parent"
-        app:layout_anchor="@+id/include"
-        app:srcCompat="@drawable/qricon"
-        tools:ignore="MissingConstraints"
-        ads:layout_anchor="@+id/include1" />
+        app:srcCompat="@drawable/qricon"/>
 
 
     <com.google.android.gms.ads.AdView

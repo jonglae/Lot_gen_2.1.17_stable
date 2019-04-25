@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //========================================================================
-        View textView1 = findViewById(R.id.textball_layout);
+//        View textView1 = findViewById(R.id.textView1);
         View textView2 = findViewById(R.id.layout_resultwin);
         View ImageView = findViewById(R.id.lottoballs);
 
@@ -374,7 +374,7 @@ public class MainActivity extends AppCompatActivity {
 
         //========================================================================
 
-        Rtilte = findViewById(R.id.Rtitle);
+        Rtilte = findViewById(R.id.rtitle);
         Resultwin1 = findViewById(R.id.winText1);
         Resultwin2 = findViewById(R.id.winText2);
         Resultwin3 = findViewById(R.id.winText3);

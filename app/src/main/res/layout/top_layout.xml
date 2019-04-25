@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
@@ -10,83 +11,71 @@
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginBottom="4dp"
         android:background="#F2006354"
         android:gravity="center_vertical"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold|italic" />
 
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
 
         <LinearLayout
             android:id="@+id/ballbox"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/ballimage1"
-                ads:srcCompat="@drawable/ball1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball1" />
 
             <ImageView
                 android:id="@+id/ballimage2"
-                ads:srcCompat="@drawable/ball2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball2" />
 
             <ImageView
                 android:id="@+id/ballimage3"
-                ads:srcCompat="@drawable/ball3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball3" />
 
             <ImageView
                 android:id="@+id/ballimage4"
-                ads:srcCompat="@drawable/ball4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball4" />
 
             <ImageView
                 android:id="@+id/ballimage5"
-                ads:srcCompat="@drawable/ball5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball5" />
 
             <ImageView
                 android:id="@+id/ballimage6"
-                ads:srcCompat="@drawable/ball6"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                ads:srcCompat="@drawable/ball6" />
 
         </LinearLayout>
 
@@ -102,8 +91,6 @@
                 android:id="@+id/balltext1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -120,8 +107,6 @@
                 android:id="@+id/balltext2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -138,8 +123,6 @@
                 android:id="@+id/balltext3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -156,8 +139,6 @@
                 android:id="@+id/balltext4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -174,8 +155,6 @@
                 android:id="@+id/balltext5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
                 android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
@@ -192,9 +171,6 @@
                 android:id="@+id/balltext6"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
                 android:layout_weight="1"
                 android:shadowColor="@android:color/black"
                 android:shadowDx="10"
@@ -212,13 +188,15 @@
 
     <TextView
         android:id="@+id/textView10"
-        tools:ignore="MissingConstraints"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:autoLink="web"
+        android:background="#9FEEE3"
         android:gravity="center"
         android:text="@string/main_mdct"
         android:textColor="#575C77"
-        android:visibility="visible" />
+        android:visibility="visible"
+        tools:ignore="MissingConstraints" />
 
 </LinearLayout>
