@@ -24,7 +24,7 @@
         android:layout_gravity="center_horizontal">
 
         <LinearLayout
-            android:id="@+id/textball_text"
+            android:id="@+id/Rball"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -80,7 +80,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/Rball_layout"
+            android:id="@+id/Rtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -235,39 +235,4 @@
         app:autoSizeMaxTextSize="16dp"
         app:autoSizeMinTextSize="12dp" />
 
-    <TextView
-        android:id="@+id/winText4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingLeft="40dp"
-        android:textColor="@android:color/background_dark"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:autoSizeMaxTextSize="16dp"
-        app:autoSizeMinTextSize="12dp" />
-
-    <TextView
-        android:id="@+id/winText5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingLeft="40dp"
-        android:textColor="@android:color/background_dark"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:autoSizeMaxTextSize="16dp"
-        app:autoSizeMinTextSize="12dp" />
-
-    <TextView
-        android:id="@+id/winText6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingLeft="40dp"
-        android:textColor="@android:color/background_dark"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:autoSizeMaxTextSize="16dp"
-        app:autoSizeMinTextSize="12dp" />
 </LinearLayout>

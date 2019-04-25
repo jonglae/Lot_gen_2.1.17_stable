@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     BackProcessHandler backHandler;
 
 
-    public String ctextR,ctextRlist;
+    public String ctextR, ctextRlist;
     String SUM_lotto_num;
     String LotDate;
     int ClickCount = 1;
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
             LotCOPY();
             ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
-            ctextR = ctextR + "\n" + SUM_lotto_num+"\n"+getString(R.string.twiter_CH);
+            ctextR = ctextR + "\n" + SUM_lotto_num + "\n" + getString(R.string.twiter_CH);
 
 
             String comText = Balltxt1.getText().toString();
@@ -178,8 +178,6 @@ public class MainActivity extends AppCompatActivity {
     };
 
     Button.OnClickListener gen = new View.OnClickListener() {
-
-
 
 
         int count = 0;
@@ -272,13 +270,14 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
 
-        ctextR = App_Share + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6+"\n\n" + App_links1;
+        ctextR = App_Share + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "\n\n" + App_links1;
 
     }
 
 
     // MDCT  클릭시 브라우저 실행 url  이동하여 보여준다.
 
+    @SuppressLint("CutPasteId")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -320,14 +319,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         //========================================================================
-//        View textView1 = findViewById(R.id.textView1);
+        View textView1 = findViewById(R.id.winText1);
         View textView2 = findViewById(R.id.layout_resultwin);
         View ImageView = findViewById(R.id.lottoballs);
 
         //========================================================================
 
         text1 = findViewById(R.id.text1);
-        text10 = findViewById(R.id.textView10);
+        text10 = findViewById(R.id.text10);
 
         Balltxt1 = findViewById(R.id.balltext1);
         Balltxt2 = findViewById(R.id.balltext2);
@@ -378,8 +377,8 @@ public class MainActivity extends AppCompatActivity {
         Resultwin1 = findViewById(R.id.winText1);
         Resultwin2 = findViewById(R.id.winText2);
         Resultwin3 = findViewById(R.id.winText3);
-        TextView resultwin4 = findViewById(R.id.winText4);
-        TextView resultwin5 = findViewById(R.id.winText5);
+
+
         /*
          *
          * 시작시 메세지 출력
@@ -405,7 +404,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
     }
-
 
 
     public void Admob_is() {
@@ -438,7 +436,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 
     @Override

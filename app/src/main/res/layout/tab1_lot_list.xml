@@ -45,7 +45,7 @@
 			android:layout_gravity="center_horizontal">
 
 			<LinearLayout
-				android:id="@+id/textball_text"
+				android:id="@+id/Rball"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
 				android:orientation="horizontal">
@@ -89,7 +89,7 @@
 			</LinearLayout>
 
 			<LinearLayout
-				android:id="@+id/Rball_layout"
+				android:id="@+id/Rtext"
 				android:layout_width="wrap_content"
 				android:layout_height="match_parent"
 				android:orientation="horizontal"
