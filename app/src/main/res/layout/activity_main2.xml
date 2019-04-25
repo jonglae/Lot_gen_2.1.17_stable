@@ -11,18 +11,19 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#006B5D"
         ads:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="@color/timestamp"
+        ads:subtitleTextColor="@color/white"
+        ads:titleTextColor="@color/white"
         tools:ignore="MissingConstraints" />
 
     <include
         android:id="@+id/include1"
         layout="@layout/content_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_above="@id/adView"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:background="@android:color/black"
         ads:layout_constraintBottom_toTopOf="@+id/adView"
         ads:layout_constraintTop_toBottomOf="@+id/toolbar" />

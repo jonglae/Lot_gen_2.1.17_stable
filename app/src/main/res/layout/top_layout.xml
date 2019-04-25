@@ -189,14 +189,16 @@
     <TextView
         android:id="@+id/text10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginTop="4dp"
         android:autoLink="web"
-        android:background="#9FEEE3"
-        android:gravity="center"
+        android:background="@color/timestamp"
+        android:gravity="center_vertical"
         android:text="@string/main_mdct"
-        android:textColor="#575C77"
-        android:visibility="visible"
-        tools:ignore="MissingConstraints" />
+        android:textAlignment="center"
+        android:textColor="#FF8F00"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
 
 </LinearLayout>

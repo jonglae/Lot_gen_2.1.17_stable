@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/black"
+    android:background="#C4C4C4"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
     android:paddingLeft="@dimen/activity_margin"
@@ -18,7 +18,7 @@
         android:layout_marginRight="@dimen/dot_margin_right"
         android:includeFontPadding="false"
         android:lineSpacingExtra="0dp"
-        android:textColor="@color/timestamp"
+        android:textColor="#2B2B2B"
         android:textSize="@dimen/dot_text_size" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/dot"
-        android:textColor="@color/timestamp"
+        android:textColor="#2B2B2B"
         android:textSize="@dimen/timestamp" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_below="@id/timestamp"
         android:layout_toRightOf="@id/dot"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_orange_dark"
+        android:textColor="#D66101"
         android:textSize="24sp"
         android:textStyle="bold" />
 

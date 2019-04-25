@@ -4,6 +4,7 @@ package gotopark.buster.lottogen;
  * Created by ravi on 20/02/18.
  */
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -77,8 +78,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
      */
     private String formatDate(String dateStr) {
         try {
+            @SuppressLint("SimpleDateFormat")
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = fmt.parse(dateStr);
+
+            @SuppressLint("SimpleDateFormat")
             SimpleDateFormat fmtOut = new SimpleDateFormat("-- MM월 dd일 (HH:mm) --");
             return fmtOut.format(date);
         } catch (ParseException ignored) {

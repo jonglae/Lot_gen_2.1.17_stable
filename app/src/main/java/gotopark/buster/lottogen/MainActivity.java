@@ -427,15 +427,15 @@ public class MainActivity extends AppCompatActivity {
                 db.insertNote(ctextRlist);
                 ClickCount = 1;
 
-                String Mesg1 ="번호가 저장되었습니다。";
+                String Mesg1 ="번호 저장 완료";
 
                 //The number has been saved.
-                text1.setText(ctextR + " -> "+Mesg1);
+                text10.setText(ctextRlist + " -> "+Mesg1);
                 Toast.makeText(MainActivity.this, Mesg1, Toast.LENGTH_SHORT).show();
 
             }else{
 
-                text1.setText("번호 생성 부터 해주세요");
+                text10.setText("번호 생성 부터 해주세요");
 
             }
         }
