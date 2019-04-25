@@ -24,8 +24,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     private List<Note> notesList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView note;
+    class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView note;
         TextView dot;
         TextView timestamp;
 
@@ -78,9 +79,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         try {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date date = fmt.parse(dateStr);
-            SimpleDateFormat fmtOut = new SimpleDateFormat("-- MM月 dd日 (HH:mm) --");
+            SimpleDateFormat fmtOut = new SimpleDateFormat("-- MM월 dd일 (HH:mm) --");
             return fmtOut.format(date);
-        } catch (ParseException e) {
+        } catch (ParseException ignored) {
 
         }
 

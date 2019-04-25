@@ -11,7 +11,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="@color/timestamp" />
 
     <TextView
         android:id="@+id/empty_notes_view"

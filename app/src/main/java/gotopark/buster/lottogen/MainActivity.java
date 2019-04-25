@@ -55,6 +55,7 @@ import gotopark.buster.lottogen.Module.MonyCalc;
 import gotopark.buster.lottogen.Module.numtoimg;
 import gotopark.buster.lottogen.Module.numtoimg2;
 import gotopark.buster.lottogen.Module.randomNum;
+import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Resultwin3;
     private InterstitialAd mInterstitialAd;
     BackProcessHandler backHandler;
-
+    DatabaseHelper db;
 
     public String ctextR, ctextRlist;
     String SUM_lotto_num;
@@ -271,7 +272,11 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
 
-        ctextR = App_Share + ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6 + "\n\n" + App_links1;
+        ctextR =  ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
+
+        ctextRlist =ctextR;
+
+        ctextR = "#" + App_Share + ctextRlist + "\n\n" + App_links1;
 
     }
 
@@ -284,6 +289,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+        db = new DatabaseHelper(this);
+        backHandler = new BackProcessHandler(this);
+
+
         ConnectivityManager manager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         assert manager != null;
         NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -292,7 +303,6 @@ public class MainActivity extends AppCompatActivity {
 
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
-            backHandler = new BackProcessHandler(this);
 
             new LotonumCall().execute();
             Admob_is();
@@ -351,6 +361,8 @@ public class MainActivity extends AppCompatActivity {
         Button btn2 = findViewById(R.id.button2);
         Button btn3 = findViewById(R.id.button3);
         Button btn4 = findViewById(R.id.button4);
+        Button btn5 = findViewById(R.id.button5);
+        Button btn6 = findViewById(R.id.button6);
 
 
         Ballimg1 = findViewById(R.id.ballimage1);
@@ -396,9 +408,51 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(gen);
         btn3.setOnClickListener(copy);
         btn4.setOnClickListener(Lot_share);
+        btn5.setOnClickListener(Lot_save);
+        btn6.setOnClickListener(Lot_list);
         text10.setOnClickListener(MDCT);
 
     }
+
+
+    private Button.OnClickListener Lot_save = new View.OnClickListener() {
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+
+            if(ClickCount == 0) {
+
+                LotCOPY();
+                db.insertNote(ctextRlist);
+                ClickCount = 1;
+
+                String Mesg1 ="번호가 저장되었습니다。";
+
+                //The number has been saved.
+                text1.setText(ctextR + " -> "+Mesg1);
+                Toast.makeText(MainActivity.this, Mesg1, Toast.LENGTH_SHORT).show();
+
+            }else{
+
+                text1.setText("번호 생성 부터 해주세요");
+
+            }
+        }
+    };
+
+    private Button.OnClickListener Lot_list = new View.OnClickListener() {
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            startActivity(intent);
+
+        }
+    };
+
+
 
     @Override
     protected void onResume() {

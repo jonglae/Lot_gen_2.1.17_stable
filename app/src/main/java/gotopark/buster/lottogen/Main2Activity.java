@@ -24,7 +24,6 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.List;
 
-import gotopark.buster.lottogen.R;
 import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 import gotopark.buster.lottogen.utils.MyDividerItemDecoration;
@@ -33,7 +32,6 @@ import gotopark.buster.lottogen.utils.RecyclerTouchListener;
 public class Main2Activity extends AppCompatActivity {
     private NotesAdapter mAdapter;
     private List<Note> notesList = new ArrayList<>();
-    private RecyclerView recyclerView;
     private TextView noNotesView;
 
     private DatabaseHelper db;
@@ -42,11 +40,11 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
-        recyclerView = findViewById(R.id.recycler_view);
+//        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
 
         db = new DatabaseHelper(this);
@@ -160,7 +158,7 @@ public class Main2Activity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // 정말로 삭제 하시 겠습니까.
-        builder.setTitle("本当に削除しますか？");
+        builder.setTitle("정말로 번호를 지우시겠습니까？");
         builder.setItems(colors, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
