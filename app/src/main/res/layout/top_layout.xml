@@ -18,7 +18,11 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="12sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.2"/>
 
     <FrameLayout
         android:layout_width="wrap_content"
