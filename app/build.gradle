@@ -8,8 +8,8 @@ android {
         applicationId "gotopark.buster.lottogen"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 71
-        versionName '2.1.26'
+        versionCode 72
+        versionName '2.2.00'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
