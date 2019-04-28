@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/saveTitle"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="50dp"
         android:layout_gravity="top"
         android:background="#006B5D"
         android:gravity="center_vertical"
