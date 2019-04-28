@@ -38,6 +38,10 @@
         android:textAlignment="center"
         android:textColor="#D66101"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:shadowColor="@android:color/background_dark"
+        android:shadowDx="7"
+        android:shadowDy="3"
+        android:shadowRadius="1.2"/>
 
 </RelativeLayout>

@@ -40,14 +40,15 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        setTitle("로또 번호 저장 리스트");
+
 
 //        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
+
+        TextView toolbar = findViewById(R.id.saveTitle);
+        toolbar.setText("로또 번호 저장 리스트");
 
         db = new DatabaseHelper(this);
 

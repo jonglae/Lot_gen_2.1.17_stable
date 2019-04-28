@@ -210,13 +210,9 @@ public class MainActivity extends AppCompatActivity {
 
                 @SuppressLint("SetTextI18n")
                 public void onFinish() {
-                    String Scr_text2 = getString(R.string.scr_text2);
-//                    String Scr_text1 = getString(R.string.scr_text1);
-//                    text1.setText(Scr_text2);
-//                    text1.append("\n" + Scr_text1);
 
+                    text10.setText(getString(R.string.scr_text2));
                     count = count + 1;
-//                        Log.e("============", count + "====" + primeWord);
 
                     if (count == primeWord) {
                         String saywords = BackProcessHandler.frontSay();
@@ -329,13 +325,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-        //========================================================================
-//        View textView1 = findViewById(R.id.winText1);
-//        View textView2 = findViewById(R.id.layout_resultwin);
-//        View ImageView = findViewById(R.id.lottoballs);
 
-        //========================================================================
-//
         text1 = findViewById(R.id.text1);
         text10 = findViewById(R.id.text10);
 
