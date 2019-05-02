@@ -48,6 +48,9 @@
     <string name="select_camera">Select a Camera</string>
     <string name="ok_button">OK</string>
     <string name="cancel_button">Cancel</string>
+    <string name="scan_Meg1">녹색 박스를 로또 QR-Code 맞춰주세요 \n 그렇게 가까이 안되도 됩니다.</string>
+    <string name="scan_Meg2">당첨 축하 드립니다.</string>
+
     <bool name="cameraPreviewShouldFillView">true</bool>
 
 

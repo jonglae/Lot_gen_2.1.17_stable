@@ -2,7 +2,7 @@
 
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,6 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="gotopark.buster.lottogen.qrCodeReader.FullScannerFragment" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/scan_Meg1"
+        android:textAlignment="center"
+        android:textColor="@color/viewfinder_border"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="100dp"
+        android:text="@string/scan_Meg2"
+        android:textAlignment="center"
+        android:textColor="@color/viewfinder_border"
+        android:textSize="14sp" />
 
 
     <!--
