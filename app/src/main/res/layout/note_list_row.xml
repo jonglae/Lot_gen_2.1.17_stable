@@ -2,46 +2,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#C4C4C4"
+    android:background="@android:color/black"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
-    android:paddingLeft="@dimen/activity_margin"
-    android:paddingTop="@dimen/dimen_10"
-    android:paddingRight="@dimen/activity_margin"
-    android:paddingBottom="@dimen/dimen_10">
+    android:focusable="true">
 
-    <TextView
-        android:id="@+id/dot"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dot_height"
-        android:layout_marginTop="@dimen/dimen_10"
-        android:layout_marginRight="@dimen/dot_margin_right"
-        android:includeFontPadding="false"
-        android:lineSpacingExtra="0dp"
-        android:textColor="#2B2B2B"
-        android:textSize="@dimen/dot_text_size" />
-
-    <TextView
-        android:id="@+id/timestamp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/dot"
-        android:textColor="#2B2B2B"
-        android:textSize="@dimen/timestamp" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/note"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/timestamp"
-        android:layout_toRightOf="@id/dot"
-        android:textAlignment="center"
-        android:textColor="#D66101"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:shadowColor="@android:color/background_dark"
-        android:shadowDx="7"
-        android:shadowDy="3"
-        android:shadowRadius="1.2"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/timestamp"
+                android:textSize="@dimen/dot_text_size" />
+
+            <TextView
+                android:id="@+id/timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/tedBtnPrimary"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/timestamp"
+                android:textSize="@dimen/timestamp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9.5"
+                android:shadowColor="#865616"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/lstbtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:text="Button" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lsttxt1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:text="TextView" />
+    </LinearLayout>
 
 </RelativeLayout>

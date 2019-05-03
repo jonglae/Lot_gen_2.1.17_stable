@@ -12,6 +12,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.ParseException;
@@ -25,17 +26,37 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     private List<Note> notesList;
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView note;
         TextView dot;
         TextView timestamp;
+        TextView lstext1;
+        Button lstbtn1;
 
         MyViewHolder(View view) {
             super(view);
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
+            lstext1 = view.findViewById(R.id.lsttxt1);
+            lstbtn1 = view.findViewById(R.id.lstbtn1);
             timestamp = view.findViewById(R.id.timestamp);
+
+
+            lstbtn1.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            if (v.getId() == lstbtn1.getId()) {
+
+                lstext1.setText("버튼 클릭 됐어요 !");
+
+            }
+
+
         }
     }
 
@@ -64,6 +85,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
         // Formatting and displaying timestamp
         holder.timestamp.setText(formatDate(note.getTimestamp()));
+
+
     }
 
     @Override
