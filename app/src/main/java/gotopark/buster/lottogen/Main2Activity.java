@@ -33,7 +33,6 @@ public class Main2Activity extends AppCompatActivity {
     private NotesAdapter mAdapter;
     private List<Note> notesList = new ArrayList<>();
     private TextView noNotesView;
-    private CustomAdapter customAdapter;
 
     private DatabaseHelper db;
 
@@ -42,8 +41,6 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
-        customAdapter = new CustomAdapter(this);
 
 //        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);

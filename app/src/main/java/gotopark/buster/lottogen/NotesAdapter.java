@@ -52,7 +52,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
             if (v.getId() == lstbtn1.getId()) {
 
-                lstext1.setText("버튼 클릭 됐어요 !");
+                lstext1.setText("회 당첨 됐습니다.");
+
+
+
 
             }
 
