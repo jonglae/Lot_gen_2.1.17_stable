@@ -47,37 +47,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertNote(String note) {
+//    public long insertNote(String note) {
+//        // get writable database as we want to write data
+//        SQLiteDatabase db = this.getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//
+//        // `id` and `timestamp` will be inserted automatically.
+//        // no need to add them
+//        values.put(Note.COLUMN_NOTE, note);
+//
+//        // insert row
+//        long id = db.insert(Note.TABLE_NAME, null, values);
+//
+//        // close db connection
+//            db.close();
+//
+//        // return newly inserted row id
+//        return id;
+//    }
+
+    public long insertColumn(String note, String alot) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
-
         ContentValues values = new ContentValues();
 
-        // `id` and `timestamp` will be inserted automatically.
-        // no need to add them
-        values.put(Note.COLUMN_NOTE, note);
+        if(note != null) {
 
-        // insert row
-        long id = db.insert(Note.TABLE_NAME, null, values);
+            values.put(Note.COLUMN_NOTE, note);
+        }
+            values.put(Note.COLUMN_AUTOLOT, alot);
+            // insert row
 
-        // close db connection
+            long id = db.insert(Note.TABLE_NAME, null, values);
             db.close();
+            // return newly inserted row id
 
-        // return newly inserted row id
         return id;
-    }
-
-    public long insertColumn (String note,String alot) {
-        // get writable database as we want to write data
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(Note.COLUMN_NOTE, note);
-        values.put(Note.COLUMN_AUTOLOT, alot);
-        // insert row
-        // close db connection
-//        db.close();
-        // return newly inserted row id
-        return db.insert(Note.TABLE_NAME, null, values);
     }
 
 

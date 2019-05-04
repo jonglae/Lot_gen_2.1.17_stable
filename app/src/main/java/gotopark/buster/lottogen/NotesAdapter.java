@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
@@ -35,6 +36,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         Button lstbtn1;
 
         MyViewHolder(View view) {
+
+
             super(view);
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
@@ -54,7 +57,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
 
                 String lotnum = (String) note.getText();
-                lstext1.setText(lotnum);
+
+                lstext1.setText("노트 번트 잘 작동하는지");
 
 
 
