@@ -100,11 +100,10 @@ public class Main2Activity extends AppCompatActivity {
      * Inserting new note in db
      * and refreshing the list
      */
-    private void createNote(String note,String lstext1) {
+    private void createNote(String note) {
         // inserting note in db and getting
         // newly inserted note id
-        long id = db.insertNote(note,lstext1);
-
+        long id = db.insertNote(note);
         // get the newly inserted note from db
         Note n = db.getNote(id);
 
@@ -234,7 +233,7 @@ public class Main2Activity extends AppCompatActivity {
 
                 } else {
                     // create new note
-                    createNote(inputNote.getText().toString(),inputNote.getText().toString());
+                    createNote(inputNote.getText().toString());
                 }
             }
         });

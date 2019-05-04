@@ -47,18 +47,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertNote(String note,String alot) {
+    public long insertNote(String note) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+
         // `id` and `timestamp` will be inserted automatically.
         // no need to add them
         values.put(Note.COLUMN_NOTE, note);
-        values.put(Note.COLUMN_AUTOLOT, alot);
-
-
-
 
         // insert row
         long id = db.insert(Note.TABLE_NAME, null, values);
@@ -69,6 +66,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // return newly inserted row id
         return id;
     }
+
+    public long insertNote2 (String alot) {
+        // get writable database as we want to write data
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Note.COLUMN_AUTOLOT, alot);
+        // insert row
+        long id = db.insert(Note.TABLE_NAME, null, values);
+        // close db connection
+        db.close();
+        // return newly inserted row id
+        return id;
+    }
+
+
+
 
     public Note getNote(long id) {
         // get readable database as we are not inserting anything
