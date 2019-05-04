@@ -47,7 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertNote(String note,String lstext1) {
+    public long insertNote(String note,String alot) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -55,7 +55,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // `id` and `timestamp` will be inserted automatically.
         // no need to add them
         values.put(Note.COLUMN_NOTE, note);
-        values.put(Note.COLUMN_AUTOLOT, lstext1);
+        values.put(Note.COLUMN_AUTOLOT, alot);
+
+
+
 
         // insert row
         long id = db.insert(Note.TABLE_NAME, null, values);
@@ -110,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Note note = new Note();
                 note.setId(cursor.getInt(cursor.getColumnIndex(Note.COLUMN_ID)));
                 note.setNote(cursor.getString(cursor.getColumnIndex(Note.COLUMN_NOTE)));
-                note.setNote(cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOLOT)));
+                note.setAlot(cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOLOT)));
                 note.setTimestamp(cursor.getString(cursor.getColumnIndex(Note.COLUMN_TIMESTAMP)));
 
                 notes.add(note);
@@ -146,12 +149,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // updating row
         db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?",
                 new String[]{String.valueOf(note.getId())});
+
+
     }
 
     public void deleteNote(Note note) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Note.TABLE_NAME, Note.COLUMN_ID + " = ?",
                 new String[]{String.valueOf(note.getId())});
+
         db.close();
     }
 }

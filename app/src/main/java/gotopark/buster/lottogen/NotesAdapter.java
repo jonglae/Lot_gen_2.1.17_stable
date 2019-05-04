@@ -85,6 +85,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         Note note = notesList.get(position);
 
         holder.note.setText(note.getNote());
+        holder.lstext1.setText(note.getAlot());
 
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
