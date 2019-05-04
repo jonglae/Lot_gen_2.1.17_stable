@@ -68,14 +68,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //    }
 
     public long insertColumn(String note, String alot) {
-        // get writable database as we want to write data
+//         get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        if(note != null) {
+
 
             values.put(Note.COLUMN_NOTE, note);
-        }
             values.put(Note.COLUMN_AUTOLOT, alot);
             // insert row
 

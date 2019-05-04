@@ -25,8 +25,9 @@ import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
 
+    private Context context;
     private List<Note> notesList;
-
+    private DatabaseHelper db;
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView note;
@@ -39,6 +40,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
 
             super(view);
+
+            db = new DatabaseHelper(context);
+
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
             lstext1 = view.findViewById(R.id.lsttxt1);
@@ -60,7 +64,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
                 lstext1.setText("노트 번트 잘 작동하는지");
 
-
+                db.insertColumn("인서트 되는지 테스트","버튼 눌룸시 인서트");
 
 
 
