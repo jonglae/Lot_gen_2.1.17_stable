@@ -19,7 +19,7 @@ import gotopark.buster.lottogen.database.model.Note;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Database Name
     private static final String DATABASE_NAME = "notes_db";
@@ -61,23 +61,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long id = db.insert(Note.TABLE_NAME, null, values);
 
         // close db connection
-        db.close();
+            db.close();
 
         // return newly inserted row id
         return id;
     }
 
-    public long insertNote2 (String alot) {
+    public long insertColumn (String note,String alot) {
         // get writable database as we want to write data
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
+        values.put(Note.COLUMN_NOTE, note);
         values.put(Note.COLUMN_AUTOLOT, alot);
         // insert row
-        long id = db.insert(Note.TABLE_NAME, null, values);
         // close db connection
-        db.close();
+//        db.close();
         // return newly inserted row id
-        return id;
+        return db.insert(Note.TABLE_NAME, null, values);
     }
 
 
