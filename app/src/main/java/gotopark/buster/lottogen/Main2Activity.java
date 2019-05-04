@@ -1,5 +1,6 @@
 package gotopark.buster.lottogen;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -99,10 +100,10 @@ public class Main2Activity extends AppCompatActivity {
      * Inserting new note in db
      * and refreshing the list
      */
-    private void createNote(String note) {
+    private void createNote(String note,String lstext1) {
         // inserting note in db and getting
         // newly inserted note id
-        long id = db.insertNote(note);
+        long id = db.insertNote(note,lstext1);
 
         // get the newly inserted note from db
         Note n = db.getNote(id);
@@ -186,7 +187,7 @@ public class Main2Activity extends AppCompatActivity {
      */
     private void showNoteDialog(final boolean shouldUpdate, final Note note, final int position) {
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
-        View view = layoutInflaterAndroid.inflate(R.layout.note_dialog, null);
+        @SuppressLint("InflateParams") View view = layoutInflaterAndroid.inflate(R.layout.note_dialog, null);
 
         AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(Main2Activity.this);
         alertDialogBuilderUserInput.setView(view);
@@ -230,9 +231,10 @@ public class Main2Activity extends AppCompatActivity {
                 if (shouldUpdate && note != null) {
                     // update note by it's id
                     updateNote(inputNote.getText().toString(), position);
+
                 } else {
                     // create new note
-                    createNote(inputNote.getText().toString());
+                    createNote(inputNote.getText().toString(),inputNote.getText().toString());
                 }
             }
         });

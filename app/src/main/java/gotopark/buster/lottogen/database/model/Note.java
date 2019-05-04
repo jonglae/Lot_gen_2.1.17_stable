@@ -9,10 +9,12 @@ public class Note {
 
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NOTE = "note";
+    public static final String COLUMN_AUTOLOT = "alot";
     public static final String COLUMN_TIMESTAMP = "timestamp";
 
     private int id;
     private String note;
+    private String alot;
     private String timestamp;
 
 
@@ -21,17 +23,29 @@ public class Note {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_NOTE + " TEXT,"
+                    + COLUMN_AUTOLOT + "TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ")";
 
     public Note() {
     }
 
-    public Note(int id, String note, String timestamp) {
+    public Note(int id, String note, String alot, String timestamp) {
         this.id = id;
         this.note = note;
+        this.alot = alot;
         this.timestamp = timestamp;
     }
+
+
+    public String getAlot() {
+        return alot;
+    }
+
+    public void setAlot(String alot) {
+        this.alot = alot;
+    }
+
 
     public int getId() {
         return id;

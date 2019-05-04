@@ -415,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LotCOPY();
 
-                db.insertNote(ctextRlist);
+                db.insertNote(ctextRlist,ctextRlist);
                 ClickCount = 1;
 
                 String Mesg1 ="번호 저장 완료";
