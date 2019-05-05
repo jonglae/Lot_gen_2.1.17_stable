@@ -30,10 +30,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     private DatabaseHelper db;
 
 
-//    public NotesAdapter(Context context){
-//
-//        this.context = context;
-//    }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -82,6 +79,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     NotesAdapter(Context context, List<Note> notesList) {
         this.notesList = notesList;
+        this.context = context;
     }
 
     @NonNull
