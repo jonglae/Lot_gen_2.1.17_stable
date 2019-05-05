@@ -84,4 +84,6 @@
     <string name="lbl_edit_note_title">Edit Note</string>
     <string name="hint_enter_note">Enter your note!</string>
 
+    <string name="op_log">Operation Log: \n</string>
+
 </resources>
