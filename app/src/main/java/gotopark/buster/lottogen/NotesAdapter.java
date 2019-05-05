@@ -76,9 +76,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         }
     }
 
-
+// 이곳이 매우 중요한 부분
     NotesAdapter(Context context, List<Note> notesList) {
         this.notesList = notesList;
+
+        // 이곳이 매우 중요한 부분 context 가 되는지 확인 되는 부분
         this.context = context;
     }
 
