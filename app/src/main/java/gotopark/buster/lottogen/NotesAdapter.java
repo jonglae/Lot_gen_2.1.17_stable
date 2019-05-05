@@ -24,11 +24,16 @@ import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
-    public Context context;
+    private Context context;
 
     private List<Note> notesList;
     private DatabaseHelper db;
 
+
+//    public NotesAdapter(Context context){
+//
+//        this.context = context;
+//    }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -39,8 +44,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         Button lstbtn1;
 
         MyViewHolder(View view) {
-
-
             super(view);
 
             db = new DatabaseHelper(context);

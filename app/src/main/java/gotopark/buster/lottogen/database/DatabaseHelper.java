@@ -24,13 +24,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database Name
     private static final String DATABASE_NAME = "notes_db";
-
-
+    private final Context context;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
 
     }
+
+
 
     // Creating Tables
     @Override
@@ -181,4 +183,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.close();
     }
+
 }
