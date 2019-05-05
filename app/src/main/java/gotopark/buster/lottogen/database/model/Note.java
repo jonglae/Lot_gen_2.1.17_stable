@@ -12,7 +12,7 @@ public class Note {
     public static final String COLUMN_AUTOLOT = "alot";
     public static final String COLUMN_TIMESTAMP = "timestamp";
 
-    public static int id;
+    public  int id;
     private String note;
     private String alot;
     private String timestamp;
@@ -31,7 +31,7 @@ public class Note {
     }
 
     public Note(int id, String note, String alot, String timestamp) {
-        Note.id = id;
+        this.id = id;
         this.note = note;
         this.alot = alot;
         this.timestamp = timestamp;
@@ -47,7 +47,7 @@ public class Note {
     }
 
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
@@ -64,7 +64,7 @@ public class Note {
     }
 
     public void setId(int id) {
-        Note.id = id;
+        this.id = id;
     }
 
     public void setTimestamp(String timestamp) {
