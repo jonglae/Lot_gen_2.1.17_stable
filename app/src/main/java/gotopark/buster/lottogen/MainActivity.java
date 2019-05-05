@@ -56,6 +56,7 @@ import gotopark.buster.lottogen.Module.numtoimg;
 import gotopark.buster.lottogen.Module.numtoimg2;
 import gotopark.buster.lottogen.Module.randomNum;
 import gotopark.buster.lottogen.database.DatabaseHelper;
+import gotopark.buster.lottogen.externaldb.ExternalDBActivity;
 import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -148,8 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
-            onBackPressed();
+//            onBackPressed();
 
+
+            Intent intent = new Intent(MainActivity.this, ExternalDBActivity.class);
+            startActivity(intent);
 
         }
     };

@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper extends SQLiteOpenHelper{
 	 
-    private static String DB_PATH = "/data/data/fr.stackr.android.externaldb/databases/";
+    private static String DB_PATH = "/data/data/gotopark.buster.lottogen/databases/";
  
     private static String DB_NAME = "db.sqlite3";
  

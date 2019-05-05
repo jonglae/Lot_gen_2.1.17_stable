@@ -25,6 +25,8 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="n">
         <activity android:name=".Main2Activity" />
+        <activity android:name=".externaldb.ExternalDBActivity" />
+
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
