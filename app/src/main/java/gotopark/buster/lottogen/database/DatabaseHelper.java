@@ -176,6 +176,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public int updateData(String string1,String string2) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Note.COLUMN_AUTOLOT, string1);
+        String [] whereArgs={string2};
+
+        // updating row
+       int Countt = db.update(Note.TABLE_NAME, values, Note.COLUMN_AUTOLOT + " = ?", whereArgs );
+        return Countt;
+
+    }
+
+
     public void deleteNote(Note note) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(Note.TABLE_NAME, Note.COLUMN_ID + " = ?",

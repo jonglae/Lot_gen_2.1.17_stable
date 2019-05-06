@@ -6,6 +6,7 @@ package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -62,13 +63,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             if (v.getId() == lstbtn1.getId()) {
 
 
+
                 String lotnum = (String) note.getText();
 
                 lstext1.setText("노트 번트 잘 작동하는지");
 
-                db.insertColumn("인서트 되는지 테스트", "버튼 눌룸시 인서트");
+//                db.insertColumn("인서트 되는지 테스트", "버튼 눌룸시 인서트");
 
-                notifyDataSetChanged();
+                update1(v) ;
+
+//                notifyDataSetChanged();
 
             }
 
@@ -76,6 +80,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         }
     }
 
+
+    private void update1(View view){
+
+        db.updateData("dddddddd","버튼 눌룸시 인서트");
+
+    }
 // 이곳이 매우 중요한 부분
     NotesAdapter(Context context, List<Note> notesList) {
         this.notesList = notesList;
