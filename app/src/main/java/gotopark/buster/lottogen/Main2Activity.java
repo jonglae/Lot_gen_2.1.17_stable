@@ -86,9 +86,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
 
-//                updateNote2("dddddd",position ) ;
+                updateNote2("dddddd",position);
 
-//                Toast.makeText(Main2Activity.this, getString(R.string.select_list), Toast.LENGTH_SHORT).show();
+
+                String aaaa = model.getrLotnum();
+                Toast.makeText(Main2Activity.this, aaaa, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -131,6 +133,7 @@ public class Main2Activity extends AppCompatActivity {
      */
     private void updateNote(String string, int position) {
         Note n = notesList.get(position);
+
         // updating note text
         n.setNote(string);
 
@@ -148,8 +151,13 @@ public class Main2Activity extends AppCompatActivity {
 
     private void updateNote2(String string, int position) {
         Note n = notesList.get(position);
+
+        String mlotnum= n.getNote();
+        model.setrLotnum(mlotnum);
+
         // updating note text
-        n.setAlot(string);
+        n.setAlot(string) ;
+
 
         // updating note in db
         db.updateData(n);

@@ -7,16 +7,14 @@ import gotopark.buster.lottogen.database.model.Note;
 public class Model {
 
     private int position;
-    private Note iid;
+    private String rLotnum;
 
-    public Note getIid() {
-        return iid;
+    public String getrLotnum() {
+        return rLotnum;
     }
 
-    public void setIid(Note iid) {
-
-        Log.d("=====", String.valueOf(iid));
-        this.iid = iid;
+    public void setrLotnum(String rLotnum) {
+        this.rLotnum = rLotnum;
     }
 
     public int getPosition() {
