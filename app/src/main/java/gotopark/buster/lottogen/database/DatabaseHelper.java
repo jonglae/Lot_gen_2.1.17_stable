@@ -79,7 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
             values.put(Note.COLUMN_NOTE, note);
-            values.put(Note.COLUMN_AUTOLOT, alot);
+            values.put(Note.COLUMN_AUTOALOT, alot);
             // insert row
 
             long id = db.insert(Note.TABLE_NAME, null, values);
@@ -97,7 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(Note.TABLE_NAME,
-                new String[]{Note.COLUMN_ID, Note.COLUMN_NOTE,Note.COLUMN_AUTOLOT,Note.COLUMN_TIMESTAMP},
+                new String[]{Note.COLUMN_ID, Note.COLUMN_NOTE,Note.COLUMN_AUTOALOT,Note.COLUMN_TIMESTAMP},
                 Note.COLUMN_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
 
@@ -109,7 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Note note = new Note(
                 cursor.getInt(cursor.getColumnIndex(Note.COLUMN_ID)),
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_NOTE)),
-                cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOLOT)),
+                cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOALOT)),
                 cursor.getString(cursor.getColumnIndex(Note.COLUMN_TIMESTAMP)));
 
         // close the db connection
@@ -135,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Note note = new Note();
                 note.setId(cursor.getInt(cursor.getColumnIndex(Note.COLUMN_ID)));
                 note.setNote(cursor.getString(cursor.getColumnIndex(Note.COLUMN_NOTE)));
-                note.setAlot(cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOLOT)));
+                note.setAlot(cursor.getString(cursor.getColumnIndex(Note.COLUMN_AUTOALOT)));
                 note.setTimestamp(cursor.getString(cursor.getColumnIndex(Note.COLUMN_TIMESTAMP)));
 
                 notes.add(note);
@@ -175,15 +175,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateData(Note count) {
+    public void updateData(Note note) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Note.COLUMN_AUTOLOT, count.getAlot() );
+        values.put(Note.COLUMN_AUTOALOT, note.getAlot());
 
         // updating row
-        db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?", new String[]{String.valueOf(count)} );
-
+        db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?",
+                new String[]{String.valueOf(note.getId())});
     }
 
 

@@ -85,7 +85,8 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view, final int position) {
 
 
-                updateNote2("dddddd",position ) ;
+
+//                updateNote2("dddddd",position ) ;
 
 //                Toast.makeText(Main2Activity.this, getString(R.string.select_list), Toast.LENGTH_SHORT).show();
 
@@ -134,7 +135,7 @@ public class Main2Activity extends AppCompatActivity {
         n.setNote(string);
 
         // updating note in db
-        db.updateData(n);
+        db.updateNote(n) ;
 
         // refreshing the list
         notesList.set(position, n);
@@ -148,10 +149,10 @@ public class Main2Activity extends AppCompatActivity {
     private void updateNote2(String string, int position) {
         Note n = notesList.get(position);
         // updating note text
-        n.setAlot(string) ;
+        n.setAlot(string);
 
         // updating note in db
-        db.updateNote(n);
+        db.updateData(n);
 
         // refreshing the list
         notesList.set(position, n);

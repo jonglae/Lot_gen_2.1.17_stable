@@ -9,7 +9,7 @@ public class Note {
 
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NOTE = "note";
-    public static final String COLUMN_AUTOLOT = "alot";
+    public static final String COLUMN_AUTOALOT = "alot";
     public static final String COLUMN_TIMESTAMP = "timestamp";
 
     public  int id;
@@ -23,7 +23,7 @@ public class Note {
             "CREATE TABLE " + TABLE_NAME + "("
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_NOTE + " TEXT,"
-                    + COLUMN_AUTOLOT + " TEXT,"
+                    + COLUMN_AUTOALOT + " TEXT,"
                     + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
                     + ")";
 

@@ -50,7 +50,7 @@ public class ExternalDBActivity extends Activity {
 
 		// Make a select
 		Cursor cur = db.rawQuery(
-				"SELECT name FROM import_db ORDER BY name ASC;", null);
+				"SELECT * FROM import_db ORDER BY Dvide ASC;", null);
 
 		cur.moveToPosition(0);
 		Log.v(TAG, "Nb Col:" + cur.getColumnCount());
@@ -69,7 +69,7 @@ public class ExternalDBActivity extends Activity {
 
 		// Check insert
 		cur = db.rawQuery(
-				"SELECT name FROM import_db ORDER BY name ASC;", null);
+				"SELECT * FROM import_db ORDER BY Dvide ASC;", null);
 
 		cur.moveToPosition(0);
 		Log.v(TAG, "Nb Col:" + cur.getColumnCount());
@@ -80,14 +80,24 @@ public class ExternalDBActivity extends Activity {
 
 		// dumb
 		cur = db.rawQuery(
-				"SELECT name, surname FROM import_db ORDER BY name ASC;",
+				"SELECT * FROM import_db ORDER BY Dvide ASC;",
 				null);
 		contentLog.append("\nDUMP\n");
 		int i = 0;
 		cur.moveToFirst();
 		while (cur.isAfterLast() == false) {
 			contentLog.append("(" + i++ + ")\t\t" + cur.getString(0) + "\t"
-					+ cur.getString(1) + "\n");
+					+ cur.getString(1) + "\t"
+					+ cur.getString(2) + "\t"
+					+ cur.getString(3) + "\t"
+//					+ cur.getString(4) + "\t"
+//					+ cur.getString(5) + "\t"
+//					+ cur.getString(6) + "\t"
+
+
+
+
+			);
 			cur.moveToNext();
 		}
 
