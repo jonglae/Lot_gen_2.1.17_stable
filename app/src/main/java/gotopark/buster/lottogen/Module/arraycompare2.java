@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class arraycompare2 {
 
-    public String main(String[] args) {
+    public String ccomp2(String[] args) {
         List<String> list = Arrays.asList(args);
 
         Map<String, Integer> map = new HashMap<>();
@@ -16,7 +16,10 @@ public class arraycompare2 {
             Integer count = map.get(temp);
             map.put(temp, (count == null) ? 1 : count + 1);
         }
-        return printMap(map);
+        String routput = printMap(map);
+        System.out.println("=====output ====="+routput);
+
+        return routput;
     }
 
     private static String printMap(Map<String, Integer> map) {
@@ -27,13 +30,18 @@ public class arraycompare2 {
         List<List<String>> secondStrings = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
 //            System.out.println("Element : " + entry.getKey() + " Count : " + entry.getValue());
-            outPutString1 = "Element : " + entry.getKey() + " Count : " + entry.getValue() + "\n";
-            outPutString2 = outPutString2 + outPutString1;
+//            outPutString1 = "맞은 번호는 : " + entry.getKey() + "입니다." + entry.getValue() + "\n";
+            outPutString1 = entry.getKey();
 
-            secondStrings.add(makeArray(entry.getKey(), entry.getValue()));
+            if (entry.getValue() == 2) {
+                outPutString2 = outPutString2 + outPutString1+", " ;
+                secondStrings.add(makeArray(entry.getKey(), entry.getValue()));
+
+            }
         }
+        System.out.println(secondStrings.toString());
+
 //        System.out.println(secondStrings.toString());
-        System.out.println(outPutString2);
 
         return outPutString2;
     }

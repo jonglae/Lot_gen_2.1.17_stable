@@ -23,7 +23,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import gotopark.buster.lottogen.Module.MonyCalc;
 import gotopark.buster.lottogen.Module.arraycomp;
+import gotopark.buster.lottogen.Module.arraycompare2;
 import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 
@@ -68,25 +70,28 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
             model = new Model();
             arraycomp Acomp = new arraycomp();
-
+            MonyCalc monyCalc =new  MonyCalc();
+            arraycompare2 acom2 = new arraycompare2();
 
             if (v.getId() == lstbtn1.getId()) {
 
+                // list1
                 String aaaa = model.getrLotnum();
-
                 String[] bbbb = aaaa.split(",");
 
 
 //                Log.d("======", Arrays.toString(bbbb));
+                //list 2
                 String cccc = String.valueOf(model.getSum_num());
-
                 String[] dddd = cccc.split(",");
 
+                String[] adadad =  MonyCalc.concatenate(bbbb,dddd);
 
+                String results = acom2.ccomp2(adadad);
 
-                List<List<String>> adadad  = Acomp.comper(bbbb,dddd);
+//                List<List<String>> adadad  = Acomp.comper(bbbb,dddd);
 
-                Log.d("==adadad====", String.valueOf(adadad));
+                Log.d("==adadad====", results);
 
 //                int[] array = new int[adadad.size()];
 //
@@ -104,8 +109,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 ////
                 Log.d("==aaa====", String.valueOf(adadad));
 //////
-                String txt = String.valueOf(adadad);
-                lstext2.setText(txt);
+//                String txt = String.valueOf(adadad);
+                lstext2.setText("당첨번호는 : "+results);
 
 //                notifyDataSetChanged();
 
