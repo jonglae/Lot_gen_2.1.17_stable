@@ -50,7 +50,7 @@ public class ExternalDBActivity extends Activity {
 
 		// Make a select
 		Cursor cur = db.rawQuery(
-				"SELECT name FROM serval_developers ORDER BY name ASC;", null);
+				"SELECT name FROM import_db ORDER BY name ASC;", null);
 
 		cur.moveToPosition(0);
 		Log.v(TAG, "Nb Col:" + cur.getColumnCount());
@@ -63,13 +63,13 @@ public class ExternalDBActivity extends Activity {
 		ContentValues values = new ContentValues();
 		values.put("name", "Serval");
 		values.put("surname", "Cat");
-		long servalCatID = db.insert("serval_developers", null, values);
+		long servalCatID = db.insert("import_db", null, values);
 		Log.v(TAG, "Serval Cat Inserted @: " + servalCatID);
 		contentLog.append("Insert @ \t" + servalCatID + "\n");
 
 		// Check insert
 		cur = db.rawQuery(
-				"SELECT name FROM serval_developers ORDER BY name ASC;", null);
+				"SELECT name FROM import_db ORDER BY name ASC;", null);
 
 		cur.moveToPosition(0);
 		Log.v(TAG, "Nb Col:" + cur.getColumnCount());
@@ -80,7 +80,7 @@ public class ExternalDBActivity extends Activity {
 
 		// dumb
 		cur = db.rawQuery(
-				"SELECT name, surname FROM serval_developers ORDER BY name ASC;",
+				"SELECT name, surname FROM import_db ORDER BY name ASC;",
 				null);
 		contentLog.append("\nDUMP\n");
 		int i = 0;

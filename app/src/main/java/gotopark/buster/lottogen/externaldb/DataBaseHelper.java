@@ -15,7 +15,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	 
     private static String DB_PATH = "/data/data/gotopark.buster.lottogen/databases/";
  
-    private static String DB_NAME = "notes_db";
+    private static String DB_NAME = "lotdb1.db";
  
     private SQLiteDatabase myDataBase; 
  
