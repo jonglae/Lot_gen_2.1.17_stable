@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class arraycompare2 {
+public class arraycompare2_ori {
 
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
