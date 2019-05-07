@@ -2,16 +2,20 @@ package gotopark.buster.lottogen;
 
 import android.util.Log;
 
+import gotopark.buster.lottogen.database.model.Note;
+
 public class Model {
 
     private int position;
-    private String[] iid;
+    private Note iid;
 
-    public String[] getIid() {
+    public Note getIid() {
         return iid;
     }
 
-    public void setIid(String[] iid) {
+    public void setIid(Note iid) {
+
+        Log.d("=====", String.valueOf(iid));
         this.iid = iid;
     }
 

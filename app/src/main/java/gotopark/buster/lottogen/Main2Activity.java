@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -36,7 +37,7 @@ public class Main2Activity extends AppCompatActivity {
     private TextView noNotesView;
 
     private DatabaseHelper db;
-
+    private Model model;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,8 @@ public class Main2Activity extends AppCompatActivity {
 
         TextView toolbar = findViewById(R.id.saveTitle);
         toolbar.setText("로또 번호 저장 리스트");
+
+        model = new Model();
 
         db = new DatabaseHelper(this);
 
@@ -81,7 +84,10 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view, final int position) {
 
-                Toast.makeText(Main2Activity.this, getString(R.string.select_list), Toast.LENGTH_SHORT).show();
+
+                updateNote2("dddddd",position ) ;
+
+//                Toast.makeText(Main2Activity.this, getString(R.string.select_list), Toast.LENGTH_SHORT).show();
 
             }
 
@@ -122,10 +128,27 @@ public class Main2Activity extends AppCompatActivity {
      * Updating note in db and updating
      * item in the list by its position
      */
-    private void updateNote(String note, int position) {
+    private void updateNote(String string, int position) {
         Note n = notesList.get(position);
         // updating note text
-        n.setNote(note);
+        n.setNote(string);
+
+        // updating note in db
+        db.updateData(n);
+
+        // refreshing the list
+        notesList.set(position, n);
+        mAdapter.notifyItemChanged(position);
+
+        toggleEmptyNotes();
+    }
+
+
+
+    private void updateNote2(String string, int position) {
+        Note n = notesList.get(position);
+        // updating note text
+        n.setAlot(string) ;
 
         // updating note in db
         db.updateNote(n);
@@ -136,6 +159,7 @@ public class Main2Activity extends AppCompatActivity {
 
         toggleEmptyNotes();
     }
+
 
     /**
      * Deleting note from SQLite and removing the

@@ -6,7 +6,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -176,16 +175,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void updateData(String string1,String string2) {
+    public void updateData(Note count) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Note.COLUMN_AUTOLOT, string1);
-        String [] whereArgs={string2};
+        values.put(Note.COLUMN_AUTOLOT, count.getAlot() );
 
         // updating row
-        db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?", whereArgs );
-//       int Countt = db.update(Note.TABLE_NAME, values, Note.COLUMN_AUTOLOT + " = ?", whereArgs );
+        db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?", new String[]{String.valueOf(count)} );
 
     }
 

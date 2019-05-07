@@ -40,6 +40,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         TextView timestamp;
         TextView lstext1;
         Button lstbtn1;
+        Model model;
 
         MyViewHolder(View view) {
             super(view);
@@ -54,7 +55,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
 
             lstbtn1.setOnClickListener(this);
-
+            model = new Model();
         }
 
         @Override
@@ -68,9 +69,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
                 lstext1.setText("노트 번트 잘 작동하는지");
 
-//                db.insertColumn("인서트 되는지 테스트", "버튼 눌룸시 인서트");
-
-                update1(v) ;
 
 //                notifyDataSetChanged();
 
@@ -87,7 +85,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
         Log.e("================>", pId );
 
-        db.updateData("dddddddda", pId);
+//        db.updateData("dddddddda", pId);
 
     }
 // 이곳이 매우 중요한 부분
