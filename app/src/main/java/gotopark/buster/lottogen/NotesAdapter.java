@@ -6,7 +6,9 @@ package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
@@ -21,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import gotopark.buster.lottogen.Module.arraycomp;
 import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 
@@ -29,7 +32,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     private List<Note> notesList;
     private DatabaseHelper db;
-
+    private List<String[]> complist;
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -59,19 +62,50 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void onClick(View v) {
 
             model = new Model();
+            arraycomp Acomp = new arraycomp();
+
 
             if (v.getId() == lstbtn1.getId()) {
 
+                String aaaa = model.getrLotnum();
 
-                String lotnum = (String) note.getText();
+                String[] bbbb = aaaa.split(",");
 
-                lstext1.setText("노트 번트 잘 작동하는지");
 
-                lstext2.setText(model.getSum_num());
+//                Log.d("======", Arrays.toString(bbbb));
+                String cccc = String.valueOf(model.getSum_num());
+
+                String[] dddd = cccc.split(",");
+
+
+
+                List<List<String>> adadad  = Acomp.comper(bbbb,dddd);
+
+                Log.d("==adadad====", String.valueOf(adadad));
+
+//                int[] array = new int[adadad.size()];
+//
+//                for (int i = 0; i < adadad.size(); i++) {
+//                    array[i] = (int) Integer.parseInt(String.valueOf(adadad.get(i))));
+//                }
+
+//                Log.d("==cccc====", Arrays.toString(array));
+
+//                int[] inttext = adadad;
+//                String lotnum = (String) note.getText();
+
+//                lstext1.setText("노트 번트 잘 작동하는지");
+//
+////
+                Log.d("==aaa====", String.valueOf(adadad));
+//////
+                String txt = String.valueOf(adadad);
+                lstext2.setText(txt);
 
 //                notifyDataSetChanged();
 

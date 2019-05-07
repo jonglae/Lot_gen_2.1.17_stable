@@ -633,15 +633,17 @@ public class MainActivity extends AppCompatActivity {
 
                 KoLotto = KoLotto.substring(1);
                 lotto_num = KoLotto.split(",");
-                SUM_lotto_num = lotto_num[0] + ", " +
+                String SUM_lotto_num1 = lotto_num[0] + ", " +
                         lotto_num[1] + ", " +
                         lotto_num[2] + ", " +
                         lotto_num[3] + ", " +
                         lotto_num[4] + ", " +
-                        lotto_num[5] + "\n보너스 번호 :" +
-                        lotto_num[6];
+                        lotto_num[5];
 
-                model.setSum_num(SUM_lotto_num);
+                model.setSum_num(SUM_lotto_num1);
+
+                SUM_lotto_num = SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6];
+
 
                 LotCount = F10.toString().replaceAll("\\<.*?>", "");
                 LotDate = F11.toString().replaceAll("\\<.*?>", "");

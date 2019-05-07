@@ -90,6 +90,7 @@ public class Main2Activity extends AppCompatActivity {
 
 
                 String aaaa = model.getrLotnum();
+
                 Toast.makeText(Main2Activity.this, aaaa, Toast.LENGTH_SHORT).show();
 
             }

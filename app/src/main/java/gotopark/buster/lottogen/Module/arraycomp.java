@@ -1,7 +1,7 @@
-package antest.lotto_test.arraycompare;
+package gotopark.buster.lottogen.Module;
 
-import android.support.constraint.solver.widgets.ConstraintWidgetGroup;
-import android.util.Log;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class arraycompare3 {
+public class arraycomp {
 
 
-    public static void main(String[] string) {
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public List<List<String>> comper(String[] string1, String[] string2) {
 
-        String[] aaaa ={"1","2","3","4","5","5"};
-        String[] bbbb ={"1","3","4","1","2","5"};
-        String[] cccc  = concatenate(aaaa,bbbb);
+
+        String[] cccc  = concatenate(string1,string2);
 
         List<String> listA = Arrays.asList(cccc);
 
@@ -40,7 +40,9 @@ public class arraycompare3 {
 
 
             resultList.add(list);
+
         });
+        return resultList;
     }
 
     @Override
@@ -49,7 +51,7 @@ public class arraycompare3 {
         return super.hashCode();
     }
 
-    public static <T> T[] concatenate(T[] a, T[] b) {
+    private static <T> T[] concatenate(T[] a, T[] b) {
         int aLen = a.length;
         int bLen = b.length;
 
@@ -60,4 +62,40 @@ public class arraycompare3 {
 
         return c;
     }
+
+
+    public static String comper2 (int[] string1)
+    {
+
+        StringBuilder text1= new StringBuilder();
+        int[] my_array = string1;
+
+        for (int i = 0; i < my_array.length-1; i++)
+        {
+            for (int j = i+1; j < my_array.length; j++)
+            {
+                if ((my_array[i] == my_array[j]) && (i != j))
+                {
+                    int aaa = my_array[j];
+                    String bbb = String.valueOf(aaa);
+
+//                    String ccc = bbb;
+
+                    text1.append(" " + bbb);
+
+
+                }
+
+
+            }
+
+
+        }
+
+
+//        System.out.println("Duplicate Element : " + text1);
+
+    return text1.toString();
+    }
+
 }

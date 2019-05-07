@@ -1,5 +1,14 @@
 package gotopark.buster.lottogen.Module;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by buster on 17. 10. 9.
  */
@@ -25,5 +34,42 @@ public class MonyCalc {
         }
 
         return result.toString();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public List<List<String>> comparray (List<String> string) {
+
+        List<String> listA = string;
+        Map<String, Integer> countMap = new HashMap<>();
+        listA.forEach(e -> {
+            Integer count = countMap.get(e);
+            countMap.put(e, count == null ? 1 : count + 1);
+        });
+        List<List<String>> resultList = new ArrayList<>();
+        countMap.forEach((k, v) -> {
+            List<String> list = new ArrayList<>();
+
+            for (int i = 0; i < v; i++)
+                list.add(k);
+
+            System.out.println("결과값 == "+resultList);
+
+
+            resultList.add(list);
+        });
+
+        return resultList;
+    }
+
+    public static <T> T[] concatenate(T[] a, T[] b) {
+        int aLen = a.length;
+        int bLen = b.length;
+
+        @SuppressWarnings("unchecked")
+        T[] c = (T[]) Array.newInstance(a.getClass().getComponentType(), aLen + bLen);
+        System.arraycopy(a, 0, c, 0, aLen);
+        System.arraycopy(b, 0, c, aLen, bLen);
+
+        return c;
     }
 }

@@ -2,12 +2,10 @@ package gotopark.buster.lottogen;
 
 import android.util.Log;
 
-import gotopark.buster.lottogen.database.model.Note;
-
 public class Model {
 
     private int position;
-    private String rLotnum;
+    static String rLotnum;
     static  String Sum_num;
 
     String getrLotnum() {
@@ -20,7 +18,7 @@ public class Model {
 
     public void setSum_num(String sum_num) {
 
-        Log.d("====",sum_num);
+        Log.d("==ffff==",sum_num);
         Sum_num = sum_num;
     }
 

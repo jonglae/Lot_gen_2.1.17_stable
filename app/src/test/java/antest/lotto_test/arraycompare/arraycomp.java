@@ -1,8 +1,5 @@
 package antest.lotto_test.arraycompare;
 
-import android.support.constraint.solver.widgets.ConstraintWidgetGroup;
-import android.util.Log;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,14 +7,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class arraycompare3 {
+public class arraycomp {
 
 
-    public static void main(String[] string) {
+    public List<List<String>> comper(String[] string1, String[] string2) {
 
-        String[] aaaa ={"1","2","3","4","5","5"};
-        String[] bbbb ={"1","3","4","1","2","5"};
-        String[] cccc  = concatenate(aaaa,bbbb);
+
+        String[] cccc  = concatenate(string1,string2);
 
         List<String> listA = Arrays.asList(cccc);
 
@@ -40,7 +36,9 @@ public class arraycompare3 {
 
 
             resultList.add(list);
+
         });
+        return resultList;
     }
 
     @Override
