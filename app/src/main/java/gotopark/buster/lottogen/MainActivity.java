@@ -102,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView Resultwin2;
     private TextView Resultwin3;
     private InterstitialAd mInterstitialAd;
+    public Model model;
     BackProcessHandler backHandler;
     DatabaseHelper db;
 
@@ -290,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        model = new Model();
 
         db = new DatabaseHelper(this);
         backHandler = new BackProcessHandler(this);
@@ -638,6 +640,8 @@ public class MainActivity extends AppCompatActivity {
                         lotto_num[4] + ", " +
                         lotto_num[5] + "\n보너스 번호 :" +
                         lotto_num[6];
+
+                model.setSum_num(SUM_lotto_num);
 
                 LotCount = F10.toString().replaceAll("\\<.*?>", "");
                 LotDate = F11.toString().replaceAll("\\<.*?>", "");

@@ -8,12 +8,23 @@ public class Model {
 
     private int position;
     private String rLotnum;
+    static  String Sum_num;
 
-    public String getrLotnum() {
+    String getrLotnum() {
         return rLotnum;
     }
 
-    public void setrLotnum(String rLotnum) {
+    public String getSum_num() {
+        return Sum_num;
+    }
+
+    public void setSum_num(String sum_num) {
+
+        Log.d("====",sum_num);
+        Sum_num = sum_num;
+    }
+
+    void setrLotnum(String rLotnum) {
         this.rLotnum = rLotnum;
     }
 

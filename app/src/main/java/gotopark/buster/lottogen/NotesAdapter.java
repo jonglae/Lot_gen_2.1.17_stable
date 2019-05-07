@@ -31,15 +31,15 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     private DatabaseHelper db;
 
 
-
-
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView note;
         TextView dot;
         TextView timestamp;
         TextView lstext1;
+        TextView lstext2;
         Button lstbtn1;
+
         Model model;
 
         MyViewHolder(View view) {
@@ -50,25 +50,28 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
             lstext1 = view.findViewById(R.id.lsttxt1);
+            lstext2 = view.findViewById(R.id.lsttxt2);
             lstbtn1 = view.findViewById(R.id.lstbtn1);
             timestamp = view.findViewById(R.id.timestamp);
 
 
             lstbtn1.setOnClickListener(this);
-            model = new Model();
+
         }
 
         @Override
         public void onClick(View v) {
 
-            if (v.getId() == lstbtn1.getId()) {
+            model = new Model();
 
+            if (v.getId() == lstbtn1.getId()) {
 
 
                 String lotnum = (String) note.getText();
 
                 lstext1.setText("노트 번트 잘 작동하는지");
 
+                lstext2.setText(model.getSum_num());
 
 //                notifyDataSetChanged();
 
@@ -79,16 +82,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     }
 
 
-    private void update1(View view){
-        Note notee = new Note();
-        String pId = notee.COLUMN_ID;
-
-        Log.e("================>", pId );
-
-//        db.updateData("dddddddda", pId);
-
-    }
-// 이곳이 매우 중요한 부분
+    // 이곳이 매우 중요한 부분
     NotesAdapter(Context context, List<Note> notesList) {
         this.notesList = notesList;
 
