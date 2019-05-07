@@ -6,10 +6,10 @@ package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,8 +82,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
 
     private void update1(View view){
+        Note notee = new Note();
+        String pId = notee.COLUMN_ID;
 
-        db.updateData("dddddddd","버튼 눌룸시 인서트");
+        Log.e("================>", pId );
+
+        db.updateData("dddddddda", pId);
 
     }
 // 이곳이 매우 중요한 부분

@@ -419,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LotCOPY();
 
-                db.insertColumn(ctextRlist, ctextRlist);
+                db.insertColumn(ctextRlist, "");
 
                 ClickCount = 1;
 

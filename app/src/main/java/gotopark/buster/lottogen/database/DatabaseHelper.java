@@ -176,7 +176,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public int updateData(String string1,String string2) {
+    public void updateData(String string1,String string2) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -184,8 +184,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String [] whereArgs={string2};
 
         // updating row
-       int Countt = db.update(Note.TABLE_NAME, values, Note.COLUMN_AUTOLOT + " = ?", whereArgs );
-        return Countt;
+        db.update(Note.TABLE_NAME, values, Note.COLUMN_ID + " = ?", whereArgs );
+//       int Countt = db.update(Note.TABLE_NAME, values, Note.COLUMN_AUTOLOT + " = ?", whereArgs );
 
     }
 
