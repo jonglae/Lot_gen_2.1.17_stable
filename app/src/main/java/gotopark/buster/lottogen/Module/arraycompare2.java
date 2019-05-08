@@ -16,30 +16,28 @@ public class arraycompare2 {
             Integer count = map.get(temp);
             map.put(temp, (count == null) ? 1 : count + 1);
         }
-        String routput = printMap(map);
-        System.out.println("=====output ====="+routput);
 
-        return routput;
+        return printMap(map);
     }
 
     private static String printMap(Map<String, Integer> map) {
 
-        String outPutString1 = "";
         String outPutString2 = "";
+
 
         List<List<String>> secondStrings = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
 //            System.out.println("Element : " + entry.getKey() + " Count : " + entry.getValue());
 //            outPutString1 = "맞은 번호는 : " + entry.getKey() + "입니다." + entry.getValue() + "\n";
-            outPutString1 = entry.getKey();
+            String outPutString1 = entry.getKey();
 
             if (entry.getValue() == 2) {
-                outPutString2 = outPutString2 + outPutString1+", " ;
+                outPutString2 = outPutString2 + outPutString1 +"  " ;
                 secondStrings.add(makeArray(entry.getKey(), entry.getValue()));
 
             }
         }
-        System.out.println(secondStrings.toString());
+//        System.out.println(secondStrings.toString());
 
 //        System.out.println(secondStrings.toString());
 

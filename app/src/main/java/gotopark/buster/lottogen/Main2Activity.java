@@ -3,16 +3,13 @@ package gotopark.buster.lottogen;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -38,6 +35,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private DatabaseHelper db;
     private Model model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,15 +81,24 @@ public class Main2Activity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
+                String Thisknum = model.getrLotnum();
+
+                Toast.makeText(Main2Activity.this, Thisknum, Toast.LENGTH_SHORT).show();
+                updateNote2(Thisknum, position);
+
+//                arraycompare2 acom2 = new arraycompare2();
+////                String Thisknum = model.getrLotnum();
+//
+//                String[] thisbonho = Thisknum.split(",");
+//
+//                String thisWeeknum = String.valueOf(model.getSum_num());
+//                String[] SthisWeeknum = thisWeeknum.split(",");
+//                String[] adadad = MonyCalc.concatenate(thisbonho, SthisWeeknum);
+//                String results = acom2.ccomp2(adadad);
 
 
+//                updateNote2(results, position);
 
-                updateNote2("dddddd",position);
-
-
-                String aaaa = model.getrLotnum();
-
-                Toast.makeText(Main2Activity.this, aaaa, Toast.LENGTH_SHORT).show();
 
             }
 
@@ -102,7 +109,6 @@ public class Main2Activity extends AppCompatActivity {
         }));
 
 
-
         Admob_is();
     }
 
@@ -110,10 +116,10 @@ public class Main2Activity extends AppCompatActivity {
      * Inserting new note in db
      * and refreshing the list
      */
-    private void createNote(String note,String alot) {
+    private void createNote(String note, String alot) {
         // inserting note in db and getting
         // newly inserted note id
-        long id = db.insertColumn(note,alot);
+        long id = db.insertColumn(note, alot);
         // get the newly inserted note from db
         Note n = db.getNote(id);
 
@@ -139,7 +145,7 @@ public class Main2Activity extends AppCompatActivity {
         n.setNote(string);
 
         // updating note in db
-        db.updateNote(n) ;
+        db.updateNote(n);
 
         // refreshing the list
         notesList.set(position, n);
@@ -149,16 +155,14 @@ public class Main2Activity extends AppCompatActivity {
     }
 
 
-
     private void updateNote2(String string, int position) {
         Note n = notesList.get(position);
 
-        String mlotnum= n.getNote();
+        String mlotnum = n.getNote();
         model.setrLotnum(mlotnum);
 
         // updating note text
-        n.setAlot(string) ;
-
+        n.setAlot(string);
 
         // updating note in db
         db.updateData(n);
