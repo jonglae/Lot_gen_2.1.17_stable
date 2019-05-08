@@ -1,7 +1,5 @@
 package gotopark.buster.lottogen;
 
-import android.util.Log;
-
 public class Model {
 
     private int position;
@@ -9,7 +7,7 @@ public class Model {
     private static  String Sum_num;
     private static String[] Weeknum;
 
-    public static String[] getWeeknum() {
+    static String[] getWeeknum() {
         return Weeknum;
     }
 
@@ -22,7 +20,7 @@ public class Model {
     }
 
     void setrLotnum(String rLotnum) {
-        this.rLotnum = rLotnum;
+        Model.rLotnum = rLotnum;
     }
 
     String getSum_num() {
@@ -31,7 +29,7 @@ public class Model {
 
     void setSum_num(String sum_num) {
 
-        Log.d("==ffff==",sum_num);
+//        Log.d("==ffff==",sum_num);
         Sum_num = sum_num;
     }
 
@@ -42,7 +40,7 @@ public class Model {
 
     public void setPosition(int position) {
 
-        Log.d("====","====>  "+position);
+//        Log.d("====","====>  "+position);
 
         this.position = position;
     }

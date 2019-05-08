@@ -88,7 +88,7 @@ class BackProcessHandler {
                 .setStoreType(StoreType.GOOGLEPLAY) //default is Google, other option is Amazon
                 .setInstallDays(1) // default 10, 0 means install day.
                 .setLaunchTimes(10) // default 10 times.
-                .setRemindInterval(2) // default 1 day.
+                .setRemindInterval(1) // default 1 day.
                 .setShowLaterButton(true) // default true.
                 .setDebug(false) // default false.
                 .setCancelable(false) // default false.
