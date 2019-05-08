@@ -10,6 +10,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.List;
 
+import gotopark.buster.lottogen.Module.ArrCom;
 import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 import gotopark.buster.lottogen.utils.MyDividerItemDecoration;
@@ -35,6 +37,8 @@ public class Main2Activity extends AppCompatActivity {
 
     private DatabaseHelper db;
     private Model model;
+
+    private ArrCom  arrcom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +54,7 @@ public class Main2Activity extends AppCompatActivity {
         toolbar.setText("로또 번호 저장 리스트");
 
         model = new Model();
+        arrcom = new ArrCom() ;
 
         db = new DatabaseHelper(this);
 
@@ -81,24 +86,41 @@ public class Main2Activity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
-                String Thisknum = model.getrLotnum();
+                String[] ClickNum = new String[6];
+                String results = "";
 
-                Toast.makeText(Main2Activity.this, Thisknum, Toast.LENGTH_SHORT).show();
-                updateNote2(Thisknum, position);
-
-//                arraycompare2 acom2 = new arraycompare2();
-////                String Thisknum = model.getrLotnum();
-//
-//                String[] thisbonho = Thisknum.split(",");
-//
-//                String thisWeeknum = String.valueOf(model.getSum_num());
-//                String[] SthisWeeknum = thisWeeknum.split(",");
-//                String[] adadad = MonyCalc.concatenate(thisbonho, SthisWeeknum);
-//                String results = acom2.ccomp2(adadad);
+                //이번주 로또 넘버
+                String[] WeekNum = Model.getWeeknum();
 
 
-//                updateNote2(results, position);
+                // 클릭한 넘버 가저와 어레이에 넣기
+                Note n = notesList.get(position);
+                String mlotnum = n.getNote();
+                mlotnum = mlotnum.replace(" ","");
+                ClickNum = mlotnum.split(",");
 
+
+                 results = arrcom.comp(ArrCom.concatenate(WeekNum,ClickNum));
+
+//                System.out.println(Thisknum1);
+//                System.out.println(ClickNum[0]+ClickNum[1]+ClickNum[5]);
+
+                Log.d("====results====", results);
+
+//                Log.d("====results====", ClickNum[1]);
+//                Log.d("====Thisknum====", ClickNum[5]);
+
+                if(results.equals("")){
+
+                    updateNote2("이번 회차와 맞는번호 없습니다.", position);
+                    Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
+
+                }else {
+
+
+                    Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
+                    updateNote2("당첨번호 : "+results, position);
+                }
 
             }
 
@@ -108,6 +130,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         }));
 
+        Rnum_comp();
 
         Admob_is();
     }
@@ -297,5 +320,25 @@ public class Main2Activity extends AppCompatActivity {
         MobileAds.initialize(getApplicationContext(), getString(R.string.google_banner_id));
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+    }
+
+    public void Rnum_comp() {
+        model = new Model();
+        String numbers = null;
+        String[] temp_rnum = new String[5];
+
+        numbers =model.getSum_num();
+        numbers = numbers.replaceAll(" ", "");
+        temp_rnum = numbers.split(",", 6);
+
+                Log.d("====sumnum====", temp_rnum[0]);
+                Log.d("====sumnum====", temp_rnum[1]);
+                Log.d("====sumnum====", temp_rnum[2]);
+                Log.d("====sumnum====", temp_rnum[3]);
+                Log.d("====sumnum====", temp_rnum[4]);
+                Log.d("====sumnum====", temp_rnum[5]);
+
+        Model.setWeeknum(temp_rnum);
+
     }
 }

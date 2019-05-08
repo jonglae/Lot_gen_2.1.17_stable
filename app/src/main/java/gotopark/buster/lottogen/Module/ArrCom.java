@@ -1,14 +1,15 @@
 package gotopark.buster.lottogen.Module;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class arraycompare2 {
+public class ArrCom {
 
-    public String ccomp2(String[] args) {
+    public String comp(String[] args) {
         List<String> list = Arrays.asList(args);
 
         Map<String, Integer> map = new HashMap<>();
@@ -52,4 +53,15 @@ public class arraycompare2 {
         return firstStrings;
     }
 
+    public static <T> T[] concatenate(T[] a, T[] b) {
+        int aLen = a.length;
+        int bLen = b.length;
+
+        @SuppressWarnings("unchecked")
+        T[] c = (T[]) Array.newInstance(a.getClass().getComponentType(), aLen + bLen);
+        System.arraycopy(a, 0, c, 0, aLen);
+        System.arraycopy(b, 0, c, aLen, bLen);
+
+        return c;
+    }
 }

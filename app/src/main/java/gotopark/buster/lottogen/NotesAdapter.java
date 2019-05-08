@@ -14,7 +14,6 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.ParseException;
@@ -22,17 +21,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import gotopark.buster.lottogen.Module.MonyCalc;
-import gotopark.buster.lottogen.Module.arraycompare2;
-import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
     private Context context;
 
     private List<Note> notesList;
-    private DatabaseHelper db;
-    private List<String[]> complist;
 
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -40,69 +34,23 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         TextView dot;
         TextView timestamp;
         TextView lstext1;
-        TextView lstext2;
-        Button lstbtn1;
 
-        Model model;
 
         MyViewHolder(View view) {
             super(view);
 
-            db = new DatabaseHelper(context);
-
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
             lstext1 = view.findViewById(R.id.lsttxt1);
-            lstext2 = view.findViewById(R.id.lsttxt2);
-            lstbtn1 = view.findViewById(R.id.lstbtn1);
             timestamp = view.findViewById(R.id.timestamp);
-            lstbtn1.setOnClickListener(this);
-
-
-
-
         }
 
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void onClick(View v) {
 
-
-            model = new Model();
-//            arraycompare2 acom2 = new arraycompare2();
-//            String aaaa = model.getrLotnum();
-//
-//            String[] bbbb = aaaa.split(",");
-//            String cccc = String.valueOf(model.getSum_num());
-//            String[] dddd = cccc.split(",");
-//            String[] adadad =  MonyCalc.concatenate(bbbb,dddd);
-//            String results = acom2.ccomp2(adadad);
-
-            arraycompare2 acom2 = new arraycompare2();
-            String Thisknum = model.getrLotnum();
-
-            String[] thisbonho = Thisknum.split(",");
-
-            String thisWeeknum = String.valueOf(model.getSum_num());
-            String[] SthisWeeknum = thisWeeknum.split(",");
-            String[] adadad = MonyCalc.concatenate(thisbonho, SthisWeeknum);
-            String results = acom2.ccomp2(adadad);
-
-            lstext2.setText("당첨번호는 : "+results);
-//
-//            if (v.getId() == lstbtn1.getId()) {
-//
-//
-//                lstext2.setText("당첨번호는 : "+results);
-
-//                notifyDataSetChanged();
-
-//            }
-
-
         }
     }
-
 
     // 이곳이 매우 중요한 부분
     NotesAdapter(Context context, List<Note> notesList) {

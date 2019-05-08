@@ -5,26 +5,36 @@ import android.util.Log;
 public class Model {
 
     private int position;
-    static String rLotnum;
-    static  String Sum_num;
+    private static String rLotnum;
+    private static  String Sum_num;
+    private static String[] Weeknum;
+
+    public static String[] getWeeknum() {
+        return Weeknum;
+    }
+
+    static void setWeeknum(String[] weeknum) {
+        Weeknum = weeknum;
+    }
 
     String getrLotnum() {
         return rLotnum;
     }
 
-    public String getSum_num() {
+    void setrLotnum(String rLotnum) {
+        this.rLotnum = rLotnum;
+    }
+
+    String getSum_num() {
         return Sum_num;
     }
 
-    public void setSum_num(String sum_num) {
+    void setSum_num(String sum_num) {
 
         Log.d("==ffff==",sum_num);
         Sum_num = sum_num;
     }
 
-    void setrLotnum(String rLotnum) {
-        this.rLotnum = rLotnum;
-    }
 
     public int getPosition() {
         return position;

@@ -53,12 +53,6 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/lstbtn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:text="@string/lstbtn1" />
         </LinearLayout>
 
         <TextView
@@ -68,12 +62,6 @@
             android:background="@color/white"
             android:text="TextView" />
 
-        <TextView
-            android:id="@+id/lsttxt2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:text="TextView" />
     </LinearLayout>
 
 </RelativeLayout>
