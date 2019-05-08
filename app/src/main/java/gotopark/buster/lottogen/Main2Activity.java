@@ -133,6 +133,9 @@ public class Main2Activity extends AppCompatActivity {
         Rnum_comp();
 
         Admob_is();
+
+        Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
+
     }
 
     /**
@@ -220,7 +223,7 @@ public class Main2Activity extends AppCompatActivity {
      */
     private void showActionsDialog(final int position) {
 //        CharSequence[] colors = new CharSequence[]{"Edit", "Delete"};
-        CharSequence[] colors = new CharSequence[]{"Delete"};
+        CharSequence[] colors = new CharSequence[]{"[번호삭제?]"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // 정말로 삭제 하시 겠습니까.

@@ -56,7 +56,6 @@ import gotopark.buster.lottogen.Module.numtoimg;
 import gotopark.buster.lottogen.Module.numtoimg2;
 import gotopark.buster.lottogen.Module.randomNum;
 import gotopark.buster.lottogen.database.DatabaseHelper;
-import gotopark.buster.lottogen.externaldb.ExternalDBActivity;
 import gotopark.buster.lottogen.qrCodeReader.FullScannerFragmentActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -150,11 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
-//            onBackPressed();
+            onBackPressed();
 
-
-            Intent intent = new Intent(MainActivity.this, ExternalDBActivity.class);
-            startActivity(intent);
+//리스트 뷰 테스트
+//            Intent intent = new Intent(MainActivity.this, ExternalDBActivity.class);
+//            startActivity(intent);
 
         }
     };
@@ -239,12 +238,14 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, ZXING_CAMERA_PERMISSION);
         } else {
+
+            Show_front();
+
             Intent intent = new Intent(this, clss);
             startActivity(intent);
 
         }
 
-        Show_front();
 
     }
 
@@ -274,10 +275,9 @@ public class MainActivity extends AppCompatActivity {
         ctext6 = Balltxt6.getText().toString();
 
 
-
         ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
 
-        ctextR = "#" + App_Share + ctextRlist + "\n\n" + App_links1;
+        ctextR = App_Share + ctextRlist + "\n\n" + App_links1;
 
     }
 
@@ -417,7 +417,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            if(ClickCount == 0) {
+            if (ClickCount == 0) {
 
                 LotCOPY();
 
@@ -425,13 +425,13 @@ public class MainActivity extends AppCompatActivity {
 
                 ClickCount = 1;
 
-                String Mesg1 ="번호 저장 완료";
+                String Mesg1 = "번호 저장 완료";
 
                 //The number has been saved.
-                text10.setText(ctextRlist + " -> "+Mesg1);
+                text10.setText(ctextRlist + " -> " + Mesg1);
                 Toast.makeText(MainActivity.this, Mesg1, Toast.LENGTH_SHORT).show();
 
-            }else{
+            } else {
 
                 text10.setText("번호 생성 부터 해주세요");
 
@@ -449,7 +449,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-
 
 
     @Override
