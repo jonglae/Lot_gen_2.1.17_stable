@@ -35,7 +35,6 @@ public class Main2Activity extends AppCompatActivity {
     private TextView noNotesView;
 
     private DatabaseHelper db;
-
     private ArrCom arrcom;
 
     @Override
@@ -106,7 +105,7 @@ public class Main2Activity extends AppCompatActivity {
                 } else {
 
                     Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
-                    updateNote2("당첨번호:" + results+"보너스:"+thisBonusNum, position);
+                    updateNote2("당첨번호:" + results + "보너스:" + thisBonusNum, position);
                 }
             }
 
@@ -310,7 +309,6 @@ public class Main2Activity extends AppCompatActivity {
     public String[] Week_sixnum(String[] weeknum) {
 
         String[] WeekNum = Model.getWeeknum();
-
         String[] week_six_num = new String[6];
 
         week_six_num[0] = WeekNum[0];
@@ -331,8 +329,9 @@ public class Main2Activity extends AppCompatActivity {
         String[] WeekNum = Model.getWeeknum();
         String Bonus_num = "";
         Bonus_num = WeekNum[6];
+        //                Log.d("====sumnum====", temp_rnum[0]);
+
         return Bonus_num;
-//                Log.d("====sumnum====", temp_rnum[0]);
 
     }
 

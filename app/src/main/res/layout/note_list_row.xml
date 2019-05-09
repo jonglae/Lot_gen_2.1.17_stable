@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#F0F0EC"
+    android:background="#1C5757"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00641D1D"
         android:orientation="vertical">
 
         <LinearLayout
@@ -30,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@color/tedBtnPrimary"
+                android:background="#7681C2"
                 android:textColor="@color/white"
                 android:textSize="@dimen/timestamp"
                 android:textStyle="bold|italic" />
@@ -61,10 +62,10 @@
             android:id="@+id/lsttxt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="#3C3A3A"
             android:paddingLeft="20dp"
-            android:text="TextView"
-            android:textColor="#2E7D32"
+            android:text=""
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
 
