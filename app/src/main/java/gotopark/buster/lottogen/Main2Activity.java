@@ -10,7 +10,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -36,9 +35,8 @@ public class Main2Activity extends AppCompatActivity {
     private TextView noNotesView;
 
     private DatabaseHelper db;
-    private Model model;
 
-    private ArrCom  arrcom;
+    private ArrCom arrcom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +51,8 @@ public class Main2Activity extends AppCompatActivity {
         TextView toolbar = findViewById(R.id.saveTitle);
         toolbar.setText("로또 번호 저장 리스트");
 
-        model = new Model();
-        arrcom = new ArrCom() ;
+//        Model model = new Model();
+        arrcom = new ArrCom();
 
         db = new DatabaseHelper(this);
 
@@ -90,38 +88,26 @@ public class Main2Activity extends AppCompatActivity {
                 String results = "";
 
                 //이번주 로또 넘버
-                String[] WeekNum = Model.getWeeknum();
-
+                String[] thisWeekNum = Week_sixnum(Model.getWeeknum());
+                String thisBonusNum = bonus_num(Model.getWeeknum());
 
                 // 클릭한 넘버 가저와 어레이에 넣기
                 Note n = notesList.get(position);
                 String mlotnum = n.getNote();
-                mlotnum = mlotnum.replace(" ","");
+                mlotnum = mlotnum.replace(" ", "");
                 ClickNum = mlotnum.split(",");
 
+                //중복 check 메소드
+                results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
 
-                 results = arrcom.comp(ArrCom.concatenate(WeekNum,ClickNum));
-
-//                System.out.println(Thisknum1);
-//                System.out.println(ClickNum[0]+ClickNum[1]+ClickNum[5]);
-
-                Log.d("====results====", results);
-
-//                Log.d("====results====", ClickNum[1]);
-//                Log.d("====Thisknum====", ClickNum[5]);
-
-                if(results.equals("")){
-
+                if (results.equals("")) {
                     updateNote2("이번 회차와 맞는번호 없습니다.", position);
                     Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
-
-                }else {
-
+                } else {
 
                     Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
-                    updateNote2("당첨번호 : "+results, position);
+                    updateNote2("당첨번호:" + results+"보너스:"+thisBonusNum, position);
                 }
-
             }
 
             @Override
@@ -130,7 +116,6 @@ public class Main2Activity extends AppCompatActivity {
             }
         }));
 
-        Rnum_comp();
 
         Admob_is();
 
@@ -183,9 +168,6 @@ public class Main2Activity extends AppCompatActivity {
 
     private void updateNote2(String string, int position) {
         Note n = notesList.get(position);
-
-        String mlotnum = n.getNote();
-        model.setrLotnum(mlotnum);
 
         // updating note text
         n.setAlot(string);
@@ -325,23 +307,34 @@ public class Main2Activity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
-    public void Rnum_comp() {
-        model = new Model();
-        String numbers = null;
-        String[] temp_rnum = new String[5];
+    public String[] Week_sixnum(String[] weeknum) {
 
-        numbers =model.getSum_num();
-        numbers = numbers.replaceAll(" ", "");
-        temp_rnum = numbers.split(",", 6);
+        String[] WeekNum = Model.getWeeknum();
 
-                Log.d("====sumnum====", temp_rnum[0]);
-                Log.d("====sumnum====", temp_rnum[1]);
-                Log.d("====sumnum====", temp_rnum[2]);
-                Log.d("====sumnum====", temp_rnum[3]);
-                Log.d("====sumnum====", temp_rnum[4]);
-                Log.d("====sumnum====", temp_rnum[5]);
+        String[] week_six_num = new String[6];
 
-        Model.setWeeknum(temp_rnum);
+        week_six_num[0] = WeekNum[0];
+        week_six_num[1] = WeekNum[1];
+        week_six_num[2] = WeekNum[2];
+        week_six_num[3] = WeekNum[3];
+        week_six_num[4] = WeekNum[4];
+        week_six_num[5] = WeekNum[5];
+
+        return week_six_num;
+//                Log.d("====sumnum====", temp_rnum[0]);
 
     }
+
+
+    public String bonus_num(String[] weeknum) {
+
+        String[] WeekNum = Model.getWeeknum();
+        String Bonus_num = "";
+        Bonus_num = WeekNum[6];
+        return Bonus_num;
+//                Log.d("====sumnum====", temp_rnum[0]);
+
+    }
+
+
 }

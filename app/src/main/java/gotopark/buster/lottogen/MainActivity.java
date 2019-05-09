@@ -639,7 +639,7 @@ public class MainActivity extends AppCompatActivity {
                         lotto_num[4] + ", " +
                         lotto_num[5];
 
-                model.setSum_num(SUM_lotto_num1);
+
 
                 SUM_lotto_num = SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6];
 
@@ -699,6 +699,7 @@ public class MainActivity extends AppCompatActivity {
                 res[5] = Integer.parseInt(lotto_num[5]);
                 res[6] = Integer.parseInt(lotto_num[6]);
 
+                Model.setWeeknum(lotto_num);
 
                 dball1 = NumtoI2.Numimg2(res[0]);
                 dball2 = NumtoI2.Numimg2(res[1]);
