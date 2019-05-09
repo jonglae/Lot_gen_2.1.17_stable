@@ -39,6 +39,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -588,9 +589,12 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 // Connect to the web site
-                Document document = Jsoup.connect(url)
-                        .timeout(10000)
-                        .get();
+//                Document document = Jsoup.connect(url)
+//                        .timeout(10000)
+//                        .get();
+                Document document = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
+                document.outputSettings().charset("UTF-8");
+
 
                 if (document != null) {
 
