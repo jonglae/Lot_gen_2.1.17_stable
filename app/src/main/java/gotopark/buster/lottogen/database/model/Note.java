@@ -24,7 +24,7 @@ public class Note {
                     + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + COLUMN_NOTE + " TEXT,"
                     + COLUMN_AUTOALOT + " TEXT,"
-                    + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                    + COLUMN_TIMESTAMP + " DATETIME DEFAULT (datetime('now','localtime'))"
                     + ")";
 
     public Note() {

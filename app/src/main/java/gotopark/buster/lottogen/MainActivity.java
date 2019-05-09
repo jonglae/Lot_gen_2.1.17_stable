@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     public String ctextR, ctextRlist;
     String SUM_lotto_num;
     String LotDate;
-    int ClickCount = 1;
+    int ClickCount = 0;
 
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
@@ -644,7 +644,6 @@ public class MainActivity extends AppCompatActivity {
                         lotto_num[5];
 
 
-
                 SUM_lotto_num = SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6];
 
 
@@ -729,6 +728,9 @@ public class MainActivity extends AppCompatActivity {
                 RBall8.setImageResource(dball8);
 
 
+
+
+                // 당첨 번호 표시
                 Rtext1.setText(String.valueOf(lotto_num[0]));
                 Rtext2.setText(String.valueOf(lotto_num[1]));
                 Rtext3.setText(String.valueOf(lotto_num[2]));
@@ -737,6 +739,16 @@ public class MainActivity extends AppCompatActivity {
                 Rtext6.setText(String.valueOf(lotto_num[5]));
                 Rtext7.setText("+");
                 Rtext8.setText(String.valueOf(lotto_num[6]));
+
+
+                // 당첨된 번호 랜덤 번호 생성 부분에 표시
+                Balltxt1.setText(String.valueOf(lotto_num[0]));
+                Balltxt2.setText(String.valueOf(lotto_num[1]));
+                Balltxt3.setText(String.valueOf(lotto_num[2]));
+                Balltxt4.setText(String.valueOf(lotto_num[3]));
+                Balltxt5.setText(String.valueOf(lotto_num[4]));
+                Balltxt6.setText(String.valueOf(lotto_num[5]));
+
 
 
             } else {

@@ -103,7 +103,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             Date date = fmt.parse(dateStr);
 
             @SuppressLint("SimpleDateFormat")
-            SimpleDateFormat fmtOut = new SimpleDateFormat("-- MM월 dd일 (HH:mm) --");
+            SimpleDateFormat fmtOut = new SimpleDateFormat(" MM월 dd일 (HH:mm) -");
             return fmtOut.format(date);
         } catch (ParseException ignored) {
 

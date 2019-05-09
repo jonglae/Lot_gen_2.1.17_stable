@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#1C5757"
+    android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
@@ -10,12 +10,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00641D1D"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="30dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-10dp"
+            android:paddingLeft="30dp">
 
             <TextView
                 android:id="@+id/dot"
@@ -23,16 +25,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textColor="#AD1457"
-                android:textSize="@dimen/dot_text_size"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/timestamp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="#7681C2"
-                android:textColor="@color/white"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/timestamp"
                 android:textStyle="bold|italic" />
         </LinearLayout>
@@ -44,10 +45,11 @@
 
             <TextView
                 android:id="@+id/note"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="9.5"
-                android:shadowColor="#865616"
+                android:gravity="center_vertical"
+                android:shadowColor="@android:color/black"
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="1.5"
@@ -62,12 +64,23 @@
             android:id="@+id/lsttxt1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#3C3A3A"
-            android:paddingLeft="20dp"
+            android:background="#585757"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="1.5"
             android:text=""
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Line"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/ripple_share"
+            android:text="TextView" />
 
     </LinearLayout>
 
