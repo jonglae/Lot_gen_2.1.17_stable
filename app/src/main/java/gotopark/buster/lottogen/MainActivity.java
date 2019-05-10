@@ -498,7 +498,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @SuppressLint({"SetTextI18n", "ResourceType"})
+    @SuppressLint({"SetTextI18n", "ResourceType", "Assert"})
     public void GenNumber() {
         int[] res = new int[6];
 
@@ -511,9 +511,21 @@ public class MainActivity extends AppCompatActivity {
 
         randomNum Num = new randomNum();
         numtoimg NumtoI = new numtoimg();
-
+        Random random = new Random();
         /** 로또 번호 발생 메소드 */
-        res = Num.lotArray(6, 45);
+//        res = Num.lotArray(1, 45);
+
+
+        assert false;
+        res[0] = random.nextInt(7 - 1 + 1) + 1;
+        res[1] = random.nextInt(16 - 8 + 1) + 8;
+        res[2] = random.nextInt(24 - 17 + 1) + 17;
+        res[3] = random.nextInt(33 - 25 + 1) + 25;
+        res[4] = random.nextInt(41 - 34 + 1) + 34;
+        res[5] = random.nextInt(46 - 42 + 1) + 42;
+
+
+//        res = Num.lotArray(1, 45);
 //        text2.setTextSize (TypedValue.COMPLEX_UNIT_SP, 30);
 
         dball1 = NumtoI.Numimg(res[0]);

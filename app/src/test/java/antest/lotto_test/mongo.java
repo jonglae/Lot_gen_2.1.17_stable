@@ -1,18 +1,18 @@
 package antest.lotto_test;
 
-import android.util.Log;
+import java.util.Random;
 
 public class mongo {
 
-        static String aaaa="hjhjhjhjhjhj";
 
-    public static void main(String aaaa) {
-        Log.d ("dfdf",aaaa);
+    public static void main(String[] args) {
 
-        System.out.println (aaaa);
+        Random rand = new Random();
+
+        assert rand != null;
+        int bbbb = rand.nextInt(7 - 1 + 1) + 1;
+        System.out.println ("===bbbb== : "+bbbb);
     }
-
-
 
 
 }

@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_button"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/black"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/ltextbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
         <Button
@@ -113,6 +114,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/ripple_gen"
         android:shadowColor="@android:color/background_dark"
         android:shadowDx="3"

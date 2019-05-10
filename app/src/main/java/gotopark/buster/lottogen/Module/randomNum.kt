@@ -1,8 +1,5 @@
 package gotopark.buster.lottogen.Module
 
-import android.util.Log
-import gotopark.buster.lottogen.R
-import java.lang.reflect.Array
 import java.util.*
 
 /**
