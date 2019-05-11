@@ -582,7 +582,7 @@ public class MainActivity extends AppCompatActivity {
             res[2] = random.nextInt(24 - 17 + 1) + 17;
             res[3] = random.nextInt(33 - 25 + 1) + 25;
             res[4] = random.nextInt(41 - 34 + 1) + 34;
-            res[5] = random.nextInt(46 - 42 + 1) + 42;
+            res[5] = random.nextInt(45 - 42 + 1) + 42;
 
         } else {
             res = Num.lotArray(6, 45);
