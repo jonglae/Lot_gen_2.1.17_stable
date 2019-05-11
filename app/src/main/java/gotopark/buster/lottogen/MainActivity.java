@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -102,14 +103,21 @@ public class MainActivity extends AppCompatActivity {
     private TextView Resultwin2;
     private TextView Resultwin3;
     private InterstitialAd mInterstitialAd;
+
+    private Switch sw1, sw2;
+
     public Model model;
     BackProcessHandler backHandler;
     DatabaseHelper db;
+
 
     public String ctextR, ctextRlist;
     String SUM_lotto_num;
     String LotDate;
     int ClickCount = 0;
+
+    int MultiClick;
+    int randconut;
 
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
@@ -189,15 +197,26 @@ public class MainActivity extends AppCompatActivity {
 
         int count = 0;
         Random rand = new Random();
-        int primeWord = rand.nextInt(13) + 4;
         int[] Times_Ran = {150, 250, 350, 550, 650, 850, 950, 1150, 1450, 1550};
-
+        int primeWord = rand.nextInt(13) + 4;
+        int millisec;
 
         public void onClick(View v) {
 
-            // 반복 회수 지정
-            int xnum = rand.nextInt(9);
-            int millisec = Times_Ran[xnum];
+//            MultiClick = Model.getClick();
+
+                            Log.d("====MultiClick====", String.valueOf(MultiClick));
+
+            if (MultiClick == 1) {
+                // 반복 회수 지정
+
+                int xnum = rand.nextInt(9);
+                millisec = Times_Ran[xnum];
+            } else {
+
+
+                millisec = 50;
+            }
 
             // 반복 회수 끝
 
@@ -388,6 +407,8 @@ public class MainActivity extends AppCompatActivity {
         Resultwin2 = findViewById(R.id.winText2);
         Resultwin3 = findViewById(R.id.winText3);
 
+        sw1 = findViewById(R.id.switch1);
+        sw2 = findViewById(R.id.switch2);
 
         /*
          *
@@ -401,6 +422,24 @@ public class MainActivity extends AppCompatActivity {
         //엡 이름과 버젼 표시
         setTitle(App_Mame + " V" + versionCode);
 
+        sw2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (sw2.isChecked()){
+
+                    MultiClick = 1;
+//                Model.setClick(MultiClick);
+
+            } else {
+
+                    MultiClick = 0;
+//                    Model.setClick(MultiClick);
+
+                }
+
+            }
+        });
+
         btn1.setOnClickListener(EXIT);
         btn2.setOnClickListener(gen);
         btn3.setOnClickListener(copy);
@@ -408,6 +447,27 @@ public class MainActivity extends AppCompatActivity {
         btn5.setOnClickListener(Lot_save);
         btn6.setOnClickListener(Lot_list);
         text10.setOnClickListener(MDCT);
+
+
+        sw1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (sw1.isChecked()) {
+
+                    randconut = 1;
+
+
+                } else {
+
+                    randconut = 0;
+
+
+                }
+
+            }
+        });
+
 
     }
 
@@ -513,20 +573,20 @@ public class MainActivity extends AppCompatActivity {
         numtoimg NumtoI = new numtoimg();
         Random random = new Random();
         /** 로또 번호 발생 메소드 */
-//        res = Num.lotArray(1, 45);
 
 
-        assert false;
-        res[0] = random.nextInt(7 - 1 + 1) + 1;
-        res[1] = random.nextInt(16 - 8 + 1) + 8;
-        res[2] = random.nextInt(24 - 17 + 1) + 17;
-        res[3] = random.nextInt(33 - 25 + 1) + 25;
-        res[4] = random.nextInt(41 - 34 + 1) + 34;
-        res[5] = random.nextInt(46 - 42 + 1) + 42;
+        if (randconut == 1) {
+            assert false;
+            res[0] = random.nextInt(7 - 1 + 1) + 1;
+            res[1] = random.nextInt(16 - 8 + 1) + 8;
+            res[2] = random.nextInt(24 - 17 + 1) + 17;
+            res[3] = random.nextInt(33 - 25 + 1) + 25;
+            res[4] = random.nextInt(41 - 34 + 1) + 34;
+            res[5] = random.nextInt(46 - 42 + 1) + 42;
 
-
-//        res = Num.lotArray(1, 45);
-//        text2.setTextSize (TypedValue.COMPLEX_UNIT_SP, 30);
+        } else {
+            res = Num.lotArray(6, 45);
+        }
 
         dball1 = NumtoI.Numimg(res[0]);
         dball2 = NumtoI.Numimg(res[1]);
@@ -740,8 +800,6 @@ public class MainActivity extends AppCompatActivity {
                 RBall8.setImageResource(dball8);
 
 
-
-
                 // 당첨 번호 표시
                 Rtext1.setText(String.valueOf(lotto_num[0]));
                 Rtext2.setText(String.valueOf(lotto_num[1]));
@@ -760,7 +818,6 @@ public class MainActivity extends AppCompatActivity {
                 Balltxt4.setText(String.valueOf(lotto_num[3]));
                 Balltxt5.setText(String.valueOf(lotto_num[4]));
                 Balltxt6.setText(String.valueOf(lotto_num[5]));
-
 
 
             } else {

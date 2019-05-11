@@ -216,8 +216,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="평타"
-            android:textAlignment="textEnd" />
+            android:text="전체/평균"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
 
         <Switch
             android:id="@+id/switch2"
@@ -225,17 +226,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/btn_tedadmob_primary"
-            android:text="상/하"
-            android:textAlignment="textEnd" />
-
-        <Switch
-            android:id="@+id/switch3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/ripple_share"
-            android:text="출현번호"
-            android:textAlignment="textEnd" />
+            android:text="단타/연타"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
