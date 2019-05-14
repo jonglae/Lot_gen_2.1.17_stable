@@ -40,7 +40,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.net.URL;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -220,16 +219,12 @@ public class MainActivity extends AppCompatActivity {
 
             // 반복 회수 끝
 
-            CountDownTimer start = new CountDownTimer(millisec, 50) {
+            CountDownTimer start = new CountDownTimer(millisec, 25) {
 
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
-
-//                    text2.setTextSize (TypedValue.COMPLEX_UNIT_SP, 24);
-                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 50 + "00ms 남았습니다.");
+                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 25 + "00ms 남았습니다.");
                     GenNumber();
-
-
                 }
 
                 @SuppressLint("SetTextI18n")
@@ -660,26 +655,21 @@ public class MainActivity extends AppCompatActivity {
             String url = getString(R.string.JsoupOne);
 
             try {
-                // Connect to the web site
-//                Document document = Jsoup.connect(url)
-//                        .timeout(10000)
-//                        .get();
-                Document document = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
-                document.outputSettings().charset("UTF-8");
+
+                Document document = Jsoup.connect(url)
+                        .timeout(10000)
+                        .get();
 
 
-                if (document != null) {
+                // Get the html document title
+                tiTle = document.title();
+                F10 = document.select(getString(R.string.jsoup_q1));
+                F11 = document.select(getString(R.string.jsoup_q2));
+                F12 = document.select(getString(R.string.jsoup_q3));
+                F13 = document.select(getString(R.string.jsoup_q4));
+                F14 = document.select(getString(R.string.jsoup_q5));
+                F15 = document.select(getString(R.string.jsoup_q6));
 
-                    // Get the html document title
-                    tiTle = document.title();
-                    F10 = document.select(getString(R.string.jsoup_q1));
-                    F11 = document.select(getString(R.string.jsoup_q2));
-                    F12 = document.select(getString(R.string.jsoup_q3));
-                    F13 = document.select(getString(R.string.jsoup_q4));
-                    F14 = document.select(getString(R.string.jsoup_q5));
-                    F15 = document.select(getString(R.string.jsoup_q6));
-
-                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -827,7 +817,6 @@ public class MainActivity extends AppCompatActivity {
                 Rtilte.setText(getString(R.string.net_Info1));
                 Resultwin1.setText(getString(R.string.net_Info2));
                 Resultwin2.setText(getString(R.string.net_Info3));
-                Resultwin3.setText(getString(R.string.net_Info4));
 
             }
 

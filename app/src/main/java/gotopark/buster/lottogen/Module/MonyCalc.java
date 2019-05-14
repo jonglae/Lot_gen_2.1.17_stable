@@ -38,9 +38,8 @@ public class MonyCalc {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public List<List<String>> comparray (List<String> string) {
 
-        List<String> listA = string;
         Map<String, Integer> countMap = new HashMap<>();
-        listA.forEach(e -> {
+        string.forEach(e -> {
             Integer count = countMap.get(e);
             countMap.put(e, count == null ? 1 : count + 1);
         });

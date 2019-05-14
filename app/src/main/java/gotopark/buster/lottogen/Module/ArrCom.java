@@ -2,7 +2,6 @@ package gotopark.buster.lottogen.Module;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,10 +9,9 @@ import java.util.Map;
 public class ArrCom {
 
     public String comp(String[] args) {
-        List<String> list = Arrays.asList(args);
 
         Map<String, Integer> map = new HashMap<>();
-        for (String temp : list) {
+        for (String temp : args) {
             Integer count = map.get(temp);
             map.put(temp, (count == null) ? 1 : count + 1);
         }
@@ -23,7 +21,7 @@ public class ArrCom {
 
     private static String printMap(Map<String, Integer> map) {
 
-        String outPutString2 = "";
+        StringBuilder outPutString2 = new StringBuilder();
 
 
         List<List<String>> secondStrings = new ArrayList<>();
@@ -33,7 +31,7 @@ public class ArrCom {
             String outPutString1 = entry.getKey();
 
             if (entry.getValue() == 2) {
-                outPutString2 = outPutString2 + outPutString1 +"  " ;
+                outPutString2.append(outPutString1).append("  ");
                 secondStrings.add(makeArray(entry.getKey(), entry.getValue()));
 
             }
@@ -42,7 +40,7 @@ public class ArrCom {
 
 //        System.out.println(secondStrings.toString());
 
-        return outPutString2;
+        return outPutString2.toString();
     }
 
     private static List<String> makeArray(String key, Integer value) {
