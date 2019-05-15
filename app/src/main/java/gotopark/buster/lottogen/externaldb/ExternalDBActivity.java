@@ -1,7 +1,5 @@
 package gotopark.buster.lottogen.externaldb;
 
-import java.io.IOException;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -10,6 +8,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import java.io.IOException;
 
 import gotopark.buster.lottogen.R;
 
@@ -85,7 +85,7 @@ public class ExternalDBActivity extends Activity {
 		contentLog.append("\nDUMP\n");
 		int i = 0;
 		cur.moveToFirst();
-		while (cur.isAfterLast() == false) {
+		while (!cur.isAfterLast()) {
 			contentLog.append("(" + i++ + ")\t\t" + cur.getString(0) + "\t"
 					+ cur.getString(1) + "\t"
 					+ cur.getString(2) + "\t"
