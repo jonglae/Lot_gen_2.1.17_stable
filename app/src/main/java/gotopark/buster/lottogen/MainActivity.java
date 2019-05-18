@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -118,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
     int MultiClick;
     int randconut;
 
+    int tak, tok;
+    SoundPool soundpool;
+
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
     private Button.OnClickListener MDCT = new View.OnClickListener() {
@@ -134,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
+            soundpool.play(tak, 1, 1, 1, 0, 1);
 
             LotCOPY();
             ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
@@ -157,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button.OnClickListener EXIT = new View.OnClickListener() {
         public void onClick(View v) {
+            soundpool.play(tak, 1, 1, 1, 0, 1);
+
             onBackPressed();
 
 //리스트 뷰 테스트
@@ -170,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @SuppressLint("SetTextI18n")
         public void onClick(View arg0) {
+            soundpool.play(tak, 1, 1, 1, 0, 1);
+
             LotCOPY();
             String comText = getString(R.string.Main_text);
 
@@ -201,6 +211,7 @@ public class MainActivity extends AppCompatActivity {
         int millisec;
 
         public void onClick(View v) {
+            soundpool.play(tak, 1, 1, 1, 0, 1);
 
 //            MultiClick = Model.getClick();
 
@@ -223,6 +234,8 @@ public class MainActivity extends AppCompatActivity {
 
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
+                    soundpool.play(tak, 1, 1, 1, 0, 1);
+
                     text10.setText(" - 소수 분석중 - " + millisUntilFinished / 25 + "00ms 남았습니다.");
                     GenNumber();
                 }
@@ -253,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, ZXING_CAMERA_PERMISSION);
         } else {
+            soundpool.play(tok, 1, 1, 1, 0, 1);
 
             Show_front();
 
@@ -311,6 +325,9 @@ public class MainActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         backHandler = new BackProcessHandler(this);
 
+        soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        tak = soundpool.load(this, R.raw.short_click2, 1);
+        tok = soundpool.load(this, R.raw.click1_rebert1, 1);
 
         ConnectivityManager manager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         assert manager != null;
@@ -420,6 +437,8 @@ public class MainActivity extends AppCompatActivity {
         sw2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundpool.play(tak, 1, 1, 1, 0, 1);
+
                 if (sw2.isChecked()){
 
                     MultiClick = 1;
@@ -447,6 +466,8 @@ public class MainActivity extends AppCompatActivity {
         sw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundpool.play(tak, 1, 1, 1, 0, 1);
+
 
                 if (sw1.isChecked()) {
 
@@ -472,6 +493,8 @@ public class MainActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
+            soundpool.play(tok, 1, 1, 1, 0, 1);
+
 
             if (ClickCount == 0) {
 
@@ -500,6 +523,8 @@ public class MainActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
+            soundpool.play(tok, 1, 1, 1, 0, 1);
+
             Intent intent = new Intent(MainActivity.this, Main2Activity.class);
             startActivity(intent);
 

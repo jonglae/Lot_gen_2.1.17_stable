@@ -2,6 +2,8 @@ package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -37,6 +39,9 @@ public class Main2Activity extends AppCompatActivity {
     private DatabaseHelper db;
     private ArrCom arrcom;
 
+    int tak, tok;
+    SoundPool soundpool;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,11 @@ public class Main2Activity extends AppCompatActivity {
 
 //        Model model = new Model();
         arrcom = new ArrCom();
+
+
+        soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        tak = soundpool.load(this, R.raw.short_click2, 1);
+        tok = soundpool.load(this, R.raw.click1_rebert1, 1);
 
         db = new DatabaseHelper(this);
 
@@ -83,6 +93,8 @@ public class Main2Activity extends AppCompatActivity {
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, final int position) {
+                soundpool.play(tok, 1, 1, 1, 0, 1);
+
                 String[] ClickNum = new String[6];
                 String results = "";
 
@@ -215,6 +227,8 @@ public class Main2Activity extends AppCompatActivity {
                 if (which == 1) {
                     showNoteDialog(true, notesList.get(position), position);
                 } else {
+                    soundpool.play(tok, 1, 1, 1, 0, 1);
+
                     deleteNote(position);
                 }
             }
