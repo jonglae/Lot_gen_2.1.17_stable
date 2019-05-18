@@ -237,13 +237,13 @@
         android:layout_marginTop="-15dp"
         android:gravity="center_vertical"
         android:paddingLeft="50dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="14sp"
-        android:textStyle="bold"
         android:shadowColor="@android:color/background_dark"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="1.2"
+        android:textColor="#D84315"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:autoSizeMaxTextSize="16dp"
         app:autoSizeMinTextSize="12dp" />
 
