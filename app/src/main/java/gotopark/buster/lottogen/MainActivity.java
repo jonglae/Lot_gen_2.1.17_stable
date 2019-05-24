@@ -461,7 +461,7 @@ public class MainActivity extends AppCompatActivity {
         btn4.setOnClickListener(Lot_share);
         btn5.setOnClickListener(Lot_save);
         btn6.setOnClickListener(Lot_list);
-        btn6.setOnClickListener(Num_Choice);
+        btn7.setOnClickListener(Num_Choice);
         text10.setOnClickListener(MDCT);
 
 

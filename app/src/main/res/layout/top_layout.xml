@@ -226,18 +226,15 @@
             android:layout_width="wrap_content"
             android:layout_height="26dp"
             android:layout_marginLeft="2dp"
-            android:layout_marginTop="1dp"
             android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="@drawable/ripple_share"
             android:shadowColor="@android:color/background_dark"
-            android:shadowDx="7"
-            android:shadowDy="3"
-            android:shadowRadius="1.2"
             android:text="수동선택"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <Switch

@@ -145,7 +145,7 @@ public class Main3Activity extends AppCompatActivity {
                         pbnum = pbnum.replace("[", "");
                         pbnum = pbnum.replace("]", "");
 
-                        Card card = new Card(LottoCount + "St Number", pbnum, "", "", "", "");
+                        Card card = new Card(LottoCount + "번째번호 저장됐습니다.", pbnum, "", "", "", "");
                         old_pbnum = pbnum;
 
                         //DB 입력
