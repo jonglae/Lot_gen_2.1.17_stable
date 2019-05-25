@@ -28,8 +28,10 @@ import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.listview.Card;
 import gotopark.buster.lottogen.listview.OneCardAdapter;
 
+import static gotopark.buster.lottogen.R.array;
 import static gotopark.buster.lottogen.R.id;
 import static gotopark.buster.lottogen.R.layout;
+
 
 
 /**
@@ -62,7 +64,7 @@ public class Main3Activity extends AppCompatActivity {
 
 
         Resources sevenball = getResources();
-        String[] numbers = sevenball.getStringArray(id.lottoballs) ;
+        String[] numbers = sevenball.getStringArray(array.Lottoball) ;
 
         db = new DatabaseHelper(this);
 
@@ -86,7 +88,7 @@ public class Main3Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 selectedIndex = adapter.selectedPositions.indexOf(position);
 
-                if (selectedStrings.size() == 5) {
+                if (selectedStrings.size() == (MaxBall-1)) {
                     Click_true = 0;
                 }
 

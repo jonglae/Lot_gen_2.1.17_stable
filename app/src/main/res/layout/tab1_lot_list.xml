@@ -30,6 +30,15 @@
 			android:textSize="18sp"
 			android:textStyle="bold|italic" />
 
+		<View
+			android:id="@+id/divider4"
+			android:layout_width="match_parent"
+			android:layout_height="2dp"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:layout_weight="9.5"
+			android:background="@color/hint_enter_note" />
+
 		<TextView
 			android:id="@+id/line2"
 			android:layout_width="match_parent"
@@ -38,6 +47,13 @@
 			android:textColor="@android:color/black"
 			android:textSize="30sp"
 			android:textStyle="bold" />
+
+		<View
+			android:id="@+id/divider3"
+			android:layout_width="match_parent"
+			android:layout_height="2dp"
+			android:layout_weight="9.5"
+			android:background="#EF6C00" />
 
 	</LinearLayout>
 

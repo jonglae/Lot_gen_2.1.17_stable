@@ -75,12 +75,12 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/Line"
+        <View
+            android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="@drawable/ripple_share"
-            android:text="TextView" />
+            android:layout_weight="9.5"
+            android:background="#2E7D32" />
 
     </LinearLayout>
 
