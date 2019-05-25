@@ -1,6 +1,7 @@
 package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Build;
@@ -8,8 +9,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -21,6 +20,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import gotopark.buster.lottogen.SelectNum.GridItemView;
 import gotopark.buster.lottogen.SelectNum.GridViewAdapter;
@@ -28,7 +28,8 @@ import gotopark.buster.lottogen.database.DatabaseHelper;
 import gotopark.buster.lottogen.listview.Card;
 import gotopark.buster.lottogen.listview.OneCardAdapter;
 
-import static gotopark.buster.lottogen.R.*;
+import static gotopark.buster.lottogen.R.id;
+import static gotopark.buster.lottogen.R.layout;
 
 
 /**
@@ -40,24 +41,16 @@ public class Main3Activity extends AppCompatActivity {
     private ArrayList<String> selectedStrings;
     private DatabaseHelper db;
     private static final String TAG = "Main3Activity";
-    private RecyclerView mRecyclerView;
-    private static final String[] numbers = new String[]{
-            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-            "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-            "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
-            "31", "32", "33", "34", "35", "36", "37", "38", "39", "40",
-            "41", "42", "43", "44", "45"};
 
     public OneCardAdapter cardArrayAdapter;
     public ListView listView;
     int LottoCount = 0;
     GridViewAdapter adapter;
-    int IndexGesu = 1;
     int selectedIndex;
     int Click_true = 1;
 
     String pbnum;
-    String old_pbnum;
+    String old_pbnum="";
     int MaxBall = 6;
     int tak, tok;
     SoundPool soundpool;
@@ -67,6 +60,10 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
+
+        Resources sevenball = getResources();
+        String[] numbers = sevenball.getStringArray(id.lottoballs) ;
+
         db = new DatabaseHelper(this);
 
         GridView gridView = (GridView) findViewById(id.grid);
@@ -74,6 +71,8 @@ public class Main3Activity extends AppCompatActivity {
         selectedStrings = new ArrayList<>();
         listView = (ListView) findViewById(id.card_listView);
         cardArrayAdapter = new OneCardAdapter(getApplicationContext(), layout.tab1_lot_list);
+
+
         adapter = new GridViewAdapter(numbers, this);
         gridView.setAdapter(adapter);
 
@@ -85,11 +84,11 @@ public class Main3Activity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-
-
                 selectedIndex = adapter.selectedPositions.indexOf(position);
 
-                Log.d("====selectedIndex=====", String.valueOf(selectedIndex));
+                if (selectedStrings.size() == 5) {
+                    Click_true = 0;
+                }
 
                 if (selectedIndex > -1) {
                     soundpool.play(tok, 1, 1, 0, 0, 1);
@@ -98,14 +97,10 @@ public class Main3Activity extends AppCompatActivity {
                     ((GridItemView) v).display(false);
                     selectedStrings.remove((String) parent.getItemAtPosition(position));
 
-                    Log.d("====parent=====", (String) parent.getItemAtPosition(position));
-
-                    IndexGesu = IndexGesu - 1;
                 } else {
 
-                    if (IndexGesu > MaxBall) {
+                    if (selectedStrings.size() == MaxBall) {
 
-                        Click_true = 0;
                         Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_LONG).show();
 
                     } else {
@@ -114,39 +109,36 @@ public class Main3Activity extends AppCompatActivity {
                         adapter.selectedPositions.add(position);
                         ((GridItemView) v).display(true);
                         selectedStrings.add((String) parent.getItemAtPosition(position));
-                        IndexGesu = IndexGesu + 1;
                     }
 
 
                 }
-                Log.d("====IndexGesu=====", String.valueOf(IndexGesu));
-
-
             }
         });
 
 
         btnGo.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
                 soundpool.play(tok, 1, 1, 0, 0, 1);
 
                 pbnum = String.valueOf(selectedStrings);
 //
-                if (IndexGesu > MaxBall && Click_true == 0) {
-                    if (old_pbnum == pbnum) {
-
+                if (selectedStrings.size() == MaxBall   && Click_true == 0) {
+                    if (Objects.equals(old_pbnum, pbnum)) {
+                        Toast.makeText(getApplicationContext(), "Same Number", Toast.LENGTH_LONG).show();
 
                     } else {
                         LottoCount += 1;
 
-
+                        old_pbnum = pbnum;
                         pbnum = String.valueOf(selectedStrings);
                         pbnum = pbnum.replace("[", "");
                         pbnum = pbnum.replace("]", "");
 
                         Card card = new Card(LottoCount + "번째번호 저장됐습니다.", pbnum, "", "", "", "");
-                        old_pbnum = pbnum;
+
 
                         //DB 입력
                         db.insertNote(pbnum);
@@ -190,11 +182,3 @@ public class Main3Activity extends AppCompatActivity {
         finish();
     }
 }
-
-
-
-
-
-
-
-
