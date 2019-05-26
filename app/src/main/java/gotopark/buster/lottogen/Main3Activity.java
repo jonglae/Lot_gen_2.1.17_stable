@@ -72,7 +72,7 @@ public class Main3Activity extends AppCompatActivity {
         View btnGo = findViewById(id.button);
         selectedStrings = new ArrayList<>();
         listView = (ListView) findViewById(id.card_listView);
-        cardArrayAdapter = new OneCardAdapter(getApplicationContext(), layout.tab1_lot_list);
+        cardArrayAdapter = new OneCardAdapter(getApplicationContext(), layout.tab1_lot_list_2ball);
 
 
         adapter = new GridViewAdapter(numbers, this);

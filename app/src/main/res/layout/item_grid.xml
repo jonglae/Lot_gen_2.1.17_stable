@@ -6,16 +6,16 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="24dp"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:shadowColor="#4E0951"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="1.5"
-        android:textColor="@color/white"
-        android:textSize="25sp"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.3"
+        android:textColor="#9A1B98"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

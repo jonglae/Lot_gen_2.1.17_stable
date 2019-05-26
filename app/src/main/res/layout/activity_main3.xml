@@ -25,18 +25,16 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:layout_height="35dp"
             android:layout_marginTop="2dp"
-            android:layout_marginRight="8dp"
             android:background="@drawable/ripple_gen"
-            android:text="번호 선택 완료"
             android:shadowColor="@android:color/black"
             android:shadowDx="3"
             android:shadowDy="3"
             android:shadowRadius="1.2"
+            android:text="수동번호 선택완료(Touch)"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <GridView

@@ -23,6 +23,6 @@ public class GridItemView extends FrameLayout {
     }
 
     public void display(boolean isSelected) {
-        textView.setBackgroundResource(isSelected ? R.drawable.checkbox  : R.drawable.uncheckbox );
+        textView.setBackgroundResource(isSelected ? R.drawable.checked  : R.drawable.unchecked);
     }
 }

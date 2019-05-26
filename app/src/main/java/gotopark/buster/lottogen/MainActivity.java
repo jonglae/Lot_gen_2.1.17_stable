@@ -225,18 +225,18 @@ public class MainActivity extends AppCompatActivity {
             } else {
 
 
-                millisec = 50;
+                millisec = 20;
             }
 
             // 반복 회수 끝
 
-            CountDownTimer start = new CountDownTimer(millisec, 25) {
+            CountDownTimer start = new CountDownTimer(millisec, 10) {
 
                 @SuppressLint("SetTextI18n")
                 public void onTick(long millisUntilFinished) {
                     soundpool.play(tak, 1, 1, 1, 0, 1);
 
-                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 25 + "00ms 남았습니다.");
+                    text10.setText(" - 소수 분석중 - " + millisUntilFinished / 10 + "00ms 남았습니다.");
                     GenNumber();
                 }
 
