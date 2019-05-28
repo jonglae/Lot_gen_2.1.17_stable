@@ -477,7 +477,7 @@ public class MainActivity extends AppCompatActivity {
             soundpool.play(tok, 1, 1, 1, 0, 1);
             if (ClickCount == 0) {
                 LotCOPY();
-                db.insertColumn(ctextRlist, "", "");
+                db.insertColumn(ctextRlist, "", "자동번호");
                 ClickCount = 1;
                 String Mesg1 = "번호 저장 완료";
                 //The number has been saved.

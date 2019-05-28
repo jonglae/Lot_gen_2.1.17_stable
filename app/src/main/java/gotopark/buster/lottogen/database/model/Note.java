@@ -37,7 +37,7 @@ public class Note {
         this.id = id;
         this.note = note;
         this.alot = alot;
-        this.alot = magroup;
+        this.magroup = magroup;
         this.timestamp = timestamp;
     }
 

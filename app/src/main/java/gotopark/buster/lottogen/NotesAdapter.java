@@ -22,7 +22,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
@@ -76,14 +75,16 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Note note = notesList.get(position);
+
+//        if(!note.getMagroup().equals("자동번호") ) {
+        holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
+//        }
+
         holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
 
 
-
-        holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
         holder.MAgroup.setText(note.getMagroup());
-
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
 

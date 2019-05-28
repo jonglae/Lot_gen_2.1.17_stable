@@ -42,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
     private DatabaseHelper db;
     private ArrCom arrcom;
 
-    int tak, tok,trash;
+    int tak, tok, trash;
     SoundPool soundpool;
 
     @Override
@@ -66,7 +66,7 @@ public class Main2Activity extends AppCompatActivity {
         soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         tak = soundpool.load(this, R.raw.short_click2, 1);
         tok = soundpool.load(this, R.raw.click1_rebert1, 1);
-        trash = soundpool.load(this, R.raw.rashbin , 1);
+        trash = soundpool.load(this, R.raw.rashbin, 1);
 
         db = new DatabaseHelper(this);
 
@@ -148,28 +148,13 @@ public class Main2Activity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
-            soundpool.play(trash , 1, 1, 0, 0, 1);
-            for (int i = 0 ; i < db.getNotesCount();i++){
+            soundpool.play(trash, 1, 1, 0, 0, 1);
+            for (int i = 0; i < db.getNotesCount(); i++) {
                 soundpool.play(trash, 1, 1, 0, 0, 1);
-
-                ALL_delete(i);
-
+                deleteNote(i);
             }
-
         }
     };
-
-
-    private void ALL_delete(int position) {
-        // deleting the note from db
-        db.deleteNote(notesList.get(position));
-
-        // removing the note from the list
-        notesList.remove(position);
-        mAdapter.notifyItemRemoved(position);
-
-        toggleEmptyNotes();
-    }
 
 
     /**
