@@ -6,6 +6,7 @@ package gotopark.buster.lottogen;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -21,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
@@ -34,6 +36,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         TextView dot;
         TextView timestamp;
         TextView lstext1;
+        TextView MAgroup;
 
 
         MyViewHolder(View view) {
@@ -42,6 +45,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             note = view.findViewById(R.id.note);
             dot = view.findViewById(R.id.dot);
             lstext1 = view.findViewById(R.id.lsttxt1);
+            MAgroup = view.findViewById(R.id.MAgroup);
             timestamp = view.findViewById(R.id.timestamp);
         }
 
@@ -71,10 +75,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Note note = notesList.get(position);
 
+        Note note = notesList.get(position);
         holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
+
+
+        if(note.getMagroup().equals("수동선택 번호")) {
+            holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
+        }
+        
+        holder.MAgroup .setText(note.getMagroup());
 
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));

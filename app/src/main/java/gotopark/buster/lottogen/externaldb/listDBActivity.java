@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import gotopark.buster.lottogen.R;
 
+@SuppressLint("Registered")
 public class listDBActivity extends Activity {
 	private static final String TAG = "ExtDB";
 

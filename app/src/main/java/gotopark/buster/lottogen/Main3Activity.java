@@ -143,7 +143,7 @@ public class Main3Activity extends AppCompatActivity {
 
 
                         //DB 입력
-                        db.insertNote(pbnum);
+                        db.insertNote(pbnum,"수동선택 번호");
 
                         cardArrayAdapter.add(card);
                         listView.setAdapter(cardArrayAdapter);

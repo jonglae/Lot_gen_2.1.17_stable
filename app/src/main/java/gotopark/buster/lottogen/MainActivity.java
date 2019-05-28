@@ -502,7 +502,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LotCOPY();
 
-                db.insertColumn(ctextRlist, "");
+                db.insertColumn(ctextRlist, "","자동생성 번호");
 
                 ClickCount = 1;
 

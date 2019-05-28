@@ -138,10 +138,10 @@ public class Main2Activity extends AppCompatActivity {
      * Inserting new note in db
      * and refreshing the list
      */
-    private void createNote(String note, String alot) {
+    private void createNote(String note, String alot,String magroup) {
         // inserting note in db and getting
         // newly inserted note id
-        long id = db.insertColumn(note, alot);
+        long id = db.insertColumn(note, alot, magroup);
         // get the newly inserted note from db
         Note n = db.getNote(id);
 

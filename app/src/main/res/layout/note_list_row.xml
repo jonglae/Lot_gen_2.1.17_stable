@@ -36,6 +36,23 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/timestamp"
                 android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/MAgroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#585757"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="1.5"
+                android:text=""
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
