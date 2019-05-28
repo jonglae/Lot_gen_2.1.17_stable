@@ -3,11 +3,6 @@ package gotopark.buster.lottogen.qrCodeReader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-
-import gotopark.buster.lottogen.R;
 
 public class BaseScannerActivity extends AppCompatActivity {
 
