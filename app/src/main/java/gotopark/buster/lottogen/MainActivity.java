@@ -500,6 +500,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (ClickCount == 0) {
 
+
                 LotCOPY();
 
 

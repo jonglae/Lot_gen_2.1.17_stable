@@ -6,7 +6,8 @@
     android:background="@color/white"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    tools:ignore="UnusedAttribute">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +19,8 @@
             android:layout_height="30dp"
             android:layout_marginTop="-5dp"
             android:layout_marginBottom="-10dp"
-            android:paddingLeft="30dp">
+            android:paddingLeft="30dp"
+            tools:ignore="RtlHardcoded,RtlSymmetry">
 
             <TextView
                 android:id="@+id/dot"

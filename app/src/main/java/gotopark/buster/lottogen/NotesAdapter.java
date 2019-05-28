@@ -78,7 +78,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         Note note = notesList.get(position);
         holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
-        String magroup = note.getMagroup();
+
 
 
         holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
