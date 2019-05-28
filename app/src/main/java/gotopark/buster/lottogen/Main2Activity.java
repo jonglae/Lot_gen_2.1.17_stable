@@ -4,7 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
     private DatabaseHelper db;
     private ArrCom arrcom;
 
-    int tak, tok;
+    int tak, tok,trash;
     SoundPool soundpool;
 
     @Override
@@ -51,6 +54,7 @@ public class Main2Activity extends AppCompatActivity {
 //        CoordinatorLayout coordinatorLayout = findViewById(R.id.coordinator_layout);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         noNotesView = findViewById(R.id.empty_notes_view);
+        Button btn1 = findViewById(R.id.btn_clear);
 
         TextView toolbar = findViewById(R.id.saveTitle);
         toolbar.setText("로또 번호 저장 리스트");
@@ -62,8 +66,12 @@ public class Main2Activity extends AppCompatActivity {
         soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         tak = soundpool.load(this, R.raw.short_click2, 1);
         tok = soundpool.load(this, R.raw.click1_rebert1, 1);
+        trash = soundpool.load(this, R.raw.rashbin , 1);
 
         db = new DatabaseHelper(this);
+
+
+        btn1.setOnClickListener(fun_clear);
 
         notesList.addAll(db.getAllNotes());
 
@@ -133,6 +141,36 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
 
     }
+
+
+    public Button.OnClickListener fun_clear = new View.OnClickListener() {
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        @Override
+        public void onClick(View v) {
+            soundpool.play(trash , 1, 1, 0, 0, 1);
+            for (int i = 0 ; i < db.getNotesCount();i++){
+                soundpool.play(trash, 1, 1, 0, 0, 1);
+
+                ALL_delete(i);
+
+            }
+
+        }
+    };
+
+
+    private void ALL_delete(int position) {
+        // deleting the note from db
+        db.deleteNote(notesList.get(position));
+
+        // removing the note from the list
+        notesList.remove(position);
+        mAdapter.notifyItemRemoved(position);
+
+        toggleEmptyNotes();
+    }
+
 
     /**
      * Inserting new note in db

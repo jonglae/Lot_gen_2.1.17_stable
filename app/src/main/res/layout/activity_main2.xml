@@ -40,6 +40,15 @@
             android:background="#3A3939"
             tools:ignore="InefficientWeight" />
 
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_delete"
+            android:text="리스트지우기(여러번클릭)"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"

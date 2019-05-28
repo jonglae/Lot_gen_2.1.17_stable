@@ -439,19 +439,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 soundpool.play(tak, 1, 1, 1, 0, 1);
-
                 if (sw2.isChecked()) {
-
                     MultiClick = 1;
-//                Model.setClick(MultiClick);
-
                 } else {
-
                     MultiClick = 0;
-//                    Model.setClick(MultiClick);
-
                 }
-
             }
         });
 
@@ -464,60 +456,35 @@ public class MainActivity extends AppCompatActivity {
         btn7.setOnClickListener(Num_Choice);
         text10.setOnClickListener(MDCT);
 
-
         sw1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soundpool.play(tak, 1, 1, 1, 0, 1);
-
-
                 if (sw1.isChecked()) {
-
                     randconut = 1;
-
-
                 } else {
-
                     randconut = 0;
-
-
                 }
-
             }
         });
-
-
     }
 
-
     private Button.OnClickListener Lot_save = new View.OnClickListener() {
-
+        @SuppressLint("SetTextI18n")
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onClick(View v) {
             soundpool.play(tok, 1, 1, 1, 0, 1);
-
-
             if (ClickCount == 0) {
-
-
                 LotCOPY();
-
-
                 db.insertColumn(ctextRlist, "", "");
-
                 ClickCount = 1;
-
                 String Mesg1 = "번호 저장 완료";
-
                 //The number has been saved.
                 text10.setText(ctextRlist + " -> " + Mesg1);
                 Toast.makeText(MainActivity.this, Mesg1, Toast.LENGTH_SHORT).show();
-
             } else {
-
                 text10.setText("번호 생성 부터 해주세요");
-
             }
         }
     };
@@ -566,13 +533,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e("전면_Front_TEST =====> ", "=======================> OK");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
-
         mInterstitialAd.loadAd(adRequest);
-
 
     }
 
@@ -580,14 +544,10 @@ public class MainActivity extends AppCompatActivity {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         }
-
-
     }
-
 
     @Override
     public void onBackPressed() {
-
         BackProcessHandler.onBackPressed();
     }
 
@@ -865,7 +825,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-
     }
 }

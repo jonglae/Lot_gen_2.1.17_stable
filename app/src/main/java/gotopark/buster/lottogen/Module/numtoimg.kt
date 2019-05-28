@@ -30,7 +30,5 @@ class numtoimg {
         } else {
             Imgnum[4]
         }
-
     }
-
 }
