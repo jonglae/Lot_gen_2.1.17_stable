@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            MultiClick = Model.getClick();
 
-                            Log.d("====MultiClick====", String.valueOf(MultiClick));
+            Log.d("====MultiClick====", String.valueOf(MultiClick));
 
             if (MultiClick == 1) {
                 // 반복 회수 지정
@@ -440,12 +440,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 soundpool.play(tak, 1, 1, 1, 0, 1);
 
-                if (sw2.isChecked()){
+                if (sw2.isChecked()) {
 
                     MultiClick = 1;
 //                Model.setClick(MultiClick);
 
-            } else {
+                } else {
 
                     MultiClick = 0;
 //                    Model.setClick(MultiClick);
@@ -502,7 +502,8 @@ public class MainActivity extends AppCompatActivity {
 
                 LotCOPY();
 
-                db.insertColumn(ctextRlist, "","자동생성 번호");
+
+                db.insertColumn(ctextRlist, "", "");
 
                 ClickCount = 1;
 

@@ -75,17 +75,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
         Note note = notesList.get(position);
         holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
+        String magroup = note.getMagroup();
 
 
-        if(note.getMagroup().equals("수동선택 번호")) {
-            holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
-        }
-        
-        holder.MAgroup .setText(note.getMagroup());
+        holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
+        holder.MAgroup.setText(note.getMagroup());
 
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));
