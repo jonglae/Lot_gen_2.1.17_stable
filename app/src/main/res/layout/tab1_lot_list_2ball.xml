@@ -33,160 +33,111 @@
 			android:layout_weight="9.5"
 			android:background="@color/hint_enter_note" />
 
-		<FrameLayout
+		<LinearLayout
+			android:id="@+id/Rtext"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal">
+			android:layout_gravity="center_horizontal"
+			android:layout_marginTop="4dp"
+			android:orientation="horizontal"
+			tools:ignore="DuplicateIds">
 
-			<LinearLayout
-				android:id="@+id/Rball"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
+			<TextView
+				android:id="@+id/Rtext1"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_marginRight="2dp"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall1"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1" />
+			<TextView
+				android:id="@+id/Rtext2"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_marginRight="2dp"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall2"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1" />
+			<TextView
+				android:id="@+id/Rtext3"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_marginRight="2dp"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall3"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1" />
+			<TextView
+				android:id="@+id/Rtext4"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_marginRight="2dp"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall4"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1" />
+			<TextView
+				android:id="@+id/Rtext5"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_marginRight="2dp"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall5"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1" />
+			<TextView
+				android:id="@+id/Rtext6"
+				android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:gravity="center"
+				android:layout_weight="1"
+				android:shadowColor="@android:color/black"
+				android:shadowDx="4"
+				android:shadowDy="4"
+				android:shadowRadius="1.4"
+				android:textAlignment="center"
+				android:textColor="@android:color/white"
+				android:textSize="20sp"
+				android:textStyle="bold" />
 
-				<ImageView
-					android:id="@+id/RBall6"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_weight="1" />
-
-			</LinearLayout>
-
-			<LinearLayout
-				android:id="@+id/Rtext"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginTop="4dp"
-				android:orientation="horizontal"
-				tools:ignore="DuplicateIds">
-
-				<TextView
-					android:id="@+id/Rtext1"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-				<TextView
-					android:id="@+id/Rtext2"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-				<TextView
-					android:id="@+id/Rtext3"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-				<TextView
-					android:id="@+id/Rtext4"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-				<TextView
-					android:id="@+id/Rtext5"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_marginRight="2dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-				<TextView
-					android:id="@+id/Rtext6"
-					android:layout_width="40dp"
-					android:layout_height="40dp"
-					android:layout_weight="1"
-					android:shadowColor="@android:color/black"
-					android:shadowDx="4"
-					android:shadowDy="4"
-					android:shadowRadius="1.4"
-					android:textAlignment="center"
-					android:textColor="@android:color/white"
-					android:textSize="20sp"
-					android:textStyle="bold" />
-
-			</LinearLayout>
-
-		</FrameLayout>
+		</LinearLayout>
 
 		<View
 			android:id="@+id/divider6"

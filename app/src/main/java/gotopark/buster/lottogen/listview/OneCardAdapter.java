@@ -105,14 +105,6 @@ OneCardAdapter extends ArrayAdapter<Card> {
             viewHolder.Rtext5 = (TextView) row.findViewById(R.id.Rtext5);
             viewHolder.Rtext6 = (TextView) row.findViewById(R.id.Rtext6);
 
-            viewHolder.Rball1 = (ImageView) row.findViewById(R.id.RBall1);
-            viewHolder.Rball2 = (ImageView) row.findViewById(R.id.RBall2);
-            viewHolder.Rball3 = (ImageView) row.findViewById(R.id.RBall3);
-            viewHolder.Rball4 = (ImageView) row.findViewById(R.id.RBall4);
-            viewHolder.Rball5 = (ImageView) row.findViewById(R.id.RBall5);
-            viewHolder.Rball6 = (ImageView) row.findViewById(R.id.RBall6);
-
-
 
             row.setTag(viewHolder);
 
@@ -163,12 +155,12 @@ OneCardAdapter extends ArrayAdapter<Card> {
         viewHolder.Rtext5.setText(Lotnum[4]);
         viewHolder.Rtext6.setText(Lotnum[5]);
 
-        viewHolder.Rball1.setImageResource(dball1);
-        viewHolder.Rball2.setImageResource(dball2);
-        viewHolder.Rball3.setImageResource(dball3);
-        viewHolder.Rball4.setImageResource(dball4);
-        viewHolder.Rball5.setImageResource(dball5);
-        viewHolder.Rball6.setImageResource(dball6);
+        viewHolder.Rtext1.setBackgroundResource(dball1);
+        viewHolder.Rtext2.setBackgroundResource(dball2);
+        viewHolder.Rtext3.setBackgroundResource(dball3);
+        viewHolder.Rtext4.setBackgroundResource(dball4);
+        viewHolder.Rtext5.setBackgroundResource(dball5);
+        viewHolder.Rtext6.setBackgroundResource(dball6);
 
         Log.e(TAG,"================>"+card.getLine2());
 //
