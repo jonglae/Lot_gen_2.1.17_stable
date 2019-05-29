@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -138,8 +139,10 @@ public class Main3Activity extends AppCompatActivity {
                         pbnum = String.valueOf(selectedStrings);
                         pbnum = pbnum.replace("[", "");
                         pbnum = pbnum.replace("]", "");
+                                        Log.d("====sumnum====", pbnum);
 
                         Card card = new Card(LottoCount + "번째번호 저장됐습니다.", pbnum, "", "", "", "");
+                        pbnum = pbnum.replace(" ", "");
 
 
                         //DB 입력

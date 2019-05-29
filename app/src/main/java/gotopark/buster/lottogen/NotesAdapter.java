@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import gotopark.buster.lottogen.Module.numtoimg;
 import gotopark.buster.lottogen.database.model.Note;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder> {
@@ -37,6 +38,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
         TextView lstext1;
         TextView MAgroup;
 
+        TextView Rtext1;
+        TextView Rtext2;
+        TextView Rtext3;
+        TextView Rtext4;
+        TextView Rtext5;
+        TextView Rtext6;
 
         MyViewHolder(View view) {
             super(view);
@@ -46,6 +53,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
             lstext1 = view.findViewById(R.id.lsttxt1);
             MAgroup = view.findViewById(R.id.MAgroup);
             timestamp = view.findViewById(R.id.timestamp);
+
+            Rtext1 = view.findViewById(R.id.Rtext1);
+            Rtext2 = view.findViewById(R.id.Rtext2);
+            Rtext3 = view.findViewById(R.id.Rtext3);
+            Rtext4 = view.findViewById(R.id.Rtext4);
+            Rtext5 = view.findViewById(R.id.Rtext5);
+            Rtext6 = view.findViewById(R.id.Rtext6);
+
         }
 
         @RequiresApi(api = Build.VERSION_CODES.N)
@@ -74,16 +89,51 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        numtoimg NumtoI = new numtoimg();
+
+        int dball1;
+        int dball2;
+        int dball3;
+        int dball4;
+        int dball5;
+        int dball6;
+
         Note note = notesList.get(position);
 
+
+        String[] res = note.getNote().split(",");
+
+
+
+        dball1 = NumtoI.Numimg(Integer.parseInt(res[0]));
+        dball2 = NumtoI.Numimg(Integer.parseInt(res[1]));
+        dball3 = NumtoI.Numimg(Integer.parseInt(res[2]));
+        dball4 = NumtoI.Numimg(Integer.parseInt(res[3]));
+        dball5 = NumtoI.Numimg(Integer.parseInt(res[4]));
+        dball6 = NumtoI.Numimg(Integer.parseInt(res[5]));
+
+        holder.Rtext1.setText(res[0]);
+        holder.Rtext2.setText(res[1]);
+        holder.Rtext3.setText(res[2]);
+        holder.Rtext4.setText(res[3]);
+        holder.Rtext5.setText(res[4]);
+        holder.Rtext6.setText(res[5]);
 //        if(!note.getMagroup().equals("자동번호") ) {
         holder.MAgroup.setTextColor(Color.parseColor("#42A02B"));
 //        }
 
-        holder.note.setText(note.getNote());
+
+
+        holder.Rtext1.setBackgroundResource(dball1);
+        holder.Rtext2.setBackgroundResource(dball2);
+        holder.Rtext3.setBackgroundResource(dball3);
+        holder.Rtext4.setBackgroundResource(dball4);
+        holder.Rtext5.setBackgroundResource(dball5);
+        holder.Rtext6.setBackgroundResource(dball6);
+
+
+//        holder.note.setText(note.getNote());
         holder.lstext1.setText(note.getAlot());
-
-
         holder.MAgroup.setText(note.getMagroup());
         // Displaying dot from HTML character code
         holder.dot.setText(Html.fromHtml("&#8226;"));

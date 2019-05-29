@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
         ctext6 = Balltxt6.getText().toString();
 
 
-        ctextRlist = ctext1 + ", " + ctext2 + ", " + ctext3 + ", " + ctext4 + ", " + ctext5 + ", " + ctext6;
+        ctextRlist = ctext1 + "," + ctext2 + "," + ctext3 + "," + ctext4 + "," + ctext5 + "," + ctext6;
 
         ctextR = App_Share + ctextRlist + "\n\n" + App_links1;
 
