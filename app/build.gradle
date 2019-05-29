@@ -48,7 +48,6 @@ dependencies {
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
     implementation 'gun0912.ted:tedadmobdialog:1.0.5'
     implementation 'com.google.firebase:firebase-ads:17.2.1'
-    implementation 'com.google.android.gms:play-services-ads:17.2.1'
     testImplementation 'org.testng:testng:6.9.6'
     testImplementation 'org.junit.platform:junit-platform-gradle-plugin:1.0.0-M3'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.0.0-M3'
