@@ -66,7 +66,7 @@ public class Main2Activity extends AppCompatActivity {
         soundpool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         tak = soundpool.load(this, R.raw.short_click2, 1);
         tok = soundpool.load(this, R.raw.click1_rebert1, 1);
-        trash = soundpool.load(this, R.raw.rashbin, 1);
+        trash = soundpool.load(this, R.raw.trashbin, 1);
 
         db = new DatabaseHelper(this);
 
