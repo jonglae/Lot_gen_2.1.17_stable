@@ -338,7 +338,6 @@ public class MainActivity extends AppCompatActivity {
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
 
-            new LotonumCall().execute();
             Admob_is();
             Admob_Front();
             BackProcessHandler.AnRate();
@@ -363,6 +362,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
+
+        new LotonumCall().execute();
 
         text1 = findViewById(R.id.text1);
         text10 = findViewById(R.id.text10);
@@ -657,7 +658,7 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 Document document = Jsoup.connect(url)
-                        .timeout(10000)
+                        .timeout(0)
                         .get();
 
 
