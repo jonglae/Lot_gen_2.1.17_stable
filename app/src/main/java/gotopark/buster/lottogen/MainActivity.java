@@ -540,8 +540,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //버젼 ver : 1.0
     public void Show_front() {
-        if (mInterstitialAd.isLoaded()) {
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         }
     }

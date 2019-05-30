@@ -107,25 +107,35 @@ public class Main2Activity extends AppCompatActivity {
                 String results = "";
 
                 //이번주 로또 넘버
-                String[] thisWeekNum = Week_sixnum(Model.getWeeknum());
-                String thisBonusNum = bonus_num(Model.getWeeknum());
 
-                // 클릭한 넘버 가저와 어레이에 넣기
-                Note n = notesList.get(position);
-                String mlotnum = n.getNote();
-                mlotnum = mlotnum.replace(" ", "");
-                ClickNum = mlotnum.split(",");
+                if (Model.getWeeknum() == null) {
 
-                //중복 check 메소드
-                results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
+                    Toast.makeText(Main2Activity.this, "Wifi or Internet", Toast.LENGTH_SHORT).show();
 
-                if (results.equals("")) {
-                    updateNote2("이번 회차와 맞는번호 없습니다.", position);
-                    Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
                 } else {
+                    String[] thisWeekNum = Week_sixnum(Model.getWeeknum());
 
-                    Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
-                    updateNote2("당첨번호:" + results + "보너스:" + thisBonusNum, position);
+
+                    String thisBonusNum = bonus_num(Model.getWeeknum());
+
+                    // 클릭한 넘버 가저와 어레이에 넣기
+                    Note n = notesList.get(position);
+                    String mlotnum = n.getNote();
+                    mlotnum = mlotnum.replace(" ", "");
+                    ClickNum = mlotnum.split(",");
+
+                    //중복 check 메소드
+                    results = arrcom.comp(ArrCom.concatenate(thisWeekNum, ClickNum));
+
+                    if (results.equals("")) {
+                        updateNote2("이번 회차와 맞는번호 없습니다.", position);
+                        Toast.makeText(Main2Activity.this, "꽝 입니다!!", Toast.LENGTH_SHORT).show();
+                    } else {
+
+                        Toast.makeText(Main2Activity.this, results, Toast.LENGTH_SHORT).show();
+                        updateNote2("당첨번호:" + results + "보너스:" + thisBonusNum, position);
+                    }
+
                 }
             }
 
