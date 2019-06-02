@@ -10,11 +10,11 @@
         android:layout_height="35dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:shadowColor="#4E0951"
+        android:shadowColor="#000000"
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="1.3"
-        android:textColor="#9A1B98"
+        android:textColor="#9EEF6C00"
         android:textSize="20sp"
         android:textStyle="bold" />
 

@@ -70,7 +70,10 @@ public class Main3Activity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         GridView gridView = (GridView) findViewById(id.grid);
+
         View btnGo = findViewById(id.button);
+        View btnClear = findViewById(id.button2);
+
         selectedStrings = new ArrayList<>();
         listView = (ListView) findViewById(id.card_listView);
         cardArrayAdapter = new OneCardAdapter(getApplicationContext(), layout.tab1_lot_list_2ball);
@@ -119,6 +122,18 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onClick(View v) {
+                soundpool.play(tok, 1, 1, 0, 0, 1);
+
+                adapter.selectedPositions.clear();
+                selectedStrings.clear();
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         btnGo.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
