@@ -84,7 +84,7 @@ OneCardAdapter extends ArrayAdapter<Card> {
 
             LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             assert inflater != null;
-            row = inflater.inflate(R.layout.tab1_lot_list_2ball, parent, false);
+            row = inflater.inflate(R.layout.tab1_lot_list, parent, false);
             viewHolder = new CardViewHolder();
 
             viewHolder.line1 = (TextView) row.findViewById(R.id.line1);

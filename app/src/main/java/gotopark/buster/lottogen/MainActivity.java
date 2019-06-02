@@ -26,7 +26,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -82,22 +81,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView Rtext6;
     private TextView Rtext7;
     private TextView Rtext8;
-
-    private ImageView Ballimg1;
-    private ImageView Ballimg2;
-    private ImageView Ballimg3;
-    private ImageView Ballimg4;
-    private ImageView Ballimg5;
-    private ImageView Ballimg6;
-
-    private ImageView RBall1;
-    private ImageView RBall2;
-    private ImageView RBall3;
-    private ImageView RBall4;
-    private ImageView RBall5;
-    private ImageView RBall6;
-    private ImageView RBall7;
-    private ImageView RBall8;
 
     private TextView Rtilte;
     private TextView Resultwin1;
@@ -375,6 +358,12 @@ public class MainActivity extends AppCompatActivity {
         Balltxt5 = findViewById(R.id.balltext5);
         Balltxt6 = findViewById(R.id.balltext6);
 
+        Balltxt1.setBackgroundResource(R.drawable.ball1);
+        Balltxt2.setBackgroundResource(R.drawable.ball2);
+        Balltxt3.setBackgroundResource(R.drawable.ball3);
+        Balltxt4.setBackgroundResource(R.drawable.ball4);
+        Balltxt5.setBackgroundResource(R.drawable.ball5);
+        Balltxt6.setBackgroundResource(R.drawable.ball6);
 
         Rtext1 = findViewById(R.id.Rtext1);
         Rtext2 = findViewById(R.id.Rtext2);
@@ -393,28 +382,6 @@ public class MainActivity extends AppCompatActivity {
         Button btn5 = findViewById(R.id.button5);
         Button btn6 = findViewById(R.id.button6);
         Button btn7 = findViewById(R.id.button7);
-
-
-        Ballimg1 = findViewById(R.id.ballimage1);
-        Ballimg2 = findViewById(R.id.ballimage2);
-        Ballimg3 = findViewById(R.id.ballimage3);
-        Ballimg4 = findViewById(R.id.ballimage4);
-        Ballimg5 = findViewById(R.id.ballimage5);
-        Ballimg6 = findViewById(R.id.ballimage6);
-
-
-        //========================================================================
-
-        RBall1 = findViewById(R.id.RBall1);
-        RBall2 = findViewById(R.id.RBall2);
-        RBall3 = findViewById(R.id.RBall3);
-        RBall4 = findViewById(R.id.RBall4);
-        RBall5 = findViewById(R.id.RBall5);
-        RBall6 = findViewById(R.id.RBall6);
-        RBall7 = findViewById(R.id.RBall7);
-        RBall8 = findViewById(R.id.RBall8);
-
-        //========================================================================
 
         Rtilte = findViewById(R.id.rtitle);
         Resultwin1 = findViewById(R.id.winText1);
@@ -598,15 +565,13 @@ public class MainActivity extends AppCompatActivity {
         Balltxt5.setText(String.valueOf(res[4]));
         Balltxt6.setText(String.valueOf(res[5]));
 
-        Ballimg1.setImageResource(dball1);
-        Ballimg2.setImageResource(dball2);
-        Ballimg3.setImageResource(dball3);
-        Ballimg4.setImageResource(dball4);
-        Ballimg5.setImageResource(dball5);
-        Ballimg6.setImageResource(dball6);
-
+        Balltxt1.setBackgroundResource(dball1);
+        Balltxt2.setBackgroundResource(dball2);
+        Balltxt3.setBackgroundResource(dball3);
+        Balltxt4.setBackgroundResource(dball4);
+        Balltxt5.setBackgroundResource(dball5);
+        Balltxt6.setBackgroundResource(dball6);
     }
-
 
     @SuppressLint("StaticFieldLeak")
     public class LotonumCall extends AsyncTask<Void, Void, Void> {
@@ -782,13 +747,7 @@ public class MainActivity extends AppCompatActivity {
                 Resultwin3.setText(Cpriz_data);
 
 
-                RBall1.setImageResource(dball1);
-                RBall2.setImageResource(dball2);
-                RBall3.setImageResource(dball3);
-                RBall4.setImageResource(dball4);
-                RBall5.setImageResource(dball5);
-                RBall6.setImageResource(dball6);
-                RBall8.setImageResource(dball8);
+
 
 
                 // 당첨 번호 표시
@@ -800,6 +759,15 @@ public class MainActivity extends AppCompatActivity {
                 Rtext6.setText(String.valueOf(lotto_num[5]));
                 Rtext7.setText("+");
                 Rtext8.setText(String.valueOf(lotto_num[6]));
+
+
+                Rtext1.setBackgroundResource(dball1);
+                Rtext2.setBackgroundResource(dball2);
+                Rtext3.setBackgroundResource(dball3);
+                Rtext4.setBackgroundResource(dball4);
+                Rtext5.setBackgroundResource(dball5);
+                Rtext6.setBackgroundResource(dball6);
+                Rtext8.setBackgroundResource(dball8);
 
 
                 // 당첨된 번호 랜덤 번호 생성 부분에 표시
