@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="2dp"
             android:background="#328D8C8C"
             android:gravity="center_horizontal"
             android:horizontalSpacing="2dp"
@@ -77,8 +77,8 @@
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="2dp"
             android:background="#FF8F00" />
 
         <ListView
