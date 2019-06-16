@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public String ctextR, ctextRlist;
-    String SUM_lotto_num;
-    String LotDate;
+
     int ClickCount = 0;
 
     int MultiClick;
@@ -110,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
             soundpool.play(tak, 1, 1, 1, 0, 1);
 
             LotCOPY();
-            ctextR = ctextR + "\n" + "추첨일 : " + LotDate;
-            ctextR = ctextR + "\n" + SUM_lotto_num + "\n" + getString(R.string.twiter_CH);
+            ctextR = ctextR + "\n" + "추첨일 : " + Jsoup_Lotto.LotDate;
+            ctextR = ctextR + "\n" + Jsoup_Lotto.SUM_lotto_num + "\n" + getString(R.string.twiter_CH);
 
 
             String comText = Balltxt1.getText().toString();

@@ -18,15 +18,16 @@ import javax.net.ssl.SSLContext
 import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
-
 @SuppressLint("StaticFieldLeak")
 // 메인 엑티비티 텍스트 표시 접근
 class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
     // 메인 엑티비티 텍스트 표시 접근
     companion object {
+
         // 메인 엑티비티 텍스트 표시 접근
         lateinit var activity: MainActivity
-
+        lateinit var SUM_lotto_num: String
+        lateinit var LotDate: String
     }
 
     init {
@@ -106,9 +107,12 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
 
         var lotto_num=arrayOfNulls<String>(7)
         val LotCount: String
-        //            String LotDate;
         var LotWin: String
         var prize_data: String
+        val SUM_lotto_num1: String
+
+
+
         if (tiTle != null) {
 
             var KoLotto=""
@@ -121,7 +125,7 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
 
             KoLotto=KoLotto.substring(1)
             lotto_num=KoLotto.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            val SUM_lotto_num1=lotto_num[0] + ", " +
+            SUM_lotto_num1=lotto_num[0] + ", " +
                     lotto_num[1] + ", " +
                     lotto_num[2] + ", " +
                     lotto_num[3] + ", " +
@@ -129,11 +133,11 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
                     lotto_num[5]
 
 
-            var SUM_lotto_num=SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6]
+            SUM_lotto_num=SUM_lotto_num1 + "\n보너스 번호 :" + lotto_num[6]
 
 
             LotCount=F10.toString().replace("\\<.*?>".toRegex(), "")
-            val LotDate=F11.toString().replace("\\<.*?>".toRegex(), "")
+            LotDate=F11.toString().replace("\\<.*?>".toRegex(), "")
 
             // 로또 당첨 등수
             LotWin=F13.toString().replace("\\<.*?>".toRegex(), "")

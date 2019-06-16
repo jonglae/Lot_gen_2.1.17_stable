@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">로또 번호 발생기</string>
+    <string name="app_name">로또명언</string>
     <string name="action_settings">Settings</string>
 
     <string name="info_net2">!인터넷 통신 문제가 있습니다!</string>
@@ -22,7 +22,6 @@
     <string name="scr_text2">❤ 대박 나세요 ❤</string>
     <string name="Popup_Mesg1">대박나세요~ 죵료 하시겠습니까?</string>
     <string name="Popup_Mesg2">길게 누루면 번호 삭제 할 수 있습니다.</string>
-
 
     <string name="banner_ad_unit_id">ca-app-pub-5187489598351901/4438118635</string>
     <string name="google_app_id">1:164039908410:android:8a1be41608f2c08e</string>
@@ -52,9 +51,7 @@
     <string name="cancel_button">Cancel</string>
     <string name="scan_Meg1">녹색 박스를 로또 QR-Code 맞춰주세요 \n 그렇게 가까이 안되도 됩니다.</string>
     <string name="scan_Meg2">당첨 축하 드립니다.</string>
-
     <bool name="cameraPreviewShouldFillView">true</bool>
-
 
     <string name="jsoup_q1">#latest_draw</string>
     <string name="jsoup_q2">#latest_date</string>
@@ -62,7 +59,6 @@
     <string name="jsoup_q4">#latest_divisions .divisions</string>
     <string name="jsoup_q5">.upcoming .info</string>
     <string name="jsoup_q6">.upcoming .prize-data</string>
-
 
     //network Error Message
     <string name="net_Info1">네트웍 Error!</string>
@@ -75,7 +71,6 @@
     <string name="scr_EXIT_Mesg2">광고 보고 나가기</string>
     <string name="scr_EXIT_Mesg3">나가기</string>
     <string name="select_list">리스트를 길게 클릭 하면 지울 수 있습니다.</string>
-
 
     //Note String
     <string name="activity_title_home">Notes</string>
