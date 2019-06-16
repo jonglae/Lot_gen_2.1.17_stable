@@ -37,7 +37,7 @@
                 android:shadowDx="3"
                 android:shadowDy="3"
                 android:shadowRadius="1.2"
-                android:text="수동번호 선택완료(Touch)"
+                android:text="수동번호 선택완료(확인)"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />

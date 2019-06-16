@@ -4,7 +4,6 @@ class Model {
 
 
     private static int click;
-    private static  String Sum_num;
     private static String[] Weeknum;
 
 
