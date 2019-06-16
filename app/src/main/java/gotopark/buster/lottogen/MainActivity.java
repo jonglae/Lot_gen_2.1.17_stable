@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int ZXING_CAMERA_PERMISSION = 1;
 
+    @SuppressLint("StaticFieldLeak")
     public static Context CONTEXT;
 
     private Button.OnClickListener MDCT = new View.OnClickListener() {
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 text1.append(getString(R.string.app_Das));
 
             } else {
-                BackProcessHandler.ClipsBoards();
+                BackProcessHandler.Companion.ClipsBoards();
 
             }
         }
@@ -214,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                     count = count + 1;
 
                     if (count == primeWord) {
-                        String saywords = BackProcessHandler.frontSay();
+                        String saywords = BackProcessHandler.Companion.frontSay();
                         text1.setText(saywords);
                         count = 0;
                         primeWord = rand.nextInt(11) + 3;
@@ -234,20 +235,14 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.CAMERA}, ZXING_CAMERA_PERMISSION);
         } else {
             soundpool.play(tok, 1, 1, 1, 0, 1);
-
             Show_front();
-
             Intent intent = new Intent(this, clss);
             startActivity(intent);
-
         }
-
-
     }
 
     public void launchFullFragmentActivity(View v) {
         launchActivity(FullScannerFragmentActivity.class);
-
     }
 
 
@@ -270,27 +265,17 @@ public class MainActivity extends AppCompatActivity {
         ctext5 = Balltxt5.getText().toString();
         ctext6 = Balltxt6.getText().toString();
 
-
         ctextRlist = ctext1 + "," + ctext2 + "," + ctext3 + "," + ctext4 + "," + ctext5 + "," + ctext6;
-
         ctextR = App_Share + ctextRlist + "\n\n" + App_links1;
-
     }
-
-
     // MDCT  클릭시 브라우저 실행 url  이동하여 보여준다.
-
     @SuppressLint("CutPasteId")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         CONTEXT = this;
-
         model = new Model();
-
         db = new DatabaseHelper(this);
         backHandler = new BackProcessHandler(this);
 
@@ -306,21 +291,15 @@ public class MainActivity extends AppCompatActivity {
 
         // wifi 또는 모바일 네트워크 어느 하나라도 연결이 되어있다면,
         if (wifi.isConnected() || mobile.isConnected()) {
-
             Admob_is();
             Admob_Front();
-            BackProcessHandler.AnRate();
-
-
+            BackProcessHandler.Companion.AnRate();
         } else {
-
             AlertDialog.Builder ad = new AlertDialog.Builder(MainActivity.this);
             {
-
                 ad.setTitle(getString(R.string.info_net1));
                 ad.setMessage(getString(R.string.info_net2));
                 ad.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.dismiss();
@@ -328,11 +307,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 ad.show();
-
             }
         }
-
-//        new LotonumCall().execute();
 
         text1 = findViewById(R.id.text1);
         text10 = findViewById(R.id.text10);
@@ -360,7 +336,6 @@ public class MainActivity extends AppCompatActivity {
         Rtext7 = findViewById(R.id.Rtext7);
         Rtext8 = findViewById(R.id.Rtext8);
 
-
         Button btn1 = findViewById(R.id.button1);
         Button btn2 = findViewById(R.id.button2);
         Button btn3 = findViewById(R.id.button3);
@@ -377,11 +352,6 @@ public class MainActivity extends AppCompatActivity {
         sw1 = findViewById(R.id.switch1);
         sw2 = findViewById(R.id.switch2);
 
-        /*
-         *
-         * 시작시 메세지 출력
-         *
-         * */
         String versionCode = BuildConfig.VERSION_NAME;
         String App_Mame = getString(R.string.app_name);
         text1.setText(getString(R.string.info_Mess));
@@ -473,9 +443,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public void Admob_is() {
-
         AdView mAdView = findViewById(R.id.adView);
         MobileAds.initialize(getApplicationContext(), getString(R.string.google_banner_id));
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -491,7 +459,6 @@ public class MainActivity extends AppCompatActivity {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mInterstitialAd.loadAd(adRequest);
-
     }
 
     //버젼 ver : 1.0
@@ -503,7 +470,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        BackProcessHandler.onBackPressed();
+        BackProcessHandler.Companion.onBackPressed();
     }
 
 
@@ -558,7 +525,6 @@ public class MainActivity extends AppCompatActivity {
         Balltxt5.setBackgroundResource(dball5);
         Balltxt6.setBackgroundResource(dball6);
     }
-
 
     @Override
     protected void onStart() {
