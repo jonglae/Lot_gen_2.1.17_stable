@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
+import androidx.fragment.app.DialogFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 public class MessageDialogFragment extends DialogFragment {
 
     public interface MessageDialogListener {
-        public void onDialogPositiveClick(android.support.v4.app.DialogFragment dialog);
+        public void onDialogPositiveClick(DialogFragment dialog);
     }
 
     private String mTitle;

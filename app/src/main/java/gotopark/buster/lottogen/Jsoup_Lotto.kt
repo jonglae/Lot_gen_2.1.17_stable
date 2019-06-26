@@ -183,13 +183,13 @@ class Jsoup_Lotto(context: Activity) : AsyncTask<Void, Void?, Void?>() {
             val NumtoI2=numtoimg2()
 
 
-            res[0]=Integer.parseInt(lotto_num[0])
-            res[1]=Integer.parseInt(lotto_num[1])
-            res[2]=Integer.parseInt(lotto_num[2])
-            res[3]=Integer.parseInt(lotto_num[3])
-            res[4]=Integer.parseInt(lotto_num[4])
-            res[5]=Integer.parseInt(lotto_num[5])
-            res[6]=Integer.parseInt(lotto_num[6])
+            res[0]=Integer.parseInt(lotto_num[0].toString())
+            res[1]=Integer.parseInt(lotto_num[1].toString())
+            res[2]=Integer.parseInt(lotto_num[2].toString())
+            res[3]=Integer.parseInt(lotto_num[3].toString())
+            res[4]=Integer.parseInt(lotto_num[4].toString())
+            res[5]=Integer.parseInt(lotto_num[5].toString())
+            res[6]=Integer.parseInt(lotto_num[6].toString())
 
             Model.setWeeknum(lotto_num)
 

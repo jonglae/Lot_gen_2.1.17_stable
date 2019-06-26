@@ -1,8 +1,7 @@
 package gotopark.buster.lottogen.qrCodeReader;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import androidx.appcompat.app.ActionBar;
 
 import gotopark.buster.lottogen.R;
 

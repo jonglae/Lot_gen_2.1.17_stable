@@ -83,9 +83,9 @@ internal class BackProcessHandler(context: Activity) {
 
             val msg=Intent(Intent.ACTION_SEND)
             msg.addCategory(Intent.CATEGORY_DEFAULT)
-            msg.putExtra(Intent.EXTRA_SUBJECT, "동행복권 로또 넘버")
+            msg.putExtra(Intent.EXTRA_SUBJECT, "동행복권 로또넘버")
             msg.putExtra(Intent.EXTRA_TEXT, activity.ctextR)
-            msg.putExtra(Intent.EXTRA_TITLE, "#동행복권 로또 넘버")
+            msg.putExtra(Intent.EXTRA_TITLE, "#동행복권 로또넘버")
             msg.type="text/plain"
             activity.startActivity(Intent.createChooser(msg, "Share"))
         }

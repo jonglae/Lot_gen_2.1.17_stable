@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Lot_Gen.iml" filepath="$PROJECT_DIR$/Lot_Gen.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Lot_gen_2.1.17_stable.iml" filepath="$PROJECT_DIR$/Lot_gen_2.1.17_stable.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
