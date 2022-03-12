@@ -23,3 +23,6 @@ https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000723837
 감사합니다.<BR>
 
 https://opensea.io/collection/ggedori
+
+수정하셔서 앱스통에 디플로이 하는 것은 가능하나<br>
+마지막으로 수정하여 소스를 제배포 (GIT,블로그,기타등등) 하는 것은 불허 합니다. 
