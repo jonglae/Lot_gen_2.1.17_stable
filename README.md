@@ -18,9 +18,8 @@ https://www.youtube.com/watch?v=bhJRgqmgYqM
 https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000723837
 
 
-고마움을 표시 하고 싶으면 아래 NFT 구매 하시면 향 후 제가진행 하는 그어떤 서비스에서 VIP 로 초대 될것 입니다.<br />
+고마움을 표시 하고 싶으면 아래 NFT 구매 하시면 <br>
+향 후 제가진행 하는 그어떤 서비스에서 VIP 로 초대 될것 입니다.<br />
 감사합니다.<BR>
-  
-[Stackoverflow The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/){:target="_blank" rel="noopener"}
 
 https://opensea.io/collection/ggedori
