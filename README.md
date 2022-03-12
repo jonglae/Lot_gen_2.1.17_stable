@@ -3,6 +3,16 @@
 <h1>Korean Lottery Android App</h1><br>
 한국 나눔 로또 앱 소스(android studio)
 
+Korean Sharing Lotto App (android studio)<br>
+I put Google developer on a suspension, so spread it a lot!<br>
+Google is becoming the evil of the world.<br>
+I don't do Google or any other business.<br>
+No Google service is commercially available.<br>
+Any service on Google is unsecured.<br>
+Google is always monitoring you, so try to reduce Google service as soon as possible.<br>
+
+
+
 구글 개발자 서스팬드 되어 올려 놓으니 많이들 퍼가세요 <br />
 구글은 세계의 악이 되고 있습니다.<br />
 구글과 그어떤 비지니스도 하지 않습니다. <br />
